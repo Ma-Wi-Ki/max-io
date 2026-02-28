@@ -18,8 +18,8 @@ import {
   SelectContent,
   SelectItem,
   SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
+  SelectValue } from
+"@/components/ui/select";
 import { supabase } from "@/integrations/supabase/client";
 import { useToast } from "@/hooks/use-toast";
 import {
@@ -30,8 +30,8 @@ import {
   clients,
   ecosystem,
   contact,
-  seo,
-} from "@/content/site";
+  seo } from
+"@/content/site";
 import {
   ArrowRight,
   CheckCircle,
@@ -42,8 +42,8 @@ import {
   Newspaper,
   Video,
   Mic,
-  Mail,
-} from "lucide-react";
+  Mail } from
+"lucide-react";
 
 /* ── Form schema ── */
 const formSchema = z.object({
@@ -56,7 +56,7 @@ const formSchema = z.object({
   current_tools: z.string().trim().max(1000).optional(),
   top_bottleneck: z.string().trim().max(1000).optional(),
   budget_range: z.string().optional(),
-  notes: z.string().trim().max(2000).optional(),
+  notes: z.string().trim().max(2000).optional()
 });
 type FormData = z.infer<typeof formSchema>;
 
@@ -73,7 +73,7 @@ const Index = () => {
     register,
     handleSubmit,
     setValue,
-    formState: { errors },
+    formState: { errors }
   } = useForm<FormData>({ resolver: zodResolver(formSchema) });
 
   const onSubmit = async (values: FormData) => {
@@ -89,7 +89,7 @@ const Index = () => {
         current_tools: values.current_tools || null,
         top_bottleneck: values.top_bottleneck || null,
         budget_range: values.budget_range || null,
-        notes: values.notes || null,
+        notes: values.notes || null
       });
       if (error) throw error;
       navigate("/thank-you");
@@ -97,7 +97,7 @@ const Index = () => {
       toast({
         title: "Something went wrong",
         description: "Please try again or email us directly.",
-        variant: "destructive",
+        variant: "destructive"
       });
     } finally {
       setSubmitting(false);
@@ -109,9 +109,9 @@ const Index = () => {
     if (!subEmail.trim()) return;
     setSubscribing(true);
     try {
-      const { error } = await supabase
-        .from("newsletter_subscribers")
-        .insert({ email: subEmail.trim() });
+      const { error } = await supabase.
+      from("newsletter_subscribers").
+      insert({ email: subEmail.trim() });
       if (error) {
         if (error.code === "23505") {
           toast({ title: "You're already subscribed!" });
@@ -126,7 +126,7 @@ const Index = () => {
       toast({
         title: "Something went wrong",
         description: "Please try again.",
-        variant: "destructive",
+        variant: "destructive"
       });
     } finally {
       setSubscribing(false);
@@ -145,7 +145,7 @@ const Index = () => {
           </h1>
         </Reveal>
         <Reveal delay={0.1}>
-          <p className="mt-6 text-lg text-muted-foreground max-w-2xl md:text-xl">
+          <p className="mt-6 text-lg text-muted-foreground max-w-2xl md:text-xl my-[2px] mx-0">
             {hero.sub}
           </p>
         </Reveal>
@@ -154,8 +154,8 @@ const Index = () => {
             <a href="#contact">
               <Button
                 size="lg"
-                className="sheen-hover silver-gradient text-primary-foreground font-semibold"
-              >
+                className="sheen-hover silver-gradient text-primary-foreground font-semibold">
+
                 {hero.cta1}
               </Button>
             </a>
@@ -163,8 +163,8 @@ const Index = () => {
               <Button
                 size="lg"
                 variant="outline"
-                className="border-primary/40 hover:bg-primary/10"
-              >
+                className="border-primary/40 hover:bg-primary/10">
+
                 {hero.cta2} <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
             </a>
@@ -186,11 +186,11 @@ const Index = () => {
             <div>
               <h3 className="text-xl font-semibold mb-3">{about.founder.name}</h3>
               <ul className="space-y-2">
-                {about.founder.lines.map((l) => (
-                  <li key={l} className="text-sm text-muted-foreground">
+                {about.founder.lines.map((l) =>
+                <li key={l} className="text-sm text-muted-foreground">
                     {l}
                   </li>
-                ))}
+                )}
               </ul>
             </div>
           </Reveal>
@@ -198,22 +198,22 @@ const Index = () => {
             <div>
               <h3 className="text-xl font-semibold mb-3">{about.company.name}</h3>
               <ul className="space-y-2">
-                {about.company.lines.map((l) => (
-                  <li key={l} className="text-sm text-muted-foreground">
+                {about.company.lines.map((l) =>
+                <li key={l} className="text-sm text-muted-foreground">
                     {l}
                   </li>
-                ))}
+                )}
               </ul>
               <ul className="mt-2 space-y-1.5 pl-1">
-                {about.company.bullets.map((b) => (
-                  <li
-                    key={b}
-                    className="text-sm text-muted-foreground flex items-center gap-2"
-                  >
+                {about.company.bullets.map((b) =>
+                <li
+                  key={b}
+                  className="text-sm text-muted-foreground flex items-center gap-2">
+
                     <CheckCircle className="h-3.5 w-3.5 text-primary shrink-0" />
                     {b}
                   </li>
-                ))}
+                )}
               </ul>
             </div>
           </Reveal>
@@ -242,48 +242,48 @@ const Index = () => {
               </p>
               <p className="text-sm font-medium text-foreground mb-2">What we do:</p>
               <ul className="space-y-1.5 mb-4">
-                {growthTracks.business.services.map((s) => (
-                  <li
-                    key={s}
-                    className="text-sm text-muted-foreground flex items-start gap-2"
-                  >
+                {growthTracks.business.services.map((s) =>
+                <li
+                  key={s}
+                  className="text-sm text-muted-foreground flex items-start gap-2">
+
                     <CheckCircle className="h-3.5 w-3.5 text-primary shrink-0 mt-0.5" />
                     {s}
                   </li>
-                ))}
+                )}
               </ul>
               <p className="text-sm font-medium text-foreground mb-1">Focus:</p>
               <ul className="space-y-1 mb-4">
-                {growthTracks.business.focus.map((f) => (
-                  <li key={f} className="text-sm text-muted-foreground">
+                {growthTracks.business.focus.map((f) =>
+                <li key={f} className="text-sm text-muted-foreground">
                     {f}
                   </li>
-                ))}
+                )}
               </ul>
-              {growthTracks.business.targets.length > 0 && (
-                <>
+              {growthTracks.business.targets.length > 0 &&
+              <>
                   <p className="text-xs font-semibold uppercase tracking-wider text-primary mb-2">
                     Targets
                   </p>
                   <ul className="space-y-1 mb-6">
-                    {growthTracks.business.targets.map((t) => (
-                      <li
-                        key={t}
-                        className="text-xs text-muted-foreground flex items-center gap-2"
-                      >
+                    {growthTracks.business.targets.map((t) =>
+                  <li
+                    key={t}
+                    className="text-xs text-muted-foreground flex items-center gap-2">
+
                         <span className="h-1 w-1 rounded-full bg-primary shrink-0" />
                         {t}
                       </li>
-                    ))}
+                  )}
                   </ul>
                 </>
-              )}
+              }
               <div className="mt-auto">
                 <a href="#contact">
                   <Button
                     variant="outline"
-                    className="border-primary/40 hover:bg-primary/10 w-full"
-                  >
+                    className="border-primary/40 hover:bg-primary/10 w-full">
+
                     {growthTracks.business.cta}{" "}
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </Button>
@@ -304,48 +304,48 @@ const Index = () => {
               </p>
               <p className="text-sm font-medium text-foreground mb-2">What we do:</p>
               <ul className="space-y-1.5 mb-4">
-                {growthTracks.executive.services.map((s) => (
-                  <li
-                    key={s}
-                    className="text-sm text-muted-foreground flex items-start gap-2"
-                  >
+                {growthTracks.executive.services.map((s) =>
+                <li
+                  key={s}
+                  className="text-sm text-muted-foreground flex items-start gap-2">
+
                     <CheckCircle className="h-3.5 w-3.5 text-primary shrink-0 mt-0.5" />
                     {s}
                   </li>
-                ))}
+                )}
               </ul>
               <p className="text-sm font-medium text-foreground mb-1">Focus:</p>
               <ul className="space-y-1 mb-4">
-                {growthTracks.executive.focus.map((f) => (
-                  <li key={f} className="text-sm text-muted-foreground">
+                {growthTracks.executive.focus.map((f) =>
+                <li key={f} className="text-sm text-muted-foreground">
                     {f}
                   </li>
-                ))}
+                )}
               </ul>
-              {growthTracks.executive.targets.length > 0 && (
-                <>
+              {growthTracks.executive.targets.length > 0 &&
+              <>
                   <p className="text-xs font-semibold uppercase tracking-wider text-primary mb-2">
                     Targets
                   </p>
                   <ul className="space-y-1 mb-6">
-                    {growthTracks.executive.targets.map((t) => (
-                      <li
-                        key={t}
-                        className="text-xs text-muted-foreground flex items-center gap-2"
-                      >
+                    {growthTracks.executive.targets.map((t) =>
+                  <li
+                    key={t}
+                    className="text-xs text-muted-foreground flex items-center gap-2">
+
                         <span className="h-1 w-1 rounded-full bg-primary shrink-0" />
                         {t}
                       </li>
-                    ))}
+                  )}
                   </ul>
                 </>
-              )}
+              }
               <div className="mt-auto">
                 <a href="#contact">
                   <Button
                     variant="outline"
-                    className="border-primary/40 hover:bg-primary/10 w-full"
-                  >
+                    className="border-primary/40 hover:bg-primary/10 w-full">
+
                     {growthTracks.executive.cta}{" "}
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </Button>
@@ -368,15 +368,15 @@ const Index = () => {
                 Before
               </h3>
               <ul className="space-y-3">
-                {outcomes.before.map((b) => (
-                  <li
-                    key={b}
-                    className="flex items-center gap-3 text-sm text-muted-foreground"
-                  >
+                {outcomes.before.map((b) =>
+                <li
+                  key={b}
+                  className="flex items-center gap-3 text-sm text-muted-foreground">
+
                     <span className="h-1.5 w-1.5 rounded-full bg-destructive shrink-0" />
                     {b}
                   </li>
-                ))}
+                )}
               </ul>
             </div>
           </Reveal>
@@ -386,15 +386,15 @@ const Index = () => {
                 After
               </h3>
               <ul className="space-y-3">
-                {outcomes.after.map((a) => (
-                  <li
-                    key={a}
-                    className="flex items-center gap-3 text-sm text-foreground"
-                  >
+                {outcomes.after.map((a) =>
+                <li
+                  key={a}
+                  className="flex items-center gap-3 text-sm text-foreground">
+
                     <CheckCircle className="h-4 w-4 text-primary shrink-0" />
                     {a}
                   </li>
-                ))}
+                )}
               </ul>
             </div>
           </Reveal>
@@ -410,8 +410,8 @@ const Index = () => {
           <h2 className="text-3xl font-bold md:text-4xl">{clients.title}</h2>
         </Reveal>
         <Stagger className="mt-10 grid gap-6 md:grid-cols-3">
-          {clients.cases.map((c) => (
-            <StaggerItem key={c.title}>
+          {clients.cases.map((c) =>
+          <StaggerItem key={c.title}>
               <HoverCard className="h-full">
                 <h3 className="text-lg font-semibold mb-3">{c.title}</h3>
                 <p className="text-sm text-muted-foreground mb-1">
@@ -424,7 +424,7 @@ const Index = () => {
                 </p>
               </HoverCard>
             </StaggerItem>
-          ))}
+          )}
         </Stagger>
         <Reveal delay={0.2}>
           <p className="mt-6 text-xs text-muted-foreground italic">
@@ -449,8 +449,8 @@ const Index = () => {
                   <h3 className="text-lg font-semibold mb-2">{block.title}</h3>
                   <p className="text-sm text-muted-foreground">{block.desc}</p>
                 </HoverCard>
-              </StaggerItem>
-            );
+              </StaggerItem>);
+
           })}
         </Stagger>
 
@@ -465,26 +465,26 @@ const Index = () => {
             </p>
             <form
               onSubmit={onSubscribe}
-              className="flex flex-col sm:flex-row gap-3"
-            >
+              className="flex flex-col sm:flex-row gap-3">
+
               <Input
                 type="email"
                 placeholder="you@company.com"
                 value={subEmail}
                 onChange={(e) => setSubEmail(e.target.value)}
                 required
-                className="flex-1"
-              />
+                className="flex-1" />
+
               <Button
                 type="submit"
                 disabled={subscribing}
-                className="sheen-hover silver-gradient text-primary-foreground font-semibold"
-              >
-                {subscribing ? (
-                  <Loader2 className="h-4 w-4 animate-spin" />
-                ) : (
-                  "Subscribe"
-                )}
+                className="sheen-hover silver-gradient text-primary-foreground font-semibold">
+
+                {subscribing ?
+                <Loader2 className="h-4 w-4 animate-spin" /> :
+
+                "Subscribe"
+                }
               </Button>
             </form>
           </div>
@@ -520,15 +520,15 @@ const Index = () => {
             Five screening questions
           </h3>
           <div className="space-y-3 max-w-2xl">
-            {contact.questions.map((q, i) => (
-              <div
-                key={i}
-                className="flex items-start gap-3 rounded-lg border border-border bg-card p-4"
-              >
+            {contact.questions.map((q, i) =>
+            <div
+              key={i}
+              className="flex items-start gap-3 rounded-lg border border-border bg-card p-4">
+
                 <CheckCircle className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
                 <p className="text-sm text-muted-foreground">{q}</p>
               </div>
-            ))}
+            )}
           </div>
         </Reveal>
 
@@ -539,21 +539,21 @@ const Index = () => {
           </h3>
           <form
             onSubmit={handleSubmit(onSubmit)}
-            className="max-w-2xl space-y-6"
-          >
+            className="max-w-2xl space-y-6">
+
             <div className="grid gap-4 sm:grid-cols-2">
               <div className="space-y-2">
                 <Label htmlFor="name">Name *</Label>
                 <Input
                   id="name"
                   {...register("name")}
-                  placeholder="Your name"
-                />
-                {errors.name && (
-                  <p className="text-xs text-destructive">
+                  placeholder="Your name" />
+
+                {errors.name &&
+                <p className="text-xs text-destructive">
                     {errors.name.message}
                   </p>
-                )}
+                }
               </div>
               <div className="space-y-2">
                 <Label htmlFor="email">Email *</Label>
@@ -561,13 +561,13 @@ const Index = () => {
                   id="email"
                   type="email"
                   {...register("email")}
-                  placeholder="you@company.com"
-                />
-                {errors.email && (
-                  <p className="text-xs text-destructive">
+                  placeholder="you@company.com" />
+
+                {errors.email &&
+                <p className="text-xs text-destructive">
                     {errors.email.message}
                   </p>
-                )}
+                }
               </div>
             </div>
 
@@ -577,16 +577,16 @@ const Index = () => {
                 <Input
                   id="phone"
                   {...register("phone")}
-                  placeholder="+61..."
-                />
+                  placeholder="+61..." />
+
               </div>
               <div className="space-y-2">
                 <Label htmlFor="business_name">Business Name</Label>
                 <Input
                   id="business_name"
                   {...register("business_name")}
-                  placeholder="Your business"
-                />
+                  placeholder="Your business" />
+
               </div>
             </div>
 
@@ -596,16 +596,16 @@ const Index = () => {
                 <Input
                   id="industry"
                   {...register("industry")}
-                  placeholder="e.g. Trades"
-                />
+                  placeholder="e.g. Trades" />
+
               </div>
               <div className="space-y-2">
                 <Label htmlFor="headcount">Headcount</Label>
                 <Input
                   id="headcount"
                   {...register("headcount")}
-                  placeholder="e.g. 10"
-                />
+                  placeholder="e.g. 10" />
+
               </div>
               <div className="space-y-2">
                 <Label htmlFor="budget_range">Budget Range</Label>
@@ -614,11 +614,11 @@ const Index = () => {
                     <SelectValue placeholder="Select..." />
                   </SelectTrigger>
                   <SelectContent>
-                    {contact.budgetRanges.map((b) => (
-                      <SelectItem key={b} value={b}>
+                    {contact.budgetRanges.map((b) =>
+                    <SelectItem key={b} value={b}>
                         {b}
                       </SelectItem>
-                    ))}
+                    )}
                   </SelectContent>
                 </Select>
               </div>
@@ -630,8 +630,8 @@ const Index = () => {
                 id="current_tools"
                 {...register("current_tools")}
                 placeholder="What tools/systems do you currently use?"
-                rows={2}
-              />
+                rows={2} />
+
             </div>
 
             <div className="space-y-2">
@@ -640,8 +640,8 @@ const Index = () => {
                 id="top_bottleneck"
                 {...register("top_bottleneck")}
                 placeholder="What's the biggest thing slowing you down?"
-                rows={2}
-              />
+                rows={2} />
+
             </div>
 
             <div className="space-y-2">
@@ -650,29 +650,29 @@ const Index = () => {
                 id="notes"
                 {...register("notes")}
                 placeholder="Anything else we should know?"
-                rows={3}
-              />
+                rows={3} />
+
             </div>
 
             <Button
               type="submit"
               size="lg"
               disabled={submitting}
-              className="sheen-hover silver-gradient text-primary-foreground font-semibold"
-            >
-              {submitting ? (
-                <>
+              className="sheen-hover silver-gradient text-primary-foreground font-semibold">
+
+              {submitting ?
+              <>
                   <Loader2 className="mr-2 h-4 w-4 animate-spin" /> Sending...
-                </>
-              ) : (
-                "Submit"
-              )}
+                </> :
+
+              "Submit"
+              }
             </Button>
           </form>
         </Reveal>
       </Section>
-    </PageLayout>
-  );
+    </PageLayout>);
+
 };
 
 export default Index;
