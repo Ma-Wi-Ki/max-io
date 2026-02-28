@@ -47,27 +47,27 @@ const Header = () => {
         <Link
           to="/"
           className="text-lg font-bold tracking-tight text-foreground"
-          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-        >
-          MAX<span className="text-primary">&lt;&gt;</span>IO
+          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}>
+          MAX<>io
+          <span className="text-primary">&lt;&gt;</span>IO
         </Link>
 
         {/* Desktop nav */}
         <nav className="hidden items-center gap-1 md:flex">
-          {nav.links.map((link) => (
-            <button
-              key={link.href}
-              onClick={() => scrollTo(link.href)}
-              className={cn(
-                "rounded-md px-3 py-2 text-sm font-medium transition-colors hover:text-foreground",
-                active === link.href.replace("#", "")
-                  ? "text-foreground"
-                  : "text-muted-foreground"
-              )}
-            >
+          {nav.links.map((link) =>
+          <button
+            key={link.href}
+            onClick={() => scrollTo(link.href)}
+            className={cn(
+              "rounded-md px-3 py-2 text-sm font-medium transition-colors hover:text-foreground",
+              active === link.href.replace("#", "") ?
+              "text-foreground" :
+              "text-muted-foreground"
+            )}>
+
               {link.label}
             </button>
-          ))}
+          )}
           <button onClick={() => scrollTo(nav.cta.href)} className="ml-2">
             <Button className="sheen-hover silver-gradient text-primary-foreground font-semibold">
               {nav.cta.label}
@@ -79,38 +79,38 @@ const Header = () => {
         <button
           className="md:hidden text-foreground"
           onClick={() => setOpen(!open)}
-          aria-label={open ? "Close menu" : "Open menu"}
-        >
+          aria-label={open ? "Close menu" : "Open menu"}>
+
           {open ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
 
       {/* Mobile menu */}
-      {open && (
-        <nav className="border-t border-border bg-background px-4 pb-4 md:hidden">
-          {nav.links.map((link) => (
-            <button
-              key={link.href}
-              onClick={() => scrollTo(link.href)}
-              className={cn(
-                "block w-full text-left py-3 text-sm font-medium transition-colors border-b border-border",
-                active === link.href.replace("#", "")
-                  ? "text-foreground"
-                  : "text-muted-foreground"
-              )}
-            >
+      {open &&
+      <nav className="border-t border-border bg-background px-4 pb-4 md:hidden">
+          {nav.links.map((link) =>
+        <button
+          key={link.href}
+          onClick={() => scrollTo(link.href)}
+          className={cn(
+            "block w-full text-left py-3 text-sm font-medium transition-colors border-b border-border",
+            active === link.href.replace("#", "") ?
+            "text-foreground" :
+            "text-muted-foreground"
+          )}>
+
               {link.label}
             </button>
-          ))}
+        )}
           <button onClick={() => scrollTo(nav.cta.href)} className="mt-3 block w-full">
             <Button className="w-full sheen-hover silver-gradient text-primary-foreground font-semibold">
               {nav.cta.label}
             </Button>
           </button>
         </nav>
-      )}
-    </header>
-  );
+      }
+    </header>);
+
 };
 
 export default Header;
