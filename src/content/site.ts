@@ -3,9 +3,9 @@ export const siteConfig = {
   tagline: "Turn operational chaos into measurable progress.",
   description:
     "Business and Executive growth through \nautomated systems, education, and execution.",
-  abn: "ABN XX XXX XXX XXX",
-  email: "hello@maxio.group",
-  phone: "+61 XXX XXX XXX",
+  abn: "ABN 22 426 251 651",
+  email: "max@max-io.co",
+  phone: "+61 435 132 222",
   location: "Brisbane, Australia",
 };
 
