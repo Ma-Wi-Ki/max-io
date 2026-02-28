@@ -42,7 +42,9 @@ import {
   Newspaper,
   Video,
   Mic,
-  Mail } from
+  Mail,
+  User,
+  Handshake } from
 "lucide-react";
 
 /* ── Form schema ── */
@@ -181,43 +183,80 @@ const Index = () => {
         <Reveal>
           <h2 className="text-3xl font-bold md:text-4xl">{about.title}</h2>
         </Reveal>
-        <div className="mt-10 grid gap-10 md:grid-cols-2">
+
+        {/* Founder — headshot + bio */}
+        <div className="mt-10 grid gap-10 md:grid-cols-[280px_1fr] items-start">
           <Reveal delay={0.1}>
-            <div>
-              <h3 className="text-xl font-semibold mb-3">{about.founder.name}</h3>
-              <ul className="space-y-2">
-                {about.founder.lines.map((l) =>
-                <li key={l} className="text-sm text-muted-foreground">
-                    {l}
-                  </li>
-                )}
-              </ul>
+            <div className="flex flex-col items-center md:items-start">
+              <div className="w-48 h-48 md:w-64 md:h-64 rounded-lg bg-card border border-border flex items-center justify-center overflow-hidden">
+                <User className="h-20 w-20 text-muted-foreground/40" />
+              </div>
+              <h3 className="text-xl font-semibold mt-4">{about.founder.name}</h3>
+              <p className="text-xs text-muted-foreground">Founder & Principal</p>
             </div>
           </Reveal>
           <Reveal delay={0.2}>
-            <div>
-              <h3 className="text-xl font-semibold mb-3">{about.company.name}</h3>
-              <ul className="space-y-2">
-                {about.company.lines.map((l) =>
-                <li key={l} className="text-sm text-muted-foreground">
-                    {l}
-                  </li>
-                )}
-              </ul>
-              <ul className="mt-2 space-y-1.5 pl-1">
-                {about.company.bullets.map((b) =>
-                <li
-                  key={b}
-                  className="text-sm text-muted-foreground flex items-center gap-2">
+            <div className="space-y-4">
+              {about.founder.bio.split("\n\n").map((paragraph, i) => (
+                <p key={i} className="text-sm leading-relaxed text-muted-foreground">
+                  {paragraph}
+                </p>
+              ))}
+            </div>
+          </Reveal>
+        </div>
 
+        {/* Company + Capabilities */}
+        <div className="mt-16 border-t border-border pt-10">
+          <Reveal delay={0.1}>
+            <h3 className="text-2xl font-bold mb-3">{about.company.name}</h3>
+            <p className="text-sm leading-relaxed text-muted-foreground max-w-3xl">
+              {about.company.description}
+            </p>
+          </Reveal>
+          <Reveal delay={0.2}>
+            <div className="mt-6">
+              <p className="text-sm font-medium text-foreground mb-3">What we deliver:</p>
+              <ul className="grid gap-2 sm:grid-cols-2">
+                {about.company.capabilities.map((c) => (
+                  <li key={c} className="text-sm text-muted-foreground flex items-center gap-2">
                     <CheckCircle className="h-3.5 w-3.5 text-primary shrink-0" />
-                    {b}
+                    {c}
                   </li>
-                )}
+                ))}
               </ul>
             </div>
           </Reveal>
         </div>
+
+        {/* Partner Network */}
+        <div className="mt-16 border-t border-border pt-10">
+          <Reveal delay={0.1}>
+            <div className="flex items-center gap-2 mb-3">
+              <Handshake className="h-6 w-6 text-primary" />
+              <h3 className="text-2xl font-bold">{about.partners.title}</h3>
+            </div>
+            <p className="text-sm leading-relaxed text-muted-foreground max-w-3xl">
+              {about.partners.description}
+            </p>
+          </Reveal>
+          <Stagger className="mt-8 grid gap-6 sm:grid-cols-3">
+            {about.partners.agencies.map((partner, i) => (
+              <StaggerItem key={i}>
+                <HoverCard className="h-full text-center">
+                  <div className="w-16 h-16 rounded-full bg-muted border border-border flex items-center justify-center mx-auto mb-4">
+                    <span className="text-lg font-bold text-muted-foreground">
+                      {partner.name.charAt(0)}
+                    </span>
+                  </div>
+                  <h4 className="font-semibold text-sm">{partner.name}</h4>
+                  <p className="text-xs text-muted-foreground mt-1">{partner.specialty}</p>
+                </HoverCard>
+              </StaggerItem>
+            ))}
+          </Stagger>
+        </div>
+
         <Reveal delay={0.3}>
           <p className="mt-10 text-sm text-muted-foreground">{about.closing}</p>
         </Reveal>
