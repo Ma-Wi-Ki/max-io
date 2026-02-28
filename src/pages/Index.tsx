@@ -44,7 +44,8 @@ import {
   Mic,
   Mail,
   User,
-  Handshake } from
+  Handshake,
+  XCircle } from
 "lucide-react";
 
 /* ── Form schema ── */
@@ -412,7 +413,7 @@ const Index = () => {
                   key={b}
                   className="flex items-center gap-3 text-sm text-secondary-foreground">
 
-                    <span className="h-1.5 w-1.5 rounded-full bg-destructive shrink-0" />
+                    <XCircle className="h-4 w-4 text-destructive shrink-0" />
                     {b}
                   </li>
                 )}
