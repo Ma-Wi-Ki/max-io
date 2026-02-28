@@ -44,7 +44,7 @@ const Footer = () => {
         </div>
         <div className="mt-8 pt-4 border-t border-border">
           <p className="text-xs text-muted-foreground">
-            © {new Date().getFullYear()} {siteConfig.name}. All rights reserved.
+            © 2025 MAX IO Group. All rights reserved.
           </p>
         </div>
       </div>
