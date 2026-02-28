@@ -364,14 +364,14 @@ const Index = () => {
         <div className="mt-10 grid gap-8 md:grid-cols-2">
           <Reveal delay={0.1}>
             <div className="rounded-lg border border-border bg-card p-6">
-              <h3 className="text-sm font-semibold uppercase tracking-wider text-muted-foreground mb-4">
+              <h3 className="text-sm font-semibold uppercase tracking-wider mb-4 text-white">
                 Before
               </h3>
               <ul className="space-y-3">
                 {outcomes.before.map((b) =>
                 <li
                   key={b}
-                  className="flex items-center gap-3 text-sm text-muted-foreground">
+                  className="flex items-center gap-3 text-sm text-secondary-foreground">
 
                     <span className="h-1.5 w-1.5 rounded-full bg-destructive shrink-0" />
                     {b}
