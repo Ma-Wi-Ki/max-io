@@ -1,7 +1,8 @@
 export const siteConfig = {
   name: "MAX<>IO Group",
-  tagline: "Turn operational chaos into measurable 90-day outcomes.",
-  description: "Automation, cyber baselining, research-grade documentation, and operator execution systems.",
+  tagline: "Turn operational chaos into measurable progress.",
+  description:
+    "Business Growth and Executive Growth for operators who value leverage over noise.",
   abn: "ABN XX XXX XXX XXX",
   email: "hello@maxio.group",
   phone: "+61 XXX XXX XXX",
@@ -11,101 +12,109 @@ export const siteConfig = {
 export const nav = {
   links: [
     { label: "About", href: "#about" },
-    { label: "Services", href: "#services" },
+    { label: "Growth Tracks", href: "#growth-tracks" },
     { label: "Outcomes", href: "#outcomes" },
     { label: "Clients", href: "#clients" },
+    { label: "Ecosystem", href: "#ecosystem" },
     { label: "Contact", href: "#contact" },
   ],
   cta: { label: "Book a Screening Call", href: "#contact" },
 };
 
 export const hero = {
-  h1: "Turn operational chaos into measurable 90-day outcomes.",
-  sub: "Automation. Cyber baselining. Research-grade documentation. Operator execution systems.",
+  h1: "Turn operational chaos into measurable progress.",
+  sub: "Business Growth and Executive Growth for operators who value leverage over noise.",
   cta1: "Book a Screening Call",
-  cta2: "Get a 90-Day Plan",
-  trust: "Built for trades, storefronts, and SMEs that need speed — not admin.",
+  cta2: "View Growth Tracks",
+  trust: "Built for trades, storefronts, SMEs, and high-agency executives.",
 };
 
 export const about = {
-  title: "Who we are.",
+  title: "Who is MAX<>IO.",
   founder: {
-    name: "Max King",
+    name: "Max King.",
     lines: [
       "Systems-first operator.",
       "IT/Law background.",
       "Experience across startups, defence-adjacent R&D, and service businesses.",
-      "Focus: execution, not theory.",
+      "Focus: execution and leverage.",
     ],
   },
   company: {
-    name: "MAX<>IO Group",
+    name: "MAX<>IO Group.",
     lines: [
       "Boutique advisory.",
-      "We design operational systems that remove admin drag.",
-      "We standardise delivery.",
-      "We make performance visible.",
+      "We build systems that:",
+    ],
+    bullets: [
+      "Remove admin drag",
+      "Increase visibility",
+      "Improve decision velocity",
+      "Standardise delivery",
     ],
   },
-  closing: "We stay small on purpose. Tight scope. Measurable outputs.",
+  closing: "Small team. Tight scope. Measurable outputs.",
 };
 
-export const services = {
-  title: "Four ways we create leverage.",
-  cards: [
-    {
-      title: "Package A — 90-Day Digital Upgrade",
-      desc: "Map workflows. Automate manual tasks. Install reporting.",
-      targets: [
-        "10–30 hours/week saved",
-        "Faster invoice-to-cash",
-        "Lead response under 5 minutes",
-      ],
-    },
-    {
-      title: "Package B — Cyber Baseline",
-      desc: "Risk register. MFA enforcement. Backup plan. Incident playbook.",
-      targets: [],
-    },
-    {
-      title: "Package C — Research & Strategic Writing",
-      desc: "White papers. Grant narratives. Structured documentation.",
-      targets: [],
-    },
-    {
-      title: "Package D — Operator Coaching",
-      desc: "90-day cadence. KPI clarity. Decision rules.",
-      targets: [],
-    },
-  ],
-  partners: {
-    title: "Specialists when required.",
-    list: [
-      { name: "Meija", desc: "Creative, brand, content, landing pages, ads." },
-      { name: "Growth Engineer", desc: "Funnels, CRM, automation stack, analytics." },
-      { name: "Coyne Capital", desc: "Funding strategy, investor materials, capital structure." },
+export const growthTracks = {
+  title: "Two Growth Tracks.",
+  sub: "Choose Business Growth or Executive Growth.",
+  business: {
+    label: "Business Growth",
+    audience: "Trades, storefronts, SMEs, startups.",
+    services: [
+      "Website revamp",
+      "Strategic positioning & offer design",
+      "AI integrations",
+      "Digital media & marketing",
+      "Business digitalisation (CRM, SOPs, dashboards, automations)",
+      "Research & strategic writing",
     ],
-    closing: "MAX<>IO remains accountable for outcomes.",
+    focus: ["Lead-to-cash velocity.", "Operational visibility.", "Automation."],
+    targets: [
+      "Faster response time",
+      "Fewer manual steps",
+      "Weekly KPI clarity",
+      "Reduced rework",
+    ],
+    cta: "Discuss Business Growth",
+  },
+  executive: {
+    label: "Executive Growth",
+    audience: "Founders, executives, operators.",
+    services: [
+      "AI education",
+      "Personal automation systems",
+      "Mentality/mindset coaching",
+      "Execution cadence design",
+    ],
+    focus: ["Decision quality.", "Consistency.", "Throughput."],
+    targets: [
+      "Predictable weekly execution",
+      "Reduced indecision",
+      "Higher leverage per hour",
+    ],
+    cta: "Discuss Executive Growth",
   },
 };
 
 export const outcomes = {
-  title: "What changes in 90 days.",
+  title: "What changes.",
   before: [
     "Leads missed",
     "Admin overload",
     "No weekly clarity",
-    "Manual reporting",
-    "Cyber exposure",
+    "Tool sprawl",
+    "Decision fatigue",
   ],
   after: [
-    "Leads tracked & automated",
+    "Leads tracked and automated",
     "Admin reduced",
-    "Weekly KPI visibility",
-    "Clear delivery SOPs",
-    "Hardened baseline security",
+    "Clear KPIs",
+    "Consolidated systems",
+    "Structured decision rules",
   ],
-  note: "Targets defined in week one. Measured weekly.",
+  note: "Outcomes are defined in week one and reviewed weekly.",
 };
 
 export const clients = {
@@ -114,31 +123,50 @@ export const clients = {
   cases: [
     {
       title: "Trade Services (10 staff)",
-      constraint: "Manual quoting and late invoices.",
+      constraint: "Manual quoting & late invoices.",
       focus: "Lead-to-cash velocity.",
     },
     {
       title: "Retail / Storefront",
       constraint: "No follow-up system.",
-      focus: "Retention + reporting visibility.",
+      focus: "Retention & reporting visibility.",
     },
     {
       title: "SME / Professional Services",
-      constraint: "Messy CRM + unclear pipeline.",
-      focus: "Automation + cyber baseline.",
+      constraint: "Messy CRM & unclear pipeline.",
+      focus: "Automation & system clarity.",
+    },
+  ],
+};
+
+export const ecosystem = {
+  title: "The MAX<>IO Ecosystem.",
+  sub: "We publish, document, and build publicly.",
+  blocks: [
+    {
+      title: "Newsletter",
+      desc: "Weekly operator memo. Practical systems, decisions, workflows.",
+    },
+    {
+      title: "Short-form",
+      desc: "2–3 weekly shorts. Execution insights.",
+    },
+    {
+      title: "Podcast",
+      desc: "Conversations with clients and operators. Operational lessons.",
     },
   ],
 };
 
 export const contact = {
   title: "Start with a screening call.",
-  sub: "Answer five questions. We confirm fit. We propose a 90-day scope.",
+  sub: "Answer five questions. We confirm fit. We propose a scope.",
   questions: [
-    "What are your top 5 bottlenecks (ranked)?",
-    "What systems do you run today and what's breaking?",
-    "What's your AI/digital experience level?",
-    "Needs vs wants (max 5 each).",
-    "Define success in 90 days using 3 numbers.",
+    "Top 5 bottlenecks?",
+    "Current systems and what's breaking?",
+    "AI/digital experience level?",
+    "Needs vs wants?",
+    "90-day success in 3 numbers?",
   ],
   budgetRanges: [
     "Under $5k/month",
@@ -151,11 +179,12 @@ export const contact = {
 
 export const thankYou = {
   title: "Thanks for reaching out.",
-  message: "We've received your details. If it's a fit, we'll be in touch within 2 business days to schedule your screening call.",
+  message:
+    "We've received your details. If it's a fit, we'll be in touch within 2 business days to schedule your screening call.",
   nextSteps: [
     "We review your submission",
     "If there's a fit, we schedule a 30-minute screening call",
-    "After the call, you receive a 90-day scope proposal",
+    "After the call, you receive a scope proposal",
   ],
 };
 
@@ -213,7 +242,7 @@ If you have questions about these Terms, please contact us at ${siteConfig.email
 export const footer = {
   links: [
     { label: "About", href: "#about" },
-    { label: "Services", href: "#services" },
+    { label: "Growth Tracks", href: "#growth-tracks" },
     { label: "Contact", href: "#contact" },
   ],
   legal: [
@@ -223,8 +252,21 @@ export const footer = {
 };
 
 export const seo = {
-  home: { title: "MAX<>IO Group — 90-Day Operational Outcomes", description: "Turn operational chaos into measurable 90-day outcomes. Automation, cyber security, research, and operator coaching for trades, storefronts, and SMEs." },
-  thankYou: { title: "Thank You — MAX<>IO Group", description: "Thanks for reaching out. We'll be in touch within 2 business days." },
-  privacy: { title: "Privacy Policy — MAX<>IO Group", description: "How MAX<>IO Group collects, uses, and protects your information." },
-  terms: { title: "Terms of Service — MAX<>IO Group", description: "Terms governing the use of MAX<>IO Group website and services." },
+  home: {
+    title: "MAX<>IO Group — Business & Executive Growth",
+    description:
+      "Turn operational chaos into measurable progress. Business Growth and Executive Growth for operators who value leverage over noise.",
+  },
+  thankYou: {
+    title: "Thank You — MAX<>IO Group",
+    description: "Thanks for reaching out. We'll be in touch within 2 business days.",
+  },
+  privacy: {
+    title: "Privacy Policy — MAX<>IO Group",
+    description: "How MAX<>IO Group collects, uses, and protects your information.",
+  },
+  terms: {
+    title: "Terms of Service — MAX<>IO Group",
+    description: "Terms governing the use of MAX<>IO Group website and services.",
+  },
 };
