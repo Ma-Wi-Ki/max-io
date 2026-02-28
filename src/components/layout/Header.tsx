@@ -48,8 +48,7 @@ const Header = () => {
           to="/"
           className="text-lg font-bold tracking-tight text-foreground"
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}>
-          MAX<>io
-          <span className="text-primary">&lt;&gt;</span>IO
+          MAX{'<>'}IO
         </Link>
 
         {/* Desktop nav */}
