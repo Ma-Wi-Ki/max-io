@@ -30,27 +30,31 @@ export const hero = {
 };
 
 export const about = {
-  title: "About MAX<>io",
+  title: "About MAX<>IO",
   founder: {
-    name: "Max King.",
-    lines: [
-      "Systems-first operator.",
-      "IT/Law background.",
-      "Experience across startups, defence-adjacent R&D, and service businesses.",
-      "Focus: execution and leverage.",
-    ],
+    name: "Max King",
+    bio: "Max King is a systems-first operator with a background spanning IT and Law. With experience across startups, defence-adjacent R&D, and service businesses, Max brings a rare combination of technical depth and strategic thinking to every engagement.\n\nHis approach is built on one principle: execution beats theory. Rather than offering generic advice, Max works inside your operations — identifying bottlenecks, designing systems, and implementing automations that deliver measurable results from week one.\n\nWhether it's restructuring a sales pipeline for a trades business, deploying AI workflows for an SME, or coaching a founder through decision fatigue, Max focuses on leverage — the smallest changes that unlock the biggest outcomes.",
   },
   company: {
-    name: "MAX<>IO Group.",
-    lines: [
-      "Boutique advisory.",
-      "We build systems that:",
+    name: "MAX<>IO Group",
+    description: "MAX<>IO Group is a boutique advisory firm built for operators who value results over noise. We combine strategic consulting with hands-on implementation — designing and deploying the systems that remove admin drag, increase visibility, improve decision velocity, and standardise delivery.",
+    capabilities: [
+      "Operational systems design & automation",
+      "AI integration & digital transformation",
+      "Strategic positioning & offer design",
+      "CRM, SOPs, dashboards & workflow builds",
+      "Digital media, marketing & lead generation",
+      "Research, strategic writing & advisory",
+      "Executive coaching & mindset development",
     ],
-    bullets: [
-      "Remove admin drag",
-      "Increase visibility",
-      "Improve decision velocity",
-      "Standardise delivery",
+  },
+  partners: {
+    title: "Partner Network",
+    description: "We work alongside a curated network of specialist agencies and operators to deliver end-to-end solutions. Where our scope ends, our partners begin — ensuring you get expert execution across every domain.",
+    agencies: [
+      { name: "Partner Agency", specialty: "Web Development & Design" },
+      { name: "Partner Agency", specialty: "Paid Media & Performance Marketing" },
+      { name: "Partner Agency", specialty: "Brand Strategy & Creative" },
     ],
   },
   closing: "Small team. Tight scope. Measurable outputs.",
