@@ -260,20 +260,24 @@ const Index = () => {
                   </li>
                 ))}
               </ul>
-              <p className="text-xs font-semibold uppercase tracking-wider text-primary mb-2">
-                Targets
-              </p>
-              <ul className="space-y-1 mb-6">
-                {growthTracks.business.targets.map((t) => (
-                  <li
-                    key={t}
-                    className="text-xs text-muted-foreground flex items-center gap-2"
-                  >
-                    <span className="h-1 w-1 rounded-full bg-primary shrink-0" />
-                    {t}
-                  </li>
-                ))}
-              </ul>
+              {growthTracks.business.targets.length > 0 && (
+                <>
+                  <p className="text-xs font-semibold uppercase tracking-wider text-primary mb-2">
+                    Targets
+                  </p>
+                  <ul className="space-y-1 mb-6">
+                    {growthTracks.business.targets.map((t) => (
+                      <li
+                        key={t}
+                        className="text-xs text-muted-foreground flex items-center gap-2"
+                      >
+                        <span className="h-1 w-1 rounded-full bg-primary shrink-0" />
+                        {t}
+                      </li>
+                    ))}
+                  </ul>
+                </>
+              )}
               <div className="mt-auto">
                 <a href="#contact">
                   <Button
@@ -318,20 +322,24 @@ const Index = () => {
                   </li>
                 ))}
               </ul>
-              <p className="text-xs font-semibold uppercase tracking-wider text-primary mb-2">
-                Targets
-              </p>
-              <ul className="space-y-1 mb-6">
-                {growthTracks.executive.targets.map((t) => (
-                  <li
-                    key={t}
-                    className="text-xs text-muted-foreground flex items-center gap-2"
-                  >
-                    <span className="h-1 w-1 rounded-full bg-primary shrink-0" />
-                    {t}
-                  </li>
-                ))}
-              </ul>
+              {growthTracks.executive.targets.length > 0 && (
+                <>
+                  <p className="text-xs font-semibold uppercase tracking-wider text-primary mb-2">
+                    Targets
+                  </p>
+                  <ul className="space-y-1 mb-6">
+                    {growthTracks.executive.targets.map((t) => (
+                      <li
+                        key={t}
+                        className="text-xs text-muted-foreground flex items-center gap-2"
+                      >
+                        <span className="h-1 w-1 rounded-full bg-primary shrink-0" />
+                        {t}
+                      </li>
+                    ))}
+                  </ul>
+                </>
+              )}
               <div className="mt-auto">
                 <a href="#contact">
                   <Button
