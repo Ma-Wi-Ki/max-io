@@ -263,8 +263,8 @@ const Index = () => {
               {growthTracks.business.targets.length > 0 &&
               <>
                   <p className="text-xs font-semibold uppercase tracking-wider text-primary mb-2">
-                    Targets
-                  </p>
+
+                </p>
                   <ul className="space-y-1 mb-6">
                     {growthTracks.business.targets.map((t) =>
                   <li
