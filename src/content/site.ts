@@ -12,7 +12,7 @@ export const siteConfig = {
 export const nav = {
   links: [
     { label: "About", href: "#about" },
-    { label: "Growth Tracks", href: "#growth-tracks" },
+    { label: "Services", href: "#growth-tracks" },
     { label: "Outcomes", href: "#outcomes" },
     { label: "Clients", href: "#clients" },
     { label: "Ecosystem", href: "#ecosystem" },
@@ -30,7 +30,7 @@ export const hero = {
 };
 
 export const about = {
-  title: "Who is MAX<>IO.",
+  title: "About MAX<>io",
   founder: {
     name: "Max King.",
     lines: [
@@ -57,7 +57,7 @@ export const about = {
 };
 
 export const growthTracks = {
-  title: "Two Growth Tracks.",
+  title: "Services",
   sub: "Choose Business Growth or Executive Growth.",
   business: {
     label: "Business Growth",
@@ -89,11 +89,7 @@ export const growthTracks = {
       "Execution cadence design",
     ],
     focus: ["Decision quality.", "Consistency.", "Throughput."],
-    targets: [
-      "Predictable weekly execution",
-      "Reduced indecision",
-      "Higher leverage per hour",
-    ],
+    targets: [],
     cta: "Discuss Executive Growth",
   },
 };
@@ -242,7 +238,7 @@ If you have questions about these Terms, please contact us at ${siteConfig.email
 export const footer = {
   links: [
     { label: "About", href: "#about" },
-    { label: "Growth Tracks", href: "#growth-tracks" },
+    { label: "Services", href: "#growth-tracks" },
     { label: "Contact", href: "#contact" },
   ],
   legal: [
