@@ -28,6 +28,8 @@ import {
   growthTracks,
   outcomes,
   clients,
+  companies,
+  testimonials,
   ecosystem,
   contact,
   seo } from
@@ -45,7 +47,9 @@ import {
   Mail,
   User,
   Handshake,
-  XCircle } from
+  XCircle,
+  Quote,
+  Building2 } from
 "lucide-react";
 
 /* ── Form schema ── */
@@ -448,29 +452,61 @@ const Index = () => {
       <Section id="clients" className="border-t border-border">
         <Reveal>
           <h2 className="text-3xl font-bold md:text-4xl">{clients.title}</h2>
+          <p className="mt-3 text-lg text-muted-foreground">{clients.sub}</p>
         </Reveal>
-        <Stagger className="mt-10 grid gap-6 md:grid-cols-3">
-          {clients.cases.map((c) =>
-          <StaggerItem key={c.title}>
-              <HoverCard className="h-full">
-                <h3 className="text-lg font-semibold mb-3">{c.title}</h3>
-                <p className="text-sm text-muted-foreground mb-1">
-                  <span className="font-medium text-foreground">Constraint:</span>{" "}
-                  {c.constraint}
-                </p>
-                <p className="text-sm text-muted-foreground">
-                  <span className="font-medium text-foreground">Focus:</span>{" "}
-                  {c.focus}
-                </p>
+        <Stagger className="mt-10 grid gap-6 sm:grid-cols-2 md:grid-cols-4">
+          {clients.examples.map((c) => (
+            <StaggerItem key={c.name}>
+              <HoverCard className="h-full text-center">
+                <div className="w-14 h-14 rounded-full bg-muted border border-border flex items-center justify-center mx-auto mb-4">
+                  <Building2 className="h-6 w-6 text-muted-foreground" />
+                </div>
+                <h3 className="text-sm font-semibold">{c.name}</h3>
+                <p className="text-xs text-muted-foreground mt-1">{c.industry}</p>
+                <p className="text-xs text-muted-foreground">{c.size}</p>
               </HoverCard>
             </StaggerItem>
-          )}
+          ))}
         </Stagger>
-        <Reveal delay={0.2}>
-          <p className="mt-6 text-xs text-muted-foreground italic">
-            {clients.label}
-          </p>
-        </Reveal>
+
+        {/* Companies previously worked with */}
+        <div className="mt-16 border-t border-border pt-10">
+          <Reveal>
+            <h3 className="text-2xl font-bold mb-8 text-center">{companies.title}</h3>
+          </Reveal>
+          <Stagger className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-6">
+            {companies.logos.map((company, i) => (
+              <StaggerItem key={i}>
+                <div className="h-20 rounded-lg border border-border bg-card flex items-center justify-center">
+                  <span className="text-xs font-medium text-muted-foreground">{company.name}</span>
+                </div>
+              </StaggerItem>
+            ))}
+          </Stagger>
+        </div>
+
+        {/* Testimonials */}
+        <div className="mt-16 border-t border-border pt-10">
+          <Reveal>
+            <h3 className="text-2xl font-bold mb-8">{testimonials.title}</h3>
+          </Reveal>
+          <Stagger className="grid gap-6 md:grid-cols-3">
+            {testimonials.items.map((t, i) => (
+              <StaggerItem key={i}>
+                <HoverCard className="h-full flex flex-col">
+                  <Quote className="h-6 w-6 text-primary/40 mb-3 shrink-0" />
+                  <p className="text-sm text-muted-foreground leading-relaxed italic flex-1">
+                    "{t.quote}"
+                  </p>
+                  <div className="mt-4 pt-4 border-t border-border">
+                    <p className="text-sm font-semibold">{t.name}</p>
+                    <p className="text-xs text-muted-foreground">{t.role}</p>
+                  </div>
+                </HoverCard>
+              </StaggerItem>
+            ))}
+          </Stagger>
+        </div>
       </Section>
 
       {/* ── ECOSYSTEM ── */}
