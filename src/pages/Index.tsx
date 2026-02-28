@@ -431,7 +431,7 @@ const Index = () => {
                   key={a}
                   className="flex items-center gap-3 text-sm text-foreground">
 
-                    <CheckCircle className="h-4 w-4 text-primary shrink-0" />
+                    <CheckCircle className="h-4 w-4 text-success shrink-0" />
                     {a}
                   </li>
                 )}
