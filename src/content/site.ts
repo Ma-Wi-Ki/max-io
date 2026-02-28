@@ -113,23 +113,45 @@ export const outcomes = {
 };
 
 export const clients = {
-  title: "Selected engagements.",
-  label: "Illustrative transformation examples.",
-  cases: [
+  title: "Who we work with.",
+  sub: "From trades to tech — we help operators at every stage.",
+  examples: [
+    { name: "Trade Services Co.", industry: "Trades & Construction", size: "10–25 staff" },
+    { name: "Urban Retail Group", industry: "Retail & E-commerce", size: "5–15 staff" },
+    { name: "Apex Professional Services", industry: "Professional Services", size: "15–50 staff" },
+    { name: "GreenTech Solutions", industry: "Technology & SaaS", size: "3–10 staff" },
+  ],
+};
+
+export const companies = {
+  title: "Previously worked with.",
+  logos: [
+    { name: "Company One" },
+    { name: "Company Two" },
+    { name: "Company Three" },
+    { name: "Company Four" },
+    { name: "Company Five" },
+    { name: "Company Six" },
+  ],
+};
+
+export const testimonials = {
+  title: "What clients say.",
+  items: [
     {
-      title: "Trade Services (10 staff)",
-      constraint: "Manual quoting & late invoices.",
-      focus: "Lead-to-cash velocity.",
+      quote: "MAX<>IO transformed how we operate. We went from drowning in admin to having full visibility across the business in under 6 weeks.",
+      name: "Client Name",
+      role: "Director, Trade Services",
     },
     {
-      title: "Retail / Storefront",
-      constraint: "No follow-up system.",
-      focus: "Retention & reporting visibility.",
+      quote: "The systems Max built paid for themselves in month one. Our lead response time dropped from 3 days to under 2 hours.",
+      name: "Client Name",
+      role: "Founder, Retail Business",
     },
     {
-      title: "SME / Professional Services",
-      constraint: "Messy CRM & unclear pipeline.",
-      focus: "Automation & system clarity.",
+      quote: "Working with MAX<>IO gave me the clarity and structure I'd been missing for years. It's not just consulting — it's execution.",
+      name: "Client Name",
+      role: "CEO, Professional Services",
     },
   ],
 };
