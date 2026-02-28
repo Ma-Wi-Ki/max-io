@@ -2,7 +2,7 @@ export const siteConfig = {
   name: "MAX<>IO Group",
   tagline: "Turn operational chaos into measurable progress.",
   description:
-    "Business and executive growth through structured systems, automation, and execution.",
+    "Business and Executive growth through \nautomated systems, education, and execution.",
   abn: "ABN XX XXX XXX XXX",
   email: "hello@maxio.group",
   phone: "+61 XXX XXX XXX",
