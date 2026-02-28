@@ -22,7 +22,7 @@ export const nav = {
 };
 
 export const hero = {
-  h1: "Max. Input, \nMaximise Output",
+  h1: "Max. Input, Max. Output",
   sub: "Business growth and executive growth through structured systems, automation, and disciplined execution.",
   cta1: "Book a Screening Call",
   cta2: "Our Services",
@@ -71,12 +71,7 @@ export const growthTracks = {
       "Research & strategic writing",
     ],
     focus: ["Lead-to-cash velocity.", "Operational visibility.", "Automation."],
-    targets: [
-      "Faster response time",
-      "Fewer manual steps",
-      "Weekly KPI clarity",
-      "Reduced rework",
-    ],
+    targets: [],
     cta: "Discuss Business Growth",
   },
   executive: {
