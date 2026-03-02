@@ -19,11 +19,11 @@ const HoverCard = ({ children, className }: HoverCardProps) => {
         prefersReduced
           ? undefined
           : {
-              y: -6,
-              boxShadow: "0 12px 40px -12px hsl(210 14% 40% / 0.15)",
+              y: -4,
+              boxShadow: "0 8px 30px -10px hsl(210 14% 40% / 0.12)",
             }
       }
-      transition={{ duration: 0.25, ease: [0.25, 0.1, 0.25, 1] }}
+      transition={{ duration: 0.2, ease: [0.22, 1, 0.36, 1] }}
     >
       {children}
     </motion.div>

@@ -7,11 +7,11 @@ interface StaggerProps {
 }
 
 const itemVariants = {
-  hidden: { opacity: 0, y: 16 },
+  hidden: { opacity: 0, y: 10 },
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.5, ease: [0.25, 0.1, 0.25, 1] as const },
+    transition: { duration: 0.4, ease: [0.22, 1, 0.36, 1] as const },
   },
 };
 
@@ -31,7 +31,7 @@ const Stagger = ({ children, className, staggerDelay = 0.12 }: StaggerProps) => 
       }}
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: true, margin: "-80px" }}
+      viewport={{ once: true, margin: "-60px" }}
     >
       {children}
     </motion.div>
