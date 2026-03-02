@@ -181,7 +181,7 @@ export const contact = {
     "Current systems and what's breaking?",
     "AI/digital experience level?",
     "Needs vs wants?",
-    "90-day success in 3 numbers?",
+    "90-day success?",
   ],
   budgetRanges: ["Under $5k/month", "$5k–$10k/month", "$10k–$15k/month", "$15k+/month", "Not sure yet"],
 };
