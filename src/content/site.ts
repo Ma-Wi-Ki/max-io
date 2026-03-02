@@ -20,7 +20,7 @@ export const nav = {
 
 export const hero = {
   h1: "Max. Input, Max. Output",
-  sub: "Business growth and executive growth through structured systems, automation, and disciplined execution.",
+  sub: "Business and executive growth through \nautomated systems, strategy, and execution.",
   cta1: "Book a Screening Call",
   cta2: "Our Services",
   trust: "Built for trades, storefronts, SMEs, and high-agency executives.",
