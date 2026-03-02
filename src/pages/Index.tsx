@@ -195,11 +195,11 @@ const Index = () => {
           </Reveal>
           <Reveal delay={0.2}>
             <div className="space-y-4">
-              {about.founder.bio.map((paragraph, i) => (
-                <p key={i} className="text-sm leading-relaxed text-muted-foreground">
+              {about.founder.bio.map((paragraph, i) =>
+              <p key={i} className="text-sm leading-relaxed text-muted-foreground">
                   {paragraph}
                 </p>
-              ))}
+              )}
             </div>
           </Reveal>
         </div>
@@ -216,12 +216,12 @@ const Index = () => {
             <div className="mt-6">
               <p className="text-sm font-medium text-foreground mb-3">What we deliver:</p>
               <ul className="grid gap-2 sm:grid-cols-2">
-                {about.company.capabilities.map((c) => (
-                  <li key={c} className="text-sm text-muted-foreground flex items-center gap-2">
+                {about.company.capabilities.map((c) =>
+                <li key={c} className="text-sm text-muted-foreground flex items-center gap-2">
                     <CheckCircle className="h-3.5 w-3.5 text-primary shrink-0" />
                     {c}
                   </li>
-                ))}
+                )}
               </ul>
             </div>
           </Reveal>
@@ -239,8 +239,8 @@ const Index = () => {
             </p>
           </Reveal>
           <Stagger className="mt-8 grid gap-6 sm:grid-cols-3">
-            {about.partners.agencies.map((partner, i) => (
-              <StaggerItem key={i}>
+            {about.partners.agencies.map((partner, i) =>
+            <StaggerItem key={i}>
                 <HoverCard className="h-full text-center">
                   <div className="w-16 h-16 rounded-full bg-muted border border-border flex items-center justify-center mx-auto mb-4">
                     <span className="text-lg font-bold text-muted-foreground">
@@ -251,7 +251,7 @@ const Index = () => {
                   <p className="text-xs text-muted-foreground mt-1">{partner.specialty}</p>
                 </HoverCard>
               </StaggerItem>
-            ))}
+            )}
           </Stagger>
         </div>
 
@@ -477,8 +477,8 @@ const Index = () => {
 
         {/* Screening questions */}
         <Reveal delay={0.15}>
-          <h3 className="text-xl font-semibold mt-14 mb-4">
-            Five screening questions
+          <h3 className="text-xl font-semibold mt-14 mb-4">Questions to think about:
+
           </h3>
           <div className="space-y-3 max-w-2xl">
             {contact.questions.map((q, i) =>
