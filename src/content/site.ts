@@ -33,7 +33,12 @@ export const about = {
   title: "About MAX<>IO",
   founder: {
     name: "Max King",
-    bio: "Max King is a systems-first operator with a background spanning IT and Law. With experience across startups, defence-adjacent R&D, and service businesses, Max brings a rare combination of technical depth and strategic thinking to every engagement.\n\nHis approach is built on one principle: execution beats theory. Rather than offering generic advice, Max works inside your operations — identifying bottlenecks, designing systems, and implementing automations that deliver measurable results from week one.\n\nWhether it's restructuring a sales pipeline for a trades business, deploying AI workflows for an SME, or coaching a founder through decision fatigue, Max focuses on leverage — the smallest changes that unlock the biggest outcomes.",
+    bio: [
+      "Max King works with businesses and operators to improve clarity, systems, and execution. His background includes founding and running ventures across esports, commercial cleaning, digital projects, and social enterprise initiatives. Through those experiences, he has worked directly inside both operational service businesses and technology-driven environments.",
+      "He focuses on identifying friction—unclear positioning, manual processes, scattered tools, inconsistent follow-through—and replacing it with structured systems that are practical and measurable.",
+      "Currently studying IT and Law, Max brings a structured, systems-oriented approach to business growth and decision-making. Through MAX<>IO, he helps businesses and individuals improve how they operate, automate where appropriate, and build a consistent execution cadence.",
+      "Maximum input. Maximum output.",],
+    principle: 
   },
   company: {
     name: "MAX<>IO Group",
