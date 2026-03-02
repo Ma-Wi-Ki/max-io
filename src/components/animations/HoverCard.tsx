@@ -12,11 +12,18 @@ const HoverCard = ({ children, className }: HoverCardProps) => {
   return (
     <motion.div
       className={cn(
-        "rounded-lg border border-border bg-card p-6 transition-colors hover:border-primary/40",
+        "rounded-lg border border-border bg-card p-6 transition-all duration-300 hover:border-accent/60",
         className
       )}
-      whileHover={prefersReduced ? undefined : { y: -4, boxShadow: "0 8px 30px -12px hsla(0,0%,75%,0.2)" }}
-      transition={{ duration: 0.2 }}
+      whileHover={
+        prefersReduced
+          ? undefined
+          : {
+              y: -6,
+              boxShadow: "0 12px 40px -12px hsl(210 14% 40% / 0.15)",
+            }
+      }
+      transition={{ duration: 0.25, ease: [0.25, 0.1, 0.25, 1] }}
     >
       {children}
     </motion.div>

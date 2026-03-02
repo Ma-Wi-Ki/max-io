@@ -138,24 +138,23 @@ const Index = () => {
       <SEO {...seo.home} />
 
       {/* ── HERO ── */}
-      <Section className="pt-24 md:pt-36 pb-28">
+      <Section className="pt-28 md:pt-40 pb-32">
         <Reveal>
           <h1 className="text-4xl font-extrabold leading-tight tracking-tight md:text-6xl lg:text-7xl max-w-4xl">
             {hero.h1}
           </h1>
         </Reveal>
-        <Reveal delay={0.1}>
-          <p className="mt-6 text-lg text-muted-foreground max-w-2xl md:text-xl my-[2px] mx-0">
+        <Reveal delay={0.15}>
+          <p className="mt-6 text-lg text-muted-foreground max-w-2xl md:text-xl">
             {hero.sub}
           </p>
         </Reveal>
-        <Reveal delay={0.2}>
-          <div className="mt-8 flex flex-col sm:flex-row gap-4">
+        <Reveal delay={0.25}>
+          <div className="mt-10 flex flex-col sm:flex-row gap-4">
             <a href="#contact">
               <Button
                 size="lg"
                 className="sheen-hover silver-gradient text-primary-foreground font-semibold">
-
                 {hero.cta1}
               </Button>
             </a>
@@ -164,20 +163,19 @@ const Index = () => {
                 size="lg"
                 variant="outline"
                 className="border-primary/40 hover:bg-primary/10">
-
                 {hero.cta2} <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
             </a>
           </div>
         </Reveal>
-        <Reveal delay={0.3}>
-          <p className="mt-8 text-sm text-muted-foreground">{hero.trust}</p>
+        <Reveal delay={0.35}>
+          <p className="mt-10 text-sm text-muted-foreground/70">{hero.trust}</p>
         </Reveal>
-        <div className="mt-16 h-px w-full max-w-md silver-gradient opacity-40" />
+        <div className="mt-20 h-px w-full max-w-md bg-gradient-to-r from-accent/40 via-primary/20 to-transparent" />
       </Section>
 
       {/* ── ABOUT ── */}
-      <Section id="about" className="border-t border-border">
+      <Section id="about" className="border-t border-border/60">
         <Reveal>
           <h2 className="text-3xl font-bold md:text-4xl">{about.title}</h2>
         </Reveal>
@@ -186,8 +184,8 @@ const Index = () => {
         <div className="mt-10 grid gap-10 md:grid-cols-[280px_1fr] items-start">
           <Reveal delay={0.1}>
             <div className="flex flex-col items-center md:items-start">
-              <div className="w-48 h-48 md:w-64 md:h-64 rounded-lg bg-card border border-border flex items-center justify-center overflow-hidden">
-                <User className="h-20 w-20 text-muted-foreground/40" />
+              <div className="w-48 h-48 md:w-64 md:h-64 rounded-lg bg-card border border-border/60 flex items-center justify-center overflow-hidden">
+                <User className="h-20 w-20 text-accent/40" />
               </div>
               <h3 className="text-xl font-semibold mt-4">{about.founder.name}</h3>
               <p className="text-xs text-muted-foreground">Founder & Principal</p>
@@ -205,7 +203,7 @@ const Index = () => {
         </div>
 
         {/* Company + Capabilities */}
-        <div className="mt-16 border-t border-border pt-10">
+        <div className="mt-20 border-t border-border/60 pt-12">
           <Reveal delay={0.1}>
             <h3 className="text-2xl font-bold mb-3">{about.company.name}</h3>
             <p className="text-sm leading-relaxed text-muted-foreground max-w-3xl">
@@ -218,7 +216,7 @@ const Index = () => {
               <ul className="grid gap-2 sm:grid-cols-2">
                 {about.company.capabilities.map((c) =>
                 <li key={c} className="text-sm text-muted-foreground flex items-center gap-2">
-                    <CheckCircle className="h-3.5 w-3.5 text-primary shrink-0" />
+                    <CheckCircle className="h-3.5 w-3.5 text-accent shrink-0" />
                     {c}
                   </li>
                 )}
@@ -228,10 +226,10 @@ const Index = () => {
         </div>
 
         {/* Partner Network */}
-        <div className="mt-16 border-t border-border pt-10">
+        <div className="mt-20 border-t border-border/60 pt-12">
           <Reveal delay={0.1}>
-            <div className="flex items-center gap-2 mb-3">
-              <Handshake className="h-6 w-6 text-primary" />
+            <div className="flex items-center gap-3 mb-3">
+              <Handshake className="h-6 w-6 text-accent" />
               <h3 className="text-2xl font-bold">{about.partners.title}</h3>
             </div>
             <p className="text-sm leading-relaxed text-muted-foreground max-w-3xl">
@@ -242,7 +240,7 @@ const Index = () => {
             {about.partners.agencies.map((partner, i) =>
             <StaggerItem key={i}>
                 <HoverCard className="h-full text-center">
-                  <div className="w-16 h-16 rounded-full bg-muted border border-border flex items-center justify-center mx-auto mb-4">
+                  <div className="w-16 h-16 rounded-full bg-muted border border-accent/20 flex items-center justify-center mx-auto mb-4">
                     <span className="text-lg font-bold text-muted-foreground">
                       {partner.name.charAt(0)}
                     </span>
@@ -261,12 +259,12 @@ const Index = () => {
       </Section>
 
       {/* ── GROWTH TRACKS ── */}
-      <Section id="growth-tracks" className="border-t border-border">
-        <div className="mt-10 grid gap-8 md:grid-cols-2">
+      <Section id="growth-tracks" className="border-t border-border/60">
+        <div className="grid gap-8 md:grid-cols-2">
           {/* Business Growth */}
           <Reveal delay={0.1}>
             <HoverCard className="h-full flex flex-col">
-              <TrendingUp className="h-8 w-8 text-primary mb-4" />
+              <TrendingUp className="h-8 w-8 text-accent mb-4" />
               <h3 className="text-2xl font-bold mb-1">
                 {growthTracks.business.label}
               </h3>
@@ -280,7 +278,7 @@ const Index = () => {
                   key={s}
                   className="text-sm text-muted-foreground flex items-start gap-2">
 
-                    <CheckCircle className="h-3.5 w-3.5 text-primary shrink-0 mt-0.5" />
+                    <CheckCircle className="h-3.5 w-3.5 text-accent shrink-0 mt-0.5" />
                     {s}
                   </li>
                 )}
@@ -328,7 +326,7 @@ const Index = () => {
           {/* Executive Growth */}
           <Reveal delay={0.2}>
             <HoverCard className="h-full flex flex-col">
-              <Brain className="h-8 w-8 text-primary mb-4" />
+              <Brain className="h-8 w-8 text-accent mb-4" />
               <h3 className="text-2xl font-bold mb-1">
                 {growthTracks.executive.label}
               </h3>
@@ -342,7 +340,7 @@ const Index = () => {
                   key={s}
                   className="text-sm text-muted-foreground flex items-start gap-2">
 
-                    <CheckCircle className="h-3.5 w-3.5 text-primary shrink-0 mt-0.5" />
+                    <CheckCircle className="h-3.5 w-3.5 text-accent shrink-0 mt-0.5" />
                     {s}
                   </li>
                 )}
@@ -391,7 +389,7 @@ const Index = () => {
 
 
       {/* ── ECOSYSTEM ── */}
-      <Section id="ecosystem" className="border-t border-border">
+      <Section id="ecosystem" className="border-t border-border/60">
         <Reveal>
           <h2 className="text-3xl font-bold md:text-4xl">{ecosystem.title}</h2>
           <p className="mt-3 text-lg text-muted-foreground">{ecosystem.sub}</p>
@@ -402,7 +400,7 @@ const Index = () => {
             return (
               <StaggerItem key={block.title}>
                 <HoverCard className="h-full">
-                  <Icon className="h-7 w-7 text-primary mb-3" />
+                  <Icon className="h-7 w-7 text-accent mb-3" />
                   <h3 className="text-lg font-semibold mb-2">{block.title}</h3>
                   <p className="text-sm text-muted-foreground">{block.desc}</p>
                 </HoverCard>
@@ -415,7 +413,7 @@ const Index = () => {
         <Reveal delay={0.2}>
           <div className="mt-12 max-w-md">
             <h3 className="text-lg font-semibold mb-2 flex items-center gap-2">
-              <Mail className="h-5 w-5 text-primary" /> Subscribe
+              <Mail className="h-5 w-5 text-accent" /> Subscribe
             </h3>
             <p className="text-sm text-muted-foreground mb-4">
               Get the weekly operator memo in your inbox.
@@ -449,7 +447,7 @@ const Index = () => {
       </Section>
 
       {/* ── CONTACT ── */}
-      <Section id="contact" className="border-t border-border">
+      <Section id="contact" className="border-t border-border/60">
         <Reveal>
           <h2 className="text-3xl font-bold md:text-4xl">{contact.title}</h2>
           <p className="mt-4 text-lg text-muted-foreground max-w-2xl">
@@ -459,8 +457,8 @@ const Index = () => {
 
         {/* Booking placeholder */}
         <Reveal delay={0.1}>
-          <div className="mt-10 rounded-lg border border-border bg-card p-8 text-center max-w-2xl">
-            <Calendar className="mx-auto h-12 w-12 text-primary mb-4" />
+          <div className="mt-12 rounded-lg border border-accent/20 bg-card p-8 text-center max-w-2xl">
+            <Calendar className="mx-auto h-12 w-12 text-accent mb-4" />
             <h3 className="text-xl font-semibold mb-2">
               Schedule a Screening Call
             </h3>
