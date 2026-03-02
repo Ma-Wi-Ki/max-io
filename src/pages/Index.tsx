@@ -140,8 +140,8 @@ const Index = () => {
       {/* ── HERO ── */}
       <Section className="pt-28 md:pt-36 pb-20">
         <Reveal>
-          <h1 className="text-4xl font-extrabold leading-tight tracking-tight md:text-6xl lg:text-7xl max-w-4xl">
-            Max. <span className="text-accent-input">Input</span>, Max. <span className="text-accent-output">Output</span>
+          <h1 className="text-4xl font-extrabold leading-tight tracking-tight md:text-6xl lg:text-7xl max-w-4xl silver-text">
+            Max. Input, Max. Output
           </h1>
         </Reveal>
         <Reveal delay={0.1}>
@@ -185,7 +185,7 @@ const Index = () => {
           <Reveal delay={0.1}>
             <div className="flex flex-col items-center md:items-start">
               <div className="w-48 h-48 md:w-64 md:h-64 rounded-lg bg-card border border-border/60 flex items-center justify-center overflow-hidden">
-                <User className="h-20 w-20 text-accent-input/40" />
+                <User className="h-20 w-20 text-accent/40" />
               </div>
               <h3 className="text-xl font-semibold mt-4">{about.founder.name}</h3>
               <p className="text-xs text-muted-foreground">Founder & Principal</p>
@@ -216,7 +216,7 @@ const Index = () => {
               <ul className="grid gap-2 sm:grid-cols-2">
                 {about.company.capabilities.map((c) =>
                 <li key={c} className="text-sm text-muted-foreground flex items-center gap-2">
-                    <CheckCircle className="h-3.5 w-3.5 text-accent-input shrink-0" />
+                    <CheckCircle className="h-3.5 w-3.5 text-accent shrink-0" />
                     {c}
                   </li>
                 )}
@@ -229,7 +229,7 @@ const Index = () => {
         <div className="mt-14 border-t border-border/60 pt-10">
           <Reveal delay={0.1}>
             <div className="flex items-center gap-3 mb-3">
-              <Handshake className="h-6 w-6 text-accent-output" />
+              <Handshake className="h-6 w-6 text-accent" />
               <h3 className="text-2xl font-bold">{about.partners.title}</h3>
             </div>
             <p className="text-sm leading-relaxed text-muted-foreground max-w-3xl">
@@ -264,8 +264,8 @@ const Index = () => {
           {/* Business Growth */}
           <Reveal delay={0.1}>
             <HoverCard className="h-full flex flex-col">
-              <TrendingUp className="h-8 w-8 text-accent-input mb-4" />
-              <h3 className="text-2xl font-bold mb-1 text-accent-input">
+              <TrendingUp className="h-8 w-8 text-accent mb-4" />
+              <h3 className="text-2xl font-bold mb-1">
                 {growthTracks.business.label}
               </h3>
               <p className="text-xs text-muted-foreground mb-4">
@@ -278,7 +278,7 @@ const Index = () => {
                   key={s}
                   className="text-sm text-muted-foreground flex items-start gap-2">
 
-                    <CheckCircle className="h-3.5 w-3.5 text-accent-input shrink-0 mt-0.5" />
+                    <CheckCircle className="h-3.5 w-3.5 text-accent shrink-0 mt-0.5" />
                     {s}
                   </li>
                 )}
@@ -326,8 +326,8 @@ const Index = () => {
           {/* Executive Growth */}
           <Reveal delay={0.2}>
             <HoverCard className="h-full flex flex-col">
-              <Brain className="h-8 w-8 text-accent-output mb-4" />
-              <h3 className="text-2xl font-bold mb-1 text-accent-output">
+              <Brain className="h-8 w-8 text-accent mb-4" />
+              <h3 className="text-2xl font-bold mb-1">
                 {growthTracks.executive.label}
               </h3>
               <p className="text-xs text-muted-foreground mb-4">
@@ -340,7 +340,7 @@ const Index = () => {
                   key={s}
                   className="text-sm text-muted-foreground flex items-start gap-2">
 
-                    <CheckCircle className="h-3.5 w-3.5 text-accent-output shrink-0 mt-0.5" />
+                    <CheckCircle className="h-3.5 w-3.5 text-accent shrink-0 mt-0.5" />
                     {s}
                   </li>
                 )}
@@ -400,7 +400,7 @@ const Index = () => {
             return (
               <StaggerItem key={block.title}>
                 <HoverCard className="h-full">
-                  <Icon className="h-7 w-7 text-accent-input mb-3" />
+                  <Icon className="h-7 w-7 text-accent mb-3" />
                   <h3 className="text-lg font-semibold mb-2">{block.title}</h3>
                   <p className="text-sm text-muted-foreground">{block.desc}</p>
                 </HoverCard>
@@ -413,7 +413,7 @@ const Index = () => {
         <Reveal delay={0.2}>
           <div className="mt-10 max-w-md">
             <h3 className="text-lg font-semibold mb-2 flex items-center gap-2">
-              <Mail className="h-5 w-5 text-accent-output" /> Subscribe
+              <Mail className="h-5 w-5 text-accent" /> Subscribe
             </h3>
             <p className="text-sm text-muted-foreground mb-4">
               Get the weekly operator memo in your inbox.
@@ -458,7 +458,7 @@ const Index = () => {
         {/* Booking placeholder */}
         <Reveal delay={0.1}>
           <div className="mt-10 rounded-lg border border-accent/20 bg-card p-8 text-center max-w-2xl">
-            <Calendar className="mx-auto h-12 w-12 text-accent-input mb-4" />
+            <Calendar className="mx-auto h-12 w-12 text-accent mb-4" />
             <h3 className="text-xl font-semibold mb-2">
               Schedule a Screening Call
             </h3>
