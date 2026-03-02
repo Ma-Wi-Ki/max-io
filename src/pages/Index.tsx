@@ -262,10 +262,6 @@ const Index = () => {
 
       {/* ── GROWTH TRACKS ── */}
       <Section id="growth-tracks" className="border-t border-border">
-        <Reveal>
-          <h2 className="text-3xl font-bold md:text-4xl">{growthTracks.title}</h2>
-          <p className="mt-3 text-lg text-muted-foreground">{growthTracks.sub}</p>
-        </Reveal>
         <div className="mt-10 grid gap-8 md:grid-cols-2">
           {/* Business Growth */}
           <Reveal delay={0.1}>
@@ -475,23 +471,6 @@ const Index = () => {
           </div>
         </Reveal>
 
-        {/* Screening questions */}
-        <Reveal delay={0.15}>
-          <h3 className="text-xl font-semibold mt-14 mb-4">Questions to think about:
-
-          </h3>
-          <div className="space-y-3 max-w-2xl">
-            {contact.questions.map((q, i) =>
-            <div
-              key={i}
-              className="flex items-start gap-3 rounded-lg border border-border bg-card p-4">
-
-                <CheckCircle className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
-                <p className="text-sm text-muted-foreground">{q}</p>
-              </div>
-            )}
-          </div>
-        </Reveal>
 
         {/* Lead form */}
         <Reveal delay={0.2}>
