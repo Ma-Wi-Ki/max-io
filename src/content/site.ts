@@ -1,8 +1,7 @@
 export const siteConfig = {
   name: "MAX<>IO Group",
   tagline: "Turn operational chaos into measurable progress.",
-  description:
-    "Business and Executive growth through \nautomated systems, education, and execution.",
+  description: "Business and Executive growth through \nautomated systems, education, and execution.",
   abn: "ABN 22 426 251 651",
   email: "max@max-io.co",
   phone: "+61 435 132 222",
@@ -37,12 +36,13 @@ export const about = {
       "Max King works with businesses and operators to improve clarity, systems, and execution. His background includes founding and running ventures across esports, commercial cleaning, digital projects, and social enterprise initiatives. Through those experiences, he has worked directly inside both operational service businesses and technology-driven environments.",
       "He focuses on identifying friction—unclear positioning, manual processes, scattered tools, inconsistent follow-through—and replacing it with structured systems that are practical and measurable.",
       "Currently studying IT and Law, Max brings a structured, systems-oriented approach to business growth and decision-making. Through MAX<>IO, he helps businesses and individuals improve how they operate, automate where appropriate, and build a consistent execution cadence.",
-      "Maximum input. Maximum output.",],
-    principle: 
+      "Maximum input. Maximum output.",
+    ],
   },
   company: {
     name: "MAX<>IO Group",
-    description: "MAX<>IO Group is a boutique advisory firm built for operators who value results over noise. We combine strategic consulting with hands-on implementation — designing and deploying the systems that remove admin drag, increase visibility, improve decision velocity, and standardise delivery.",
+    description:
+      "MAX<>IO Group is a boutique advisory firm built for operators who value results over noise. We combine strategic consulting with hands-on implementation — designing and deploying the systems that remove admin drag, increase visibility, improve decision velocity, and standardise delivery.",
     capabilities: [
       "Operational systems design & automation",
       "AI integration & digital transformation",
@@ -55,7 +55,8 @@ export const about = {
   },
   partners: {
     title: "Partner Network",
-    description: "We work alongside a curated network of specialist agencies and operators to deliver end-to-end solutions. Where our scope ends, our partners begin — ensuring you get expert execution across every domain.",
+    description:
+      "We work alongside a curated network of specialist agencies and operators to deliver end-to-end solutions. Where our scope ends, our partners begin — ensuring you get expert execution across every domain.",
     agencies: [
       { name: "Partner Agency", specialty: "Web Development & Design" },
       { name: "Partner Agency", specialty: "Paid Media & Performance Marketing" },
@@ -86,12 +87,7 @@ export const growthTracks = {
   executive: {
     label: "Executive Growth",
     audience: "Founders, executives, operators.",
-    services: [
-      "AI education",
-      "Personal automation systems",
-      "Mentality/mindset coaching",
-      "Execution cadence design",
-    ],
+    services: ["AI education", "Personal automation systems", "Mentality/mindset coaching", "Execution cadence design"],
     focus: ["Decision quality.", "Consistency.", "Throughput."],
     targets: [],
     cta: "Discuss Executive Growth",
@@ -100,13 +96,7 @@ export const growthTracks = {
 
 export const outcomes = {
   title: "What changes.",
-  before: [
-    "Leads missed",
-    "Admin overload",
-    "No weekly clarity",
-    "Tool sprawl",
-    "Decision fatigue",
-  ],
+  before: ["Leads missed", "Admin overload", "No weekly clarity", "Tool sprawl", "Decision fatigue"],
   after: [
     "Leads tracked and automated",
     "Admin reduced",
@@ -144,17 +134,20 @@ export const testimonials = {
   title: "What clients say.",
   items: [
     {
-      quote: "MAX<>IO transformed how we operate. We went from drowning in admin to having full visibility across the business in under 6 weeks.",
+      quote:
+        "MAX<>IO transformed how we operate. We went from drowning in admin to having full visibility across the business in under 6 weeks.",
       name: "Client Name",
       role: "Director, Trade Services",
     },
     {
-      quote: "The systems Max built paid for themselves in month one. Our lead response time dropped from 3 days to under 2 hours.",
+      quote:
+        "The systems Max built paid for themselves in month one. Our lead response time dropped from 3 days to under 2 hours.",
       name: "Client Name",
       role: "Founder, Retail Business",
     },
     {
-      quote: "Working with MAX<>IO gave me the clarity and structure I'd been missing for years. It's not just consulting — it's execution.",
+      quote:
+        "Working with MAX<>IO gave me the clarity and structure I'd been missing for years. It's not just consulting — it's execution.",
       name: "Client Name",
       role: "CEO, Professional Services",
     },
@@ -190,13 +183,7 @@ export const contact = {
     "Needs vs wants?",
     "90-day success in 3 numbers?",
   ],
-  budgetRanges: [
-    "Under $5k/month",
-    "$5k–$10k/month",
-    "$10k–$15k/month",
-    "$15k+/month",
-    "Not sure yet",
-  ],
+  budgetRanges: ["Under $5k/month", "$5k–$10k/month", "$10k–$15k/month", "$15k+/month", "Not sure yet"],
 };
 
 export const thankYou = {
