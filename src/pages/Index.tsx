@@ -202,7 +202,7 @@ const Index = () => {
           </Reveal>
           <Reveal delay={0.2}>
             <div className="space-y-4">
-              {about.founder.bio.split("\n\n").map((paragraph, i) => (
+              {about.founder.bio.map((paragraph, i) => (
                 <p key={i} className="text-sm leading-relaxed text-muted-foreground">
                   {paragraph}
                 </p>
