@@ -40,15 +40,27 @@ export const about = {
   company: {
     name: "MAX<>IO Group",
     description:
-      "MAX<>IO Group is a boutique advisory firm built for operators who value results over noise. We combine strategic consulting with hands-on implementation — designing and deploying the systems that remove admin drag, increase visibility, improve decision velocity, and standardise delivery.",
+      "MAX<>IO Group is a boutique advisory built for operators who want practical change, not presentations.",
+    manifesto: [
+      "Consulting is shifting. Traditional firms analyse and recommend. We design and deploy. By combining structured strategy with AI-enabled workflows, we build systems that reduce manual load, improve visibility, and increase output.",
+      "This is new-age consulting — not slide decks, but working environments.",
+    ],
+    aiUseCases: [
+      "To triage and respond to leads",
+      "To draft and systemise documentation",
+      "To reduce repetitive admin",
+      "To surface data for better decisions",
+      "To support execution without increasing headcount",
+    ],
+    aiDisclaimer: "AI is not the product. Structured systems are.",
     capabilities: [
-      "Operational systems design & automation",
-      "AI integration & digital transformation",
-      "Strategic positioning & offer design",
-      "CRM, SOPs, dashboards & workflow builds",
-      "Digital media, marketing & lead generation",
-      "Research, strategic writing & advisory",
-      "Executive coaching & mindset development",
+      { title: "Operational systems design & automation", desc: "Clear workflows that remove friction and standardise delivery." },
+      { title: "AI integrations & workflow agents", desc: "Practical automation embedded into day-to-day operations." },
+      { title: "Strategic positioning & offer design", desc: "Define who you serve and how you win." },
+      { title: "CRM, SOPs, dashboards & process builds", desc: "Operational clarity and measurable tracking." },
+      { title: "Digital media & lead infrastructure", desc: "Structured acquisition systems (partner-supported where required)." },
+      { title: "Research & strategic documentation", desc: "Capability statements, grant narratives, and formal advisory outputs." },
+      { title: "Executive coaching & execution cadence", desc: "Disciplined thinking and consistent output." },
     ],
   },
   partners: {

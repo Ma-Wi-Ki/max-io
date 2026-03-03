@@ -202,22 +202,56 @@ const Index = () => {
           </Reveal>
         </div>
 
-        {/* Company + Capabilities */}
+        {/* Company + Manifesto */}
         <div className="mt-14 border-t border-border/60 pt-10">
           <Reveal delay={0.1}>
             <h3 className="text-2xl font-bold mb-3">{about.company.name}</h3>
-            <p className="text-sm leading-relaxed text-muted-foreground max-w-3xl">
+            <p className="text-base leading-relaxed text-muted-foreground max-w-3xl">
               {about.company.description}
             </p>
           </Reveal>
+          <Reveal delay={0.15}>
+            <div className="mt-6 space-y-4 max-w-3xl">
+              {about.company.manifesto.map((p, i) =>
+              <p key={i} className="text-sm leading-relaxed text-muted-foreground">
+                  {p}
+                </p>
+              )}
+            </div>
+          </Reveal>
+
+          {/* AI use cases */}
           <Reveal delay={0.2}>
-            <div className="mt-6">
-              <p className="text-sm font-medium text-foreground mb-3">What we deliver:</p>
-              <ul className="grid gap-2 sm:grid-cols-2">
+            <div className="mt-8 max-w-3xl">
+              <p className="text-sm font-medium text-foreground mb-3">
+                We use AI agents and automation deliberately:
+              </p>
+              <ul className="space-y-1.5 mb-4">
+                {about.company.aiUseCases.map((uc) =>
+                <li key={uc} className="text-sm text-muted-foreground flex items-center gap-2">
+                    <span className="h-1.5 w-1.5 rounded-full bg-accent shrink-0" />
+                    {uc}
+                  </li>
+                )}
+              </ul>
+              <p className="text-sm font-semibold text-foreground italic">
+                {about.company.aiDisclaimer}
+              </p>
+            </div>
+          </Reveal>
+
+          {/* What we deliver */}
+          <Reveal delay={0.25}>
+            <div className="mt-10">
+              <p className="text-sm font-medium text-foreground mb-4">What we deliver</p>
+              <ul className="grid gap-3 sm:grid-cols-2">
                 {about.company.capabilities.map((c) =>
-                <li key={c} className="text-sm text-muted-foreground flex items-center gap-2">
-                    <CheckCircle className="h-3.5 w-3.5 text-accent shrink-0" />
-                    {c}
+                <li key={c.title} className="text-sm flex items-start gap-2.5">
+                    <CheckCircle className="h-4 w-4 text-accent shrink-0 mt-0.5" />
+                    <div>
+                      <span className="font-medium text-foreground">{c.title}</span>
+                      <span className="text-muted-foreground"> — {c.desc}</span>
+                    </div>
                   </li>
                 )}
               </ul>
