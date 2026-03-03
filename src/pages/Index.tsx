@@ -40,6 +40,7 @@ import {
   Newspaper,
   Video,
   Mic,
+  BookOpen,
   Mail,
   User,
   Handshake } from
@@ -60,7 +61,7 @@ const formSchema = z.object({
 });
 type FormData = z.infer<typeof formSchema>;
 
-const ecosystemIcons = [Newspaper, Video, Mic];
+const ecosystemIcons = [Newspaper, Video, Mic, BookOpen];
 
 const Index = () => {
   const navigate = useNavigate();
@@ -392,7 +393,7 @@ const Index = () => {
           <h2 className="text-3xl font-bold md:text-4xl">{ecosystem.title}</h2>
           <p className="mt-3 text-lg text-muted-foreground">{ecosystem.sub}</p>
         </Reveal>
-        <Stagger className="mt-8 grid gap-6 md:grid-cols-3">
+        <Stagger className="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
           {ecosystem.blocks.map((block, i) => {
             const Icon = ecosystemIcons[i];
             return (
@@ -409,7 +410,7 @@ const Index = () => {
 
         {/* Newsletter subscribe */}
         <Reveal delay={0.2}>
-          <div className="mt-10 max-w-md">
+          <div className="mt-10 max-w-md mx-auto text-center">
             <h3 className="text-lg font-semibold mb-2 flex items-center gap-2">
               <Mail className="h-5 w-5 text-accent" /> Subscribe
             </h3>

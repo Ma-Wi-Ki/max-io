@@ -199,6 +199,10 @@ export const ecosystem = {
       title: "Podcast",
       desc: "Conversations with clients and operators. Operational lessons.",
     },
+    {
+      title: "Education",
+      desc: "Courses, frameworks, and resources for operators who want to learn and apply.",
+    },
   ],
 };
 
