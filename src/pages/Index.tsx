@@ -34,7 +34,7 @@ import {
   Video,
   Mic,
   BookOpen,
-  Mail,
+  
   User,
   Handshake } from
 "lucide-react";
@@ -376,8 +376,8 @@ Max. Output
           <p className="mt-3 text-lg text-muted-foreground">{ecosystem.sub}</p>
         </Reveal>
 
-        <div className="mt-10 grid gap-8 lg:grid-cols-[1fr_1fr]">
-          {/* Left — Interactive tabs */}
+        <div className="mt-10">
+          {/* Interactive tabs */}
           <Reveal delay={0.1} direction="left">
             <div className="flex flex-wrap gap-2 mb-6">
               {ecosystem.blocks.map((block, i) => {
@@ -403,7 +403,7 @@ Max. Output
               initial={{ opacity: 0, y: 8 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
-              className="rounded-xl border border-border/80 bg-card p-6">
+              className="rounded-xl border border-border/80 bg-card p-6 max-w-2xl">
               
               <div className="flex items-center justify-between mb-4">
                 <div className="flex items-center gap-3">
@@ -418,37 +418,6 @@ Max. Output
                 {ecosystem.blocks[activeEco].desc}
               </p>
             </motion.div>
-          </Reveal>
-
-          {/* Right — Subscribe */}
-          <Reveal delay={0.2} direction="right">
-            <div className="rounded-xl border border-accent/20 bg-card/50 p-8 flex flex-col justify-center h-full">
-              <Mail className="h-8 w-8 text-accent mb-4" />
-              <h3 className="text-xl font-semibold mb-2">Subscribe to the Operator Memo</h3>
-              <p className="text-sm text-muted-foreground mb-6 leading-relaxed">
-                Weekly systems, decisions, and workflows — straight to your inbox.
-              </p>
-              <form
-                onSubmit={onSubscribe}
-                className="flex flex-col sm:flex-row gap-3">
-                <Input
-                  type="email"
-                  placeholder="you@company.com"
-                  value={subEmail}
-                  onChange={(e) => setSubEmail(e.target.value)}
-                  required
-                  className="flex-1" />
-                <Button
-                  type="submit"
-                  disabled={subscribing}
-                  className="sheen-hover silver-gradient text-primary-foreground font-semibold px-6">
-                  {subscribing ?
-                  <Loader2 className="h-4 w-4 animate-spin" /> :
-                  "Subscribe"
-                  }
-                </Button>
-              </form>
-            </div>
           </Reveal>
         </div>
       </Section>
