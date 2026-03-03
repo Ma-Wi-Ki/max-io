@@ -432,16 +432,13 @@ Max. Output
           </p>
         </Reveal>
 
-        {/* Calendly Embed */}
+        {/* Calendly Inline Embed */}
         <Reveal delay={0.1}>
           <div className="mt-10 max-w-2xl mx-auto rounded-lg border border-accent/20 bg-card overflow-hidden">
-            <iframe
-              src="https://calendly.com/max-io-io?hide_gdpr_banner=1"
-              width="100%"
-              height="700"
-              frameBorder="0"
-              title="Schedule a Screening Call"
-              className="w-full"
+            <div
+              className="calendly-inline-widget"
+              data-url="https://calendly.com/max-io-group?hide_landing_page_details=1&hide_gdpr_banner=1"
+              style={{ minWidth: "320px", height: "700px" }}
             />
           </div>
         </Reveal>
