@@ -23,7 +23,7 @@ export const hero = {
   sub: "Business and executive growth through \nautomated systems, strategy, and execution.",
   cta1: "Book a Screening Call",
   cta2: "Our Services",
-  trust: "Built for trades, storefronts, SMEs, and high-agency executives.",
+  trust: "BUILT FOR FOUNDER, OPERATORS AND HIGH-AGENCY EXECUTIVES.",
 };
 
 export const about = {
@@ -33,17 +33,17 @@ export const about = {
     bio: [
       "Max works with businesses and operators to improve systems, strategy, and execution. His background includes founding and running ventures across esports, commercial cleaning, digital projects, and social enterprise initiatives. Through those experiences, he has worked directly inside both operational service businesses and technology-driven environments.",
       "He focuses on identifying friction—unclear positioning, manual processes, scattered tools, inconsistent workflows—and replacing it with structured, practical and measurable processes.",
-      "Currently studying IT & Law, Max brings a structured, systems-oriented approach to business growth and decision-making. Leading MAX<>IO, Max helps businesses and individuals improve how they operate, automate where appropriate, and build a consistent execution cadence.",
-      "Operating with one core objective: Maximum input. Maximum output.",
+      "Currently studying IT & Law, Max brings a structured, systems-oriented approach to business growth and decision-making. Through MAX<>IO, he helps businesses and individuals improve how they operate, automate, and build a consistent execution cadence.",
+      "Main objective: Maximum input. Maximum output.",
     ],
   },
   company: {
     name: "MAX<>IO Group",
     description:
-      "MAX<>IO Group is a boutique advisory built for operators who want practical change, not presentations.",
+      "New-Age Consulting",
     manifesto: [
       "Consulting is shifting. Traditional firms analyse and recommend. We design and deploy. By combining structured strategy with AI-enabled workflows, we build systems that reduce manual load, improve visibility, and increase output.",
-      "This is new-age consulting — not slide decks, but working environments.",
+      "\n",
     ],
     aiUseCases: [
       "To triage and respond to leads",
