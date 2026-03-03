@@ -12,15 +12,8 @@ import HoverCard from "@/components/animations/HoverCard";
 import SEO from "@/components/SEO";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
+
 import { Label } from "@/components/ui/label";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue } from
-"@/components/ui/select";
 import { supabase } from "@/integrations/supabase/client";
 import { useToast } from "@/hooks/use-toast";
 import {
@@ -28,7 +21,6 @@ import {
   about,
   growthTracks,
   ecosystem,
-  contact,
   seo } from
 "@/content/site";
 import {
@@ -53,12 +45,6 @@ const formSchema = z.object({
   email: z.string().trim().email("Valid email required").max(255),
   phone: z.string().trim().max(30).optional(),
   business_name: z.string().trim().max(200).optional(),
-  industry: z.string().trim().max(100).optional(),
-  headcount: z.string().trim().max(50).optional(),
-  current_tools: z.string().trim().max(1000).optional(),
-  top_bottleneck: z.string().trim().max(1000).optional(),
-  budget_range: z.string().optional(),
-  notes: z.string().trim().max(2000).optional()
 });
 type FormData = z.infer<typeof formSchema>;
 
@@ -87,12 +73,6 @@ const Index = () => {
         email: values.email,
         phone: values.phone || null,
         business_name: values.business_name || null,
-        industry: values.industry || null,
-        headcount: values.headcount || null,
-        current_tools: values.current_tools || null,
-        top_bottleneck: values.top_bottleneck || null,
-        budget_range: values.budget_range || null,
-        notes: values.notes || null
       });
       if (error) throw error;
       navigate("/thank-you");
@@ -476,15 +456,15 @@ const Index = () => {
       {/* ── CONTACT ── */}
       <Section id="contact" className="border-t border-border/60">
         <Reveal>
-          <h2 className="text-3xl font-bold md:text-4xl">{contact.title}</h2>
+          <h2 className="text-3xl font-bold md:text-4xl">Start with a screening call.</h2>
           <p className="mt-3 text-lg text-muted-foreground max-w-2xl">
-            {contact.sub}
+            Answer a few questions. We confirm fit. We propose a scope.
           </p>
         </Reveal>
 
         {/* Booking placeholder */}
         <Reveal delay={0.1}>
-          <div className="mt-10 rounded-lg border border-accent/20 bg-card p-8 text-center max-w-2xl">
+          <div className="mt-10 rounded-lg border border-accent/20 bg-card p-8 text-center max-w-2xl mx-auto">
             <Calendar className="mx-auto h-12 w-12 text-accent mb-4" />
             <h3 className="text-xl font-semibold mb-2">
               Schedule a Screening Call
@@ -496,15 +476,20 @@ const Index = () => {
           </div>
         </Reveal>
 
+        {/* OR divider */}
+        <Reveal delay={0.15}>
+          <div className="flex items-center gap-4 my-10 max-w-2xl mx-auto">
+            <div className="flex-1 h-px bg-border" />
+            <span className="text-sm font-semibold text-muted-foreground tracking-widest uppercase">OR</span>
+            <div className="flex-1 h-px bg-border" />
+          </div>
+        </Reveal>
 
         {/* Lead form */}
         <Reveal delay={0.2}>
-          <h3 className="text-xl font-semibold mt-10 mb-5">
-            Or send us your details
-          </h3>
           <form
             onSubmit={handleSubmit(onSubmit)}
-            className="max-w-2xl space-y-6">
+            className="max-w-2xl mx-auto space-y-6">
 
             <div className="grid gap-4 sm:grid-cols-2">
               <div className="space-y-2">
@@ -513,7 +498,6 @@ const Index = () => {
                   id="name"
                   {...register("name")}
                   placeholder="Your name" />
-
                 {errors.name &&
                 <p className="text-xs text-destructive">
                     {errors.name.message}
@@ -527,7 +511,6 @@ const Index = () => {
                   type="email"
                   {...register("email")}
                   placeholder="you@company.com" />
-
                 {errors.email &&
                 <p className="text-xs text-destructive">
                     {errors.email.message}
@@ -543,7 +526,6 @@ const Index = () => {
                   id="phone"
                   {...register("phone")}
                   placeholder="+61..." />
-
               </div>
               <div className="space-y-2">
                 <Label htmlFor="business_name">Business Name</Label>
@@ -551,85 +533,18 @@ const Index = () => {
                   id="business_name"
                   {...register("business_name")}
                   placeholder="Your business" />
-
               </div>
-            </div>
-
-            <div className="grid gap-4 sm:grid-cols-3">
-              <div className="space-y-2">
-                <Label htmlFor="industry">Industry</Label>
-                <Input
-                  id="industry"
-                  {...register("industry")}
-                  placeholder="e.g. Trades" />
-
-              </div>
-              <div className="space-y-2">
-                <Label htmlFor="headcount">Headcount</Label>
-                <Input
-                  id="headcount"
-                  {...register("headcount")}
-                  placeholder="e.g. 10" />
-
-              </div>
-              <div className="space-y-2">
-                <Label htmlFor="budget_range">Budget Range</Label>
-                <Select onValueChange={(v) => setValue("budget_range", v)}>
-                  <SelectTrigger>
-                    <SelectValue placeholder="Select..." />
-                  </SelectTrigger>
-                  <SelectContent>
-                    {contact.budgetRanges.map((b) =>
-                    <SelectItem key={b} value={b}>
-                        {b}
-                      </SelectItem>
-                    )}
-                  </SelectContent>
-                </Select>
-              </div>
-            </div>
-
-            <div className="space-y-2">
-              <Label htmlFor="current_tools">Current Tools</Label>
-              <Textarea
-                id="current_tools"
-                {...register("current_tools")}
-                placeholder="What tools/systems do you currently use?"
-                rows={2} />
-
-            </div>
-
-            <div className="space-y-2">
-              <Label htmlFor="top_bottleneck">Top Bottleneck</Label>
-              <Textarea
-                id="top_bottleneck"
-                {...register("top_bottleneck")}
-                placeholder="What's the biggest thing slowing you down?"
-                rows={2} />
-
-            </div>
-
-            <div className="space-y-2">
-              <Label htmlFor="notes">Additional Notes</Label>
-              <Textarea
-                id="notes"
-                {...register("notes")}
-                placeholder="Anything else we should know?"
-                rows={3} />
-
             </div>
 
             <Button
               type="submit"
               size="lg"
               disabled={submitting}
-              className="sheen-hover silver-gradient text-primary-foreground font-semibold">
-
+              className="sheen-hover silver-gradient text-primary-foreground font-semibold w-full">
               {submitting ?
               <>
                   <Loader2 className="mr-2 h-4 w-4 animate-spin" /> Sending...
                 </> :
-
               "Submit"
               }
             </Button>
