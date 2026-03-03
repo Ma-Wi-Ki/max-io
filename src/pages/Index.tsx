@@ -64,7 +64,7 @@ const CalendlyWidget = () => {
     widgetDiv.className = 'calendly-inline-widget';
     widgetDiv.setAttribute('data-url', 'https://calendly.com/max-io-group?hide_landing_page_details=1&hide_gdpr_banner=1');
     widgetDiv.style.minWidth = '320px';
-    widgetDiv.style.height = '580px';
+    widgetDiv.style.height = '290px';
     containerRef.current.appendChild(widgetDiv);
 
     // Load the Calendly script
