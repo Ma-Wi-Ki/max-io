@@ -268,53 +268,35 @@ const Index = () => {
               <h3 className="text-2xl font-bold mb-1">
                 {growthTracks.business.label}
               </h3>
-              <p className="text-xs text-muted-foreground mb-4">
-                For: {growthTracks.business.audience}
+              <p className="text-sm text-muted-foreground mb-6">
+                {growthTracks.business.audience}
               </p>
-              <p className="text-sm font-medium text-foreground mb-2">What we do:</p>
-              <ul className="space-y-1.5 mb-4">
+              <p className="text-sm font-medium text-foreground mb-3">What we do</p>
+              <ul className="space-y-3 mb-6">
                 {growthTracks.business.services.map((s) =>
-                <li
-                  key={s}
-                  className="text-sm text-muted-foreground flex items-start gap-2">
-
-                    <CheckCircle className="h-3.5 w-3.5 text-accent shrink-0 mt-0.5" />
-                    {s}
+                <li key={s.title} className="flex items-start gap-2.5">
+                    <CheckCircle className="h-4 w-4 text-accent shrink-0 mt-0.5" />
+                    <div>
+                      <span className="text-sm font-medium text-foreground">{s.title}</span>
+                      <span className="text-sm text-muted-foreground"> — {s.desc}</span>
+                    </div>
                   </li>
                 )}
               </ul>
-              <p className="text-sm font-medium text-foreground mb-1">Focus:</p>
-              <ul className="space-y-1 mb-4">
+              <p className="text-sm font-medium text-foreground mb-2">Focus</p>
+              <ul className="space-y-1.5 mb-6">
                 {growthTracks.business.focus.map((f) =>
-                <li key={f} className="text-sm text-muted-foreground">
+                <li key={f} className="text-sm text-muted-foreground flex items-center gap-2">
+                    <span className="h-1.5 w-1.5 rounded-full bg-accent shrink-0" />
                     {f}
                   </li>
                 )}
               </ul>
-              {growthTracks.business.targets.length > 0 &&
-              <>
-                  <p className="text-xs font-semibold uppercase tracking-wider text-primary mb-2">
-
-                </p>
-                  <ul className="space-y-1 mb-6">
-                    {growthTracks.business.targets.map((t) =>
-                  <li
-                    key={t}
-                    className="text-xs text-muted-foreground flex items-center gap-2">
-
-                        <span className="h-1 w-1 rounded-full bg-primary shrink-0" />
-                        {t}
-                      </li>
-                  )}
-                  </ul>
-                </>
-              }
               <div className="mt-auto">
                 <a href="#contact">
                   <Button
-                    variant="outline"
-                    className="border-primary/40 hover:bg-primary/10 w-full">
-
+                    size="lg"
+                    className="sheen-hover silver-gradient text-primary-foreground font-semibold w-full">
                     {growthTracks.business.cta}{" "}
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </Button>
@@ -330,53 +312,35 @@ const Index = () => {
               <h3 className="text-2xl font-bold mb-1">
                 {growthTracks.executive.label}
               </h3>
-              <p className="text-xs text-muted-foreground mb-4">
-                For: {growthTracks.executive.audience}
+              <p className="text-sm text-muted-foreground mb-6">
+                {growthTracks.executive.audience}
               </p>
-              <p className="text-sm font-medium text-foreground mb-2">What we do:</p>
-              <ul className="space-y-1.5 mb-4">
+              <p className="text-sm font-medium text-foreground mb-3">What we do</p>
+              <ul className="space-y-3 mb-6">
                 {growthTracks.executive.services.map((s) =>
-                <li
-                  key={s}
-                  className="text-sm text-muted-foreground flex items-start gap-2">
-
-                    <CheckCircle className="h-3.5 w-3.5 text-accent shrink-0 mt-0.5" />
-                    {s}
+                <li key={s.title} className="flex items-start gap-2.5">
+                    <CheckCircle className="h-4 w-4 text-accent shrink-0 mt-0.5" />
+                    <div>
+                      <span className="text-sm font-medium text-foreground">{s.title}</span>
+                      <span className="text-sm text-muted-foreground"> — {s.desc}</span>
+                    </div>
                   </li>
                 )}
               </ul>
-              <p className="text-sm font-medium text-foreground mb-1">Focus:</p>
-              <ul className="space-y-1 mb-4">
+              <p className="text-sm font-medium text-foreground mb-2">Focus</p>
+              <ul className="space-y-1.5 mb-6">
                 {growthTracks.executive.focus.map((f) =>
-                <li key={f} className="text-sm text-muted-foreground">
+                <li key={f} className="text-sm text-muted-foreground flex items-center gap-2">
+                    <span className="h-1.5 w-1.5 rounded-full bg-accent shrink-0" />
                     {f}
                   </li>
                 )}
               </ul>
-              {growthTracks.executive.targets.length > 0 &&
-              <>
-                  <p className="text-xs font-semibold uppercase tracking-wider text-primary mb-2">
-                    Targets
-                  </p>
-                  <ul className="space-y-1 mb-6">
-                    {growthTracks.executive.targets.map((t) =>
-                  <li
-                    key={t}
-                    className="text-xs text-muted-foreground flex items-center gap-2">
-
-                        <span className="h-1 w-1 rounded-full bg-primary shrink-0" />
-                        {t}
-                      </li>
-                  )}
-                  </ul>
-                </>
-              }
               <div className="mt-auto">
                 <a href="#contact">
                   <Button
-                    variant="outline"
-                    className="border-primary/40 hover:bg-primary/10 w-full">
-
+                    size="lg"
+                    className="sheen-hover silver-gradient text-primary-foreground font-semibold w-full">
                     {growthTracks.executive.cta}{" "}
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </Button>
