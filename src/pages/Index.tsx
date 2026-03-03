@@ -305,45 +305,32 @@ Max. Output
 
       {/* ── GROWTH TRACKS ── */}
       <Section id="growth-tracks" className="border-t border-border/60">
-        <div className="grid gap-8 md:grid-cols-2">
+        <div className="grid gap-6 md:grid-cols-2">
           {/* Business Growth */}
           <Reveal delay={0.1}>
             <HoverCard className="h-full flex flex-col">
-              <TrendingUp className="h-8 w-8 text-accent mb-4" />
-              <h3 className="text-2xl font-bold mb-1">
+              <TrendingUp className="h-6 w-6 text-accent mb-3" />
+              <h3 className="text-xl font-bold mb-1">
                 {growthTracks.business.label}
               </h3>
-              <p className="text-sm text-muted-foreground mb-6">
+              <p className="text-xs text-muted-foreground mb-4">
                 {growthTracks.business.audience}
               </p>
-              <p className="text-sm font-medium text-foreground mb-3">What we do</p>
-              <ul className="space-y-3.5 mb-8">
+              <ul className="space-y-2 mb-4">
                 {growthTracks.business.services.map((s) =>
-                <li key={s.title} className="flex items-start gap-2.5 group/item cursor-default">
-                    <CheckCircle className="h-4 w-4 text-accent shrink-0 mt-0.5 transition-transform group-hover/item:scale-110" />
-                    <div>
-                      <span className="text-sm font-medium text-foreground group-hover/item:text-accent transition-colors">{s.title}</span>
-                      <p className="text-sm text-muted-foreground mt-0.5 leading-relaxed">{s.desc}</p>
-                    </div>
-                  </li>
-                )}
-              </ul>
-              <p className="text-sm font-medium text-foreground mb-2">Focus</p>
-              <ul className="space-y-1.5 mb-6">
-                {growthTracks.business.focus.map((f) =>
-                <li key={f} className="text-sm text-muted-foreground flex items-center gap-2">
-                    <span className="h-1.5 w-1.5 rounded-full bg-accent shrink-0" />
-                    {f}
+                <li key={s.title} className="flex items-start gap-2 group/item cursor-default">
+                    <CheckCircle className="h-3.5 w-3.5 text-accent shrink-0 mt-0.5" />
+                    <span className="text-xs text-muted-foreground"><span className="font-medium text-foreground">{s.title}</span> — {s.desc}</span>
                   </li>
                 )}
               </ul>
               <div className="mt-auto">
                 <a href="#contact">
                   <Button
-                    size="lg"
-                    className="sheen-hover silver-gradient text-primary-foreground font-semibold w-full group/btn text-base py-6">
+                    size="sm"
+                    className="sheen-hover silver-gradient text-primary-foreground font-semibold w-full group/btn">
                     {growthTracks.business.cta}{" "}
-                    <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover/btn:translate-x-1" />
+                    <ArrowRight className="ml-2 h-3.5 w-3.5 transition-transform group-hover/btn:translate-x-1" />
                   </Button>
                 </a>
               </div>
@@ -353,41 +340,28 @@ Max. Output
           {/* Executive Growth */}
           <Reveal delay={0.2}>
             <HoverCard className="h-full flex flex-col">
-              <Brain className="h-8 w-8 text-accent mb-4" />
-              <h3 className="text-2xl font-bold mb-1">
+              <Brain className="h-6 w-6 text-accent mb-3" />
+              <h3 className="text-xl font-bold mb-1">
                 {growthTracks.executive.label}
               </h3>
-              <p className="text-sm text-muted-foreground mb-6">
+              <p className="text-xs text-muted-foreground mb-4">
                 {growthTracks.executive.audience}
               </p>
-              <p className="text-sm font-medium text-foreground mb-3">What we do</p>
-              <ul className="space-y-3.5 mb-8">
+              <ul className="space-y-2 mb-4">
                 {growthTracks.executive.services.map((s) =>
-                <li key={s.title} className="flex items-start gap-2.5 group/item cursor-default">
-                    <CheckCircle className="h-4 w-4 text-accent shrink-0 mt-0.5 transition-transform group-hover/item:scale-110" />
-                    <div>
-                      <span className="text-sm font-medium text-foreground group-hover/item:text-accent transition-colors">{s.title}</span>
-                      <p className="text-sm text-muted-foreground mt-0.5 leading-relaxed">{s.desc}</p>
-                    </div>
-                  </li>
-                )}
-              </ul>
-              <p className="text-sm font-medium text-foreground mb-2">Focus</p>
-              <ul className="space-y-1.5 mb-6">
-                {growthTracks.executive.focus.map((f) =>
-                <li key={f} className="text-sm text-muted-foreground flex items-center gap-2">
-                    <span className="h-1.5 w-1.5 rounded-full bg-accent shrink-0" />
-                    {f}
+                <li key={s.title} className="flex items-start gap-2 group/item cursor-default">
+                    <CheckCircle className="h-3.5 w-3.5 text-accent shrink-0 mt-0.5" />
+                    <span className="text-xs text-muted-foreground"><span className="font-medium text-foreground">{s.title}</span> — {s.desc}</span>
                   </li>
                 )}
               </ul>
               <div className="mt-auto">
                 <a href="#contact">
                   <Button
-                    size="lg"
-                    className="sheen-hover silver-gradient text-primary-foreground font-semibold w-full group/btn text-base py-6">
+                    size="sm"
+                    className="sheen-hover silver-gradient text-primary-foreground font-semibold w-full group/btn">
                     {growthTracks.executive.cta}{" "}
-                    <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover/btn:translate-x-1" />
+                    <ArrowRight className="ml-2 h-3.5 w-3.5 transition-transform group-hover/btn:translate-x-1" />
                   </Button>
                 </a>
               </div>
