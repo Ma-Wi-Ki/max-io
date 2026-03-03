@@ -1,4 +1,4 @@
-import { useState, useCallback } from "react";
+import { useState, useCallback, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
@@ -49,6 +49,42 @@ const formSchema = z.object({
 type FormData = z.infer<typeof formSchema>;
 
 const ecosystemIcons = [Newspaper, Video, Mic, BookOpen];
+
+declare global {
+  interface Window {
+    Calendly?: { initInlineWidget: (opts: { url: string; parentElement: HTMLElement }) => void };
+  }
+}
+
+const CalendlyWidget = () => {
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const init = () => {
+      if (window.Calendly && containerRef.current) {
+        window.Calendly.initInlineWidget({
+          url: "https://calendly.com/max-io-group?hide_landing_page_details=1&hide_gdpr_banner=1",
+          parentElement: containerRef.current,
+        });
+      }
+    };
+
+    // Try immediately, or wait for script to load
+    if (window.Calendly) {
+      init();
+    } else {
+      const interval = setInterval(() => {
+        if (window.Calendly) {
+          init();
+          clearInterval(interval);
+        }
+      }, 200);
+      return () => clearInterval(interval);
+    }
+  }, []);
+
+  return <div ref={containerRef} style={{ minWidth: "320px", height: "700px" }} />;
+};
 
 const Index = () => {
   const navigate = useNavigate();
@@ -465,11 +501,7 @@ Max. Output
         {/* Calendly inline widget */}
         <Reveal delay={0.1}>
           <div className="mt-10 max-w-2xl mx-auto">
-            <div
-              className="calendly-inline-widget"
-              data-url="https://calendly.com/max-io-group?hide_landing_page_details=1&hide_gdpr_banner=1"
-              style={{ minWidth: "320px", height: "700px" }}
-            />
+            <CalendlyWidget />
           </div>
         </Reveal>
 
