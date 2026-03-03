@@ -312,7 +312,7 @@ const Index = () => {
                     <CheckCircle className="h-4 w-4 text-accent shrink-0 mt-0.5" />
                     <div>
                       <span className="text-sm font-medium text-foreground">{s.title}</span>
-                      <span className="text-sm text-muted-foreground"> — {s.desc}</span>
+                      <p className="text-sm text-muted-foreground mt-0.5">{s.desc}</p>
                     </div>
                   </li>
                 )}
@@ -356,7 +356,7 @@ const Index = () => {
                     <CheckCircle className="h-4 w-4 text-accent shrink-0 mt-0.5" />
                     <div>
                       <span className="text-sm font-medium text-foreground">{s.title}</span>
-                      <span className="text-sm text-muted-foreground"> — {s.desc}</span>
+                      <p className="text-sm text-muted-foreground mt-0.5">{s.desc}</p>
                     </div>
                   </li>
                 )}
