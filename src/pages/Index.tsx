@@ -250,7 +250,7 @@ const Index = () => {
                     <CheckCircle className="h-4 w-4 text-accent shrink-0 mt-0.5" />
                     <div>
                       <span className="font-medium text-foreground">{c.title}</span>
-                      <span className="text-muted-foreground"> — {c.desc}</span>
+                      <p className="text-muted-foreground mt-0.5">{c.desc}</p>
                     </div>
                   </li>
                 )}
