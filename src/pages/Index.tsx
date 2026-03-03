@@ -148,7 +148,7 @@ const Index = () => {
       <SEO {...seo.home} />
 
       {/* ── HERO ── */}
-      <Section className="pt-32 md:pt-44 pb-24">
+      <Section className="pt-24 md:pt-32 pb-12">
         <Reveal>
           <h1 className="text-5xl font-extrabold leading-[1.05] tracking-tight md:text-7xl lg:text-8xl max-w-5xl silver-text">Max. Input
 Max. Output
@@ -181,7 +181,7 @@ Max. Output
         <Reveal delay={0.35}>
           <p className="mt-10 text-sm text-muted-foreground/60 tracking-wide uppercase">{hero.trust}</p>
         </Reveal>
-        <div className="mt-16 h-px w-full max-w-lg bg-gradient-to-r from-accent/40 via-primary/20 to-transparent" />
+        <div className="mt-8 h-px w-full max-w-lg bg-gradient-to-r from-accent/40 via-primary/20 to-transparent" />
       </Section>
 
       {/* ── ABOUT ── */}
@@ -191,7 +191,7 @@ Max. Output
         </Reveal>
 
         {/* Founder — headshot + bio */}
-        <div className="mt-8 grid gap-8 md:grid-cols-[280px_1fr] items-start">
+        <div className="mt-6 grid gap-6 md:grid-cols-[280px_1fr] items-start">
           <Reveal delay={0.1}>
             <div className="flex flex-col items-center md:items-start">
               <div className="w-48 h-48 md:w-64 md:h-64 rounded-lg bg-card border border-border/60 flex items-center justify-center overflow-hidden">
@@ -213,7 +213,7 @@ Max. Output
         </div>
 
         {/* Company + Manifesto */}
-        <div className="mt-14 border-t border-border/60 pt-10">
+        <div className="mt-8 border-t border-border/60 pt-6">
           <Reveal delay={0.1}>
             <h3 className="text-2xl font-bold mb-3">{about.company.name}</h3>
             <p className="text-base leading-relaxed text-muted-foreground max-w-3xl">
@@ -270,7 +270,7 @@ Max. Output
         </div>
 
         {/* Partner Network */}
-        <div className="mt-14 border-t border-border/60 pt-10">
+        <div className="mt-8 border-t border-border/60 pt-6">
           <Reveal delay={0.1}>
             <div className="flex items-center gap-3 mb-3">
               <Handshake className="h-6 w-6 text-accent" />
@@ -298,7 +298,7 @@ Max. Output
         </div>
 
         <Reveal delay={0.3}>
-          <p className="mt-10 text-sm text-muted-foreground">{about.closing}</p>
+          <p className="mt-6 text-sm text-muted-foreground">{about.closing}</p>
         </Reveal>
       </Section>
 
@@ -403,7 +403,7 @@ Max. Output
           <p className="mt-3 text-lg text-muted-foreground">{ecosystem.sub}</p>
         </Reveal>
 
-        <div className="mt-10 grid gap-8 lg:grid-cols-[1fr_1fr]">
+        <div className="mt-6 grid gap-6 lg:grid-cols-[1fr_1fr]">
           {/* Left — Interactive tabs */}
           <Reveal delay={0.1} direction="left">
             <div className="flex flex-wrap gap-2 mb-6">
