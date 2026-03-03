@@ -104,9 +104,12 @@ export const growthTracks = {
     audience: "Founders, executives, and operators who want stronger execution and clearer decision-making.",
     services: [
       { title: "AI education", desc: "Practical workflows, tool selection, and structured prompt design." },
-      { title: "Personal automation systems", desc: "Reduce cognitive load and eliminate repetitive work." },
+      { title: "Personal automation systems", desc: "Reduce cognitive load and eliminate repetitive work across email, scheduling, and reporting." },
       { title: "Mentality & mindset coaching", desc: "Disciplined thinking, performance structure, and resilience under pressure." },
       { title: "Execution cadence design", desc: "Weekly operating systems, KPI clarity, and decision rules." },
+      { title: "Strategic decision frameworks", desc: "Structured models for prioritisation, delegation, and resource allocation." },
+      { title: "Communication & positioning", desc: "Sharpen how you present, pitch, and lead conversations internally and externally." },
+      { title: "Time & energy architecture", desc: "Design your calendar, routines, and environment for sustained high output." },
     ],
     focus: [
       "Higher decision quality",
