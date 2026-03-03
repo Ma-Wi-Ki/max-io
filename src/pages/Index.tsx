@@ -44,7 +44,7 @@ const formSchema = z.object({
   name: z.string().trim().min(1, "Name is required").max(100),
   email: z.string().trim().email("Valid email required").max(255),
   phone: z.string().trim().max(30).optional(),
-  business_name: z.string().trim().max(200).optional(),
+  business_name: z.string().trim().max(200).optional()
 });
 type FormData = z.infer<typeof formSchema>;
 
@@ -72,7 +72,7 @@ const Index = () => {
         name: values.name,
         email: values.email,
         phone: values.phone || null,
-        business_name: values.business_name || null,
+        business_name: values.business_name || null
       });
       if (error) throw error;
       navigate("/thank-you");
@@ -123,8 +123,8 @@ const Index = () => {
       {/* ── HERO ── */}
       <Section className="pt-32 md:pt-44 pb-24">
         <Reveal>
-          <h1 className="text-5xl font-extrabold leading-[1.05] tracking-tight md:text-7xl lg:text-8xl max-w-5xl silver-text">
-            Max. Input, Max. Output
+          <h1 className="text-5xl font-extrabold leading-[1.05] tracking-tight md:text-7xl lg:text-8xl max-w-5xl silver-text">Max. Input
+Max. Output
           </h1>
         </Reveal>
         <Reveal delay={0.15} direction="up">
@@ -387,15 +387,15 @@ const Index = () => {
                     key={block.title}
                     onClick={() => setActiveEco(i)}
                     className={`flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 border ${
-                      activeEco === i
-                        ? "bg-accent/15 border-accent/50 text-accent"
-                        : "bg-card border-border/60 text-muted-foreground hover:border-accent/30 hover:text-foreground"
-                    }`}
-                  >
+                    activeEco === i ?
+                    "bg-accent/15 border-accent/50 text-accent" :
+                    "bg-card border-border/60 text-muted-foreground hover:border-accent/30 hover:text-foreground"}`
+                    }>
+                    
                     <Icon className="h-4 w-4" />
                     {block.title}
-                  </button>
-                );
+                  </button>);
+
               })}
             </div>
             <motion.div
@@ -403,11 +403,11 @@ const Index = () => {
               initial={{ opacity: 0, y: 8 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
-              className="rounded-xl border border-border/80 bg-card p-6"
-            >
+              className="rounded-xl border border-border/80 bg-card p-6">
+              
               <div className="flex items-center justify-between mb-4">
                 <div className="flex items-center gap-3">
-                  {(() => { const Icon = ecosystemIcons[activeEco]; return <Icon className="h-6 w-6 text-accent" />; })()}
+                  {(() => {const Icon = ecosystemIcons[activeEco];return <Icon className="h-6 w-6 text-accent" />;})()}
                   <h3 className="text-xl font-semibold">{ecosystem.blocks[activeEco].title}</h3>
                 </div>
                 <span className="text-xs font-medium text-accent bg-accent/10 px-3 py-1 rounded-full">
@@ -443,8 +443,8 @@ const Index = () => {
                   disabled={subscribing}
                   className="sheen-hover silver-gradient text-primary-foreground font-semibold px-6">
                   {subscribing ?
-                    <Loader2 className="h-4 w-4 animate-spin" /> :
-                    "Subscribe"
+                  <Loader2 className="h-4 w-4 animate-spin" /> :
+                  "Subscribe"
                   }
                 </Button>
               </form>
