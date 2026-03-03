@@ -31,10 +31,10 @@ export const about = {
   founder: {
     name: "Max King",
     bio: [
-      "Max King works with businesses and operators to improve clarity, systems, and execution. His background includes founding and running ventures across esports, commercial cleaning, digital projects, and social enterprise initiatives. Through those experiences, he has worked directly inside both operational service businesses and technology-driven environments.",
-      "He focuses on identifying friction—unclear positioning, manual processes, scattered tools, inconsistent follow-through—and replacing it with structured systems that are practical and measurable.",
-      "Currently studying IT and Law, Max brings a structured, systems-oriented approach to business growth and decision-making. Through MAX<>IO, he helps businesses and individuals improve how they operate, automate where appropriate, and build a consistent execution cadence.",
-      "Maximum input. Maximum output.",
+      "Max works with businesses and operators to improve systems, strategy, and execution. His background includes founding and running ventures across esports, commercial cleaning, digital projects, and social enterprise initiatives. Through those experiences, he has worked directly inside both operational service businesses and technology-driven environments.",
+      "He focuses on identifying friction—unclear positioning, manual processes, scattered tools, inconsistent workflows—and replacing it with structured, practical and measurable processes.",
+      "Currently studying IT & Law, Max brings a structured, systems-oriented approach to business growth and decision-making. Leading MAX<>IO, Max helps businesses and individuals improve how they operate, automate where appropriate, and build a consistent execution cadence.",
+      "Operating with one core objective: Maximum input. Maximum output.",
     ],
   },
   company: {
