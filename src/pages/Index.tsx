@@ -34,7 +34,7 @@ import {
   Video,
   Mic,
   BookOpen,
-  
+  Mail,
   User,
   Handshake } from
 "lucide-react";
@@ -123,7 +123,7 @@ const Index = () => {
       {/* ── HERO ── */}
       <Section className="pt-32 md:pt-44 pb-24">
         <Reveal>
-          <h1 className="text-5xl font-extrabold leading-[1.05] tracking-tight md:text-7xl lg:text-8xl max-w-5xl silver-text">Max. Input
+          <h1 className="text-5xl font-extrabold leading-[1.05] tracking-tight md:text-7xl lg:text-8xl max-w-5xl silver-text">Max. Input 
 Max. Output
           </h1>
         </Reveal>
@@ -376,36 +376,35 @@ Max. Output
           <p className="mt-3 text-lg text-muted-foreground">{ecosystem.sub}</p>
         </Reveal>
 
-        <div className="mt-10 grid gap-6 lg:grid-cols-[220px_1fr]">
-          {/* Left — Vertical tab list */}
+        <div className="mt-10 grid gap-8 lg:grid-cols-[1fr_1fr]">
+          {/* Left — Interactive tabs */}
           <Reveal delay={0.1} direction="left">
-            <div className="flex flex-col gap-2">
+            <div className="flex flex-wrap gap-2 mb-6">
               {ecosystem.blocks.map((block, i) => {
                 const Icon = ecosystemIcons[i];
                 return (
                   <button
                     key={block.title}
                     onClick={() => setActiveEco(i)}
-                    className={`flex items-center gap-2 px-4 py-3 rounded-lg text-sm font-medium transition-all duration-300 border text-left ${
+                    className={`flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 border ${
                     activeEco === i ?
                     "bg-accent/15 border-accent/50 text-accent" :
                     "bg-card border-border/60 text-muted-foreground hover:border-accent/30 hover:text-foreground"}`
                     }>
-                    <Icon className="h-4 w-4 shrink-0" />
+                    
+                    <Icon className="h-4 w-4" />
                     {block.title}
                   </button>);
+
               })}
             </div>
-          </Reveal>
-
-          {/* Right — Expanded content */}
-          <Reveal delay={0.2} direction="right">
             <motion.div
               key={activeEco}
-              initial={{ opacity: 0, x: 8 }}
-              animate={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, y: 8 }}
+              animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
-              className="rounded-xl border border-border/80 bg-card p-6 h-full">
+              className="rounded-xl border border-border/80 bg-card p-6">
+              
               <div className="flex items-center justify-between mb-4">
                 <div className="flex items-center gap-3">
                   {(() => {const Icon = ecosystemIcons[activeEco];return <Icon className="h-6 w-6 text-accent" />;})()}
@@ -420,6 +419,37 @@ Max. Output
               </p>
             </motion.div>
           </Reveal>
+
+          {/* Right — Subscribe */}
+          <Reveal delay={0.2} direction="right">
+            <div className="rounded-xl border border-accent/20 bg-card/50 p-8 flex flex-col justify-center h-full">
+              <Mail className="h-8 w-8 text-accent mb-4" />
+              <h3 className="text-xl font-semibold mb-2">Subscribe to the Operator Memo</h3>
+              <p className="text-sm text-muted-foreground mb-6 leading-relaxed">
+                Weekly systems, decisions, and workflows — straight to your inbox.
+              </p>
+              <form
+                onSubmit={onSubscribe}
+                className="flex flex-col sm:flex-row gap-3">
+                <Input
+                  type="email"
+                  placeholder="you@company.com"
+                  value={subEmail}
+                  onChange={(e) => setSubEmail(e.target.value)}
+                  required
+                  className="flex-1" />
+                <Button
+                  type="submit"
+                  disabled={subscribing}
+                  className="sheen-hover silver-gradient text-primary-foreground font-semibold px-6">
+                  {subscribing ?
+                  <Loader2 className="h-4 w-4 animate-spin" /> :
+                  "Subscribe"
+                  }
+                </Button>
+              </form>
+            </div>
+          </Reveal>
         </div>
       </Section>
 
@@ -432,14 +462,17 @@ Max. Output
           </p>
         </Reveal>
 
-        {/* Calendly Inline Embed */}
+        {/* Booking placeholder */}
         <Reveal delay={0.1}>
-          <div className="mt-10 max-w-2xl mx-auto rounded-lg border border-accent/20 bg-card overflow-hidden">
-            <div
-              className="calendly-inline-widget"
-              data-url="https://calendly.com/max-io-group?hide_landing_page_details=1&hide_gdpr_banner=1"
-              style={{ minWidth: "320px", height: "700px" }}
-            />
+          <div className="mt-10 rounded-lg border border-accent/20 bg-card p-8 text-center max-w-2xl mx-auto">
+            <Calendar className="mx-auto h-12 w-12 text-accent mb-4" />
+            <h3 className="text-xl font-semibold mb-2">
+              Schedule a Screening Call
+            </h3>
+            <p className="text-sm text-muted-foreground">
+              Calendly or booking embed goes here. Replace this placeholder with
+              your scheduling tool embed.
+            </p>
           </div>
         </Reveal>
 
