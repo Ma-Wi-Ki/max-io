@@ -462,17 +462,14 @@ Max. Output
           </p>
         </Reveal>
 
-        {/* Booking placeholder */}
+        {/* Calendly inline widget */}
         <Reveal delay={0.1}>
-          <div className="mt-10 rounded-lg border border-accent/20 bg-card p-8 text-center max-w-2xl mx-auto">
-            <Calendar className="mx-auto h-12 w-12 text-accent mb-4" />
-            <h3 className="text-xl font-semibold mb-2">
-              Schedule a Screening Call
-            </h3>
-            <p className="text-sm text-muted-foreground">
-              Calendly or booking embed goes here. Replace this placeholder with
-              your scheduling tool embed.
-            </p>
+          <div className="mt-10 max-w-2xl mx-auto">
+            <div
+              className="calendly-inline-widget"
+              data-url="https://calendly.com/max-io-group?hide_landing_page_details=1&hide_gdpr_banner=1"
+              style={{ minWidth: "320px", height: "700px" }}
+            />
           </div>
         </Reveal>
 
