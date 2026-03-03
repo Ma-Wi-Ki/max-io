@@ -189,19 +189,23 @@ export const ecosystem = {
   blocks: [
     {
       title: "Newsletter",
-      desc: "Weekly operator memo. Practical systems, decisions, workflows.",
+      desc: "The weekly operator memo. Practical systems, structured decisions, and workflows — delivered every Monday to keep you executing with clarity.",
+      tag: "Weekly",
     },
     {
       title: "Short-form",
-      desc: "2–3 weekly shorts. Execution insights.",
+      desc: "2–3 shorts per week breaking down execution insights, operational wins, and real examples from client engagements and internal builds.",
+      tag: "2–3x weekly",
     },
     {
       title: "Podcast",
-      desc: "Conversations with clients and operators. Operational lessons.",
+      desc: "Long-form conversations with clients, operators, and builders. Each episode unpacks operational lessons and decision-making frameworks.",
+      tag: "Fortnightly",
     },
     {
       title: "Education",
-      desc: "Courses, frameworks, and resources for operators who want to learn and apply.",
+      desc: "Structured courses, frameworks, and resource libraries designed for operators who want to learn AI, systems thinking, and execution cadence.",
+      tag: "On-demand",
     },
   ],
 };

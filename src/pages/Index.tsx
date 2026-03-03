@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useState, useCallback } from "react";
+import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -69,6 +70,7 @@ const Index = () => {
   const [submitting, setSubmitting] = useState(false);
   const [subscribing, setSubscribing] = useState(false);
   const [subEmail, setSubEmail] = useState("");
+  const [activeEco, setActiveEco] = useState(0);
 
   const {
     register,
@@ -393,27 +395,57 @@ const Index = () => {
           <h2 className="text-3xl font-bold md:text-4xl">{ecosystem.title}</h2>
           <p className="mt-3 text-lg text-muted-foreground">{ecosystem.sub}</p>
         </Reveal>
-        <Stagger className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-          {ecosystem.blocks.map((block, i) => {
-            const Icon = ecosystemIcons[i];
-            return (
-              <StaggerItem key={block.title}>
-                <HoverCard className="h-full">
-                  <Icon className="h-7 w-7 text-accent mb-4" />
-                  <h3 className="text-lg font-semibold mb-2">{block.title}</h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed">{block.desc}</p>
-                </HoverCard>
-              </StaggerItem>);
-          })}
-        </Stagger>
 
-        {/* Newsletter subscribe */}
-        <Reveal delay={0.2}>
-          <div className="mt-14 max-w-lg mx-auto text-center">
-            <div className="rounded-xl border border-accent/20 bg-card/50 p-8">
-              <Mail className="h-8 w-8 text-accent mx-auto mb-4" />
+        <div className="mt-10 grid gap-8 lg:grid-cols-[1fr_1fr]">
+          {/* Left — Interactive tabs */}
+          <Reveal delay={0.1} direction="left">
+            <div className="flex flex-wrap gap-2 mb-6">
+              {ecosystem.blocks.map((block, i) => {
+                const Icon = ecosystemIcons[i];
+                return (
+                  <button
+                    key={block.title}
+                    onClick={() => setActiveEco(i)}
+                    className={`flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 border ${
+                      activeEco === i
+                        ? "bg-accent/15 border-accent/50 text-accent"
+                        : "bg-card border-border/60 text-muted-foreground hover:border-accent/30 hover:text-foreground"
+                    }`}
+                  >
+                    <Icon className="h-4 w-4" />
+                    {block.title}
+                  </button>
+                );
+              })}
+            </div>
+            <motion.div
+              key={activeEco}
+              initial={{ opacity: 0, y: 8 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+              className="rounded-xl border border-border/80 bg-card p-6"
+            >
+              <div className="flex items-center justify-between mb-4">
+                <div className="flex items-center gap-3">
+                  {(() => { const Icon = ecosystemIcons[activeEco]; return <Icon className="h-6 w-6 text-accent" />; })()}
+                  <h3 className="text-xl font-semibold">{ecosystem.blocks[activeEco].title}</h3>
+                </div>
+                <span className="text-xs font-medium text-accent bg-accent/10 px-3 py-1 rounded-full">
+                  {ecosystem.blocks[activeEco].tag}
+                </span>
+              </div>
+              <p className="text-sm text-muted-foreground leading-relaxed">
+                {ecosystem.blocks[activeEco].desc}
+              </p>
+            </motion.div>
+          </Reveal>
+
+          {/* Right — Subscribe */}
+          <Reveal delay={0.2} direction="right">
+            <div className="rounded-xl border border-accent/20 bg-card/50 p-8 flex flex-col justify-center h-full">
+              <Mail className="h-8 w-8 text-accent mb-4" />
               <h3 className="text-xl font-semibold mb-2">Subscribe to the Operator Memo</h3>
-              <p className="text-sm text-muted-foreground mb-6">
+              <p className="text-sm text-muted-foreground mb-6 leading-relaxed">
                 Weekly systems, decisions, and workflows — straight to your inbox.
               </p>
               <form
@@ -437,8 +469,8 @@ const Index = () => {
                 </Button>
               </form>
             </div>
-          </div>
-        </Reveal>
+          </Reveal>
+        </div>
       </Section>
 
       {/* ── CONTACT ── */}
