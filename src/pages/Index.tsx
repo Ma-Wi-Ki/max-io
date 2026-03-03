@@ -65,6 +65,7 @@ const CalendlyWidget = () => {
     widgetDiv.setAttribute('data-url', 'https://calendly.com/max-io-group?hide_landing_page_details=1&hide_gdpr_banner=1');
     widgetDiv.style.minWidth = '320px';
     widgetDiv.style.height = '290px';
+    widgetDiv.style.overflow = 'hidden';
     containerRef.current.appendChild(widgetDiv);
 
     // Load the Calendly script
