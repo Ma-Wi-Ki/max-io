@@ -83,12 +83,13 @@ export const growthTracks = {
     label: "Business Growth",
     audience: "Trades, storefronts, SMEs, and startups ready to tighten operations and increase output.",
     services: [
-      { title: "Website revamp", desc: "Rebuild for clarity, positioning, and lead capture." },
-      { title: "Strategic positioning & offer design", desc: "Define who you serve, what you sell, and how you win." },
-      { title: "AI integrations", desc: "Automate lead triage, drafting, follow-ups, reporting, and internal workflows." },
-      { title: "Digital media & marketing systems", desc: "Structured content and campaign infrastructure (partner-supported where required)." },
+      { title: "Website revamp", desc: "Rebuild for clarity, positioning, and lead capture that converts." },
+      { title: "Strategic positioning & offer design", desc: "Define who you serve, what you sell, and how you win in your market." },
+      { title: "AI integrations & workflow agents", desc: "Automate lead triage, drafting, follow-ups, reporting, and internal workflows." },
+      { title: "Digital media & marketing systems", desc: "Structured content, campaign infrastructure, and acquisition funnels (partner-supported where required)." },
       { title: "Business digitalisation", desc: "CRM implementation, SOP development, dashboards, and automation architecture." },
       { title: "Research & strategic writing", desc: "White papers, capability statements, grant narratives, and structured documentation." },
+      { title: "Process mapping & workflow design", desc: "Document, streamline, and standardise operations across teams and departments." },
     ],
     focus: [
       "Faster lead-to-cash cycles",
