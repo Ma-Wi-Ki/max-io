@@ -7,7 +7,7 @@ interface SectionProps {
 }
 
 const Section = ({ children, className, id }: SectionProps) => (
-  <section id={id} className={cn("py-20 md:py-28", className)}>
+  <section id={id} className={cn("py-10 md:py-14", className)}>
     <div className="container">{children}</div>
   </section>
 );
