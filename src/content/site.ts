@@ -42,7 +42,7 @@ export const about = {
     description:
       "New-Age Consulting",
     manifesto: [
-      "Consulting is shifting. Traditional firms analyse and recommend. We design and deploy. By combining structured strategy with AI-enabled workflows, we build systems that reduce manual load, improve visibility, and increase output.",
+      "Traditional firms analyse and recommend. We design and deploy. By combining structured strategy with AI-enabled workflows, we build systems that reduce manual load, improve visibility, and increase output.",
       "\n",
     ],
     aiUseCases: [
