@@ -123,7 +123,7 @@ const Index = () => {
       {/* ── HERO ── */}
       <Section className="pt-32 md:pt-44 pb-24">
         <Reveal>
-          <h1 className="text-5xl font-extrabold leading-[1.05] tracking-tight md:text-7xl lg:text-8xl max-w-5xl silver-text">Max. Input 
+          <h1 className="text-5xl font-extrabold leading-[1.05] tracking-tight md:text-7xl lg:text-8xl max-w-5xl silver-text">Max. Input  
 Max. Output
           </h1>
         </Reveal>
