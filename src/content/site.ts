@@ -19,7 +19,7 @@ export const nav = {
 };
 
 export const hero = {
-  h1: "Max. Input, Max. Output",
+  h1: "Max. Input\nMax. Output",
   sub: "Business and executive growth through \nautomated systems, strategy, and execution.",
   cta1: "Book a Screening Call",
   cta2: "Our Services",
