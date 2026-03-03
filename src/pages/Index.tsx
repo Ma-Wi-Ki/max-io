@@ -139,23 +139,23 @@ const Index = () => {
       <SEO {...seo.home} />
 
       {/* ── HERO ── */}
-      <Section className="pt-28 md:pt-36 pb-20">
+      <Section className="pt-32 md:pt-44 pb-24">
         <Reveal>
-          <h1 className="text-4xl font-extrabold leading-tight tracking-tight md:text-6xl lg:text-7xl max-w-4xl silver-text">
+          <h1 className="text-5xl font-extrabold leading-[1.05] tracking-tight md:text-7xl lg:text-8xl max-w-5xl silver-text">
             Max. Input, Max. Output
           </h1>
         </Reveal>
-        <Reveal delay={0.1}>
-          <p className="mt-5 text-lg text-muted-foreground max-w-2xl md:text-xl">
+        <Reveal delay={0.15} direction="up">
+          <p className="mt-6 text-lg text-muted-foreground max-w-2xl md:text-xl leading-relaxed">
             {hero.sub}
           </p>
         </Reveal>
-        <Reveal delay={0.2}>
-          <div className="mt-8 flex flex-col sm:flex-row gap-4">
+        <Reveal delay={0.25} direction="up">
+          <div className="mt-10 flex flex-col sm:flex-row gap-4">
             <a href="#contact">
               <Button
                 size="lg"
-                className="sheen-hover silver-gradient text-primary-foreground font-semibold">
+                className="sheen-hover silver-gradient text-primary-foreground font-semibold text-base px-8 py-6">
                 {hero.cta1}
               </Button>
             </a>
@@ -163,16 +163,16 @@ const Index = () => {
               <Button
                 size="lg"
                 variant="outline"
-                className="border-primary/40 hover:bg-primary/10">
-                {hero.cta2} <ArrowRight className="ml-2 h-4 w-4" />
+                className="border-primary/40 hover:bg-primary/10 text-base px-8 py-6 group">
+                {hero.cta2} <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
               </Button>
             </a>
           </div>
         </Reveal>
-        <Reveal delay={0.25}>
-          <p className="mt-8 text-sm text-muted-foreground/70">{hero.trust}</p>
+        <Reveal delay={0.35}>
+          <p className="mt-10 text-sm text-muted-foreground/60 tracking-wide uppercase">{hero.trust}</p>
         </Reveal>
-        <div className="mt-14 h-px w-full max-w-md bg-gradient-to-r from-accent/40 via-primary/20 to-transparent" />
+        <div className="mt-16 h-px w-full max-w-lg bg-gradient-to-r from-accent/40 via-primary/20 to-transparent" />
       </Section>
 
       {/* ── ABOUT ── */}
@@ -307,13 +307,13 @@ const Index = () => {
                 {growthTracks.business.audience}
               </p>
               <p className="text-sm font-medium text-foreground mb-3">What we do</p>
-              <ul className="space-y-3 mb-6">
+              <ul className="space-y-3.5 mb-8">
                 {growthTracks.business.services.map((s) =>
-                <li key={s.title} className="flex items-start gap-2.5">
-                    <CheckCircle className="h-4 w-4 text-accent shrink-0 mt-0.5" />
+                <li key={s.title} className="flex items-start gap-2.5 group/item cursor-default">
+                    <CheckCircle className="h-4 w-4 text-accent shrink-0 mt-0.5 transition-transform group-hover/item:scale-110" />
                     <div>
-                      <span className="text-sm font-medium text-foreground">{s.title}</span>
-                      <p className="text-sm text-muted-foreground mt-0.5">{s.desc}</p>
+                      <span className="text-sm font-medium text-foreground group-hover/item:text-accent transition-colors">{s.title}</span>
+                      <p className="text-sm text-muted-foreground mt-0.5 leading-relaxed">{s.desc}</p>
                     </div>
                   </li>
                 )}
@@ -331,9 +331,9 @@ const Index = () => {
                 <a href="#contact">
                   <Button
                     size="lg"
-                    className="sheen-hover silver-gradient text-primary-foreground font-semibold w-full">
+                    className="sheen-hover silver-gradient text-primary-foreground font-semibold w-full group/btn text-base py-6">
                     {growthTracks.business.cta}{" "}
-                    <ArrowRight className="ml-2 h-4 w-4" />
+                    <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover/btn:translate-x-1" />
                   </Button>
                 </a>
               </div>
@@ -351,13 +351,13 @@ const Index = () => {
                 {growthTracks.executive.audience}
               </p>
               <p className="text-sm font-medium text-foreground mb-3">What we do</p>
-              <ul className="space-y-3 mb-6">
+              <ul className="space-y-3.5 mb-8">
                 {growthTracks.executive.services.map((s) =>
-                <li key={s.title} className="flex items-start gap-2.5">
-                    <CheckCircle className="h-4 w-4 text-accent shrink-0 mt-0.5" />
+                <li key={s.title} className="flex items-start gap-2.5 group/item cursor-default">
+                    <CheckCircle className="h-4 w-4 text-accent shrink-0 mt-0.5 transition-transform group-hover/item:scale-110" />
                     <div>
-                      <span className="text-sm font-medium text-foreground">{s.title}</span>
-                      <p className="text-sm text-muted-foreground mt-0.5">{s.desc}</p>
+                      <span className="text-sm font-medium text-foreground group-hover/item:text-accent transition-colors">{s.title}</span>
+                      <p className="text-sm text-muted-foreground mt-0.5 leading-relaxed">{s.desc}</p>
                     </div>
                   </li>
                 )}
@@ -375,9 +375,9 @@ const Index = () => {
                 <a href="#contact">
                   <Button
                     size="lg"
-                    className="sheen-hover silver-gradient text-primary-foreground font-semibold w-full">
+                    className="sheen-hover silver-gradient text-primary-foreground font-semibold w-full group/btn text-base py-6">
                     {growthTracks.executive.cta}{" "}
-                    <ArrowRight className="ml-2 h-4 w-4" />
+                    <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover/btn:translate-x-1" />
                   </Button>
                 </a>
               </div>
@@ -393,54 +393,50 @@ const Index = () => {
           <h2 className="text-3xl font-bold md:text-4xl">{ecosystem.title}</h2>
           <p className="mt-3 text-lg text-muted-foreground">{ecosystem.sub}</p>
         </Reveal>
-        <Stagger className="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+        <Stagger className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
           {ecosystem.blocks.map((block, i) => {
             const Icon = ecosystemIcons[i];
             return (
               <StaggerItem key={block.title}>
                 <HoverCard className="h-full">
-                  <Icon className="h-7 w-7 text-accent mb-3" />
+                  <Icon className="h-7 w-7 text-accent mb-4" />
                   <h3 className="text-lg font-semibold mb-2">{block.title}</h3>
-                  <p className="text-sm text-muted-foreground">{block.desc}</p>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{block.desc}</p>
                 </HoverCard>
               </StaggerItem>);
-
           })}
         </Stagger>
 
         {/* Newsletter subscribe */}
         <Reveal delay={0.2}>
-          <div className="mt-10 max-w-md mx-auto text-center">
-            <h3 className="text-lg font-semibold mb-2 flex items-center gap-2">
-              <Mail className="h-5 w-5 text-accent" /> Subscribe
-            </h3>
-            <p className="text-sm text-muted-foreground mb-4">
-              Get the weekly operator memo in your inbox.
-            </p>
-            <form
-              onSubmit={onSubscribe}
-              className="flex flex-col sm:flex-row gap-3">
-
-              <Input
-                type="email"
-                placeholder="you@company.com"
-                value={subEmail}
-                onChange={(e) => setSubEmail(e.target.value)}
-                required
-                className="flex-1" />
-
-              <Button
-                type="submit"
-                disabled={subscribing}
-                className="sheen-hover silver-gradient text-primary-foreground font-semibold">
-
-                {subscribing ?
-                <Loader2 className="h-4 w-4 animate-spin" /> :
-
-                "Subscribe"
-                }
-              </Button>
-            </form>
+          <div className="mt-14 max-w-lg mx-auto text-center">
+            <div className="rounded-xl border border-accent/20 bg-card/50 p-8">
+              <Mail className="h-8 w-8 text-accent mx-auto mb-4" />
+              <h3 className="text-xl font-semibold mb-2">Subscribe to the Operator Memo</h3>
+              <p className="text-sm text-muted-foreground mb-6">
+                Weekly systems, decisions, and workflows — straight to your inbox.
+              </p>
+              <form
+                onSubmit={onSubscribe}
+                className="flex flex-col sm:flex-row gap-3">
+                <Input
+                  type="email"
+                  placeholder="you@company.com"
+                  value={subEmail}
+                  onChange={(e) => setSubEmail(e.target.value)}
+                  required
+                  className="flex-1" />
+                <Button
+                  type="submit"
+                  disabled={subscribing}
+                  className="sheen-hover silver-gradient text-primary-foreground font-semibold px-6">
+                  {subscribing ?
+                    <Loader2 className="h-4 w-4 animate-spin" /> :
+                    "Subscribe"
+                  }
+                </Button>
+              </form>
+            </div>
           </div>
         </Reveal>
       </Section>

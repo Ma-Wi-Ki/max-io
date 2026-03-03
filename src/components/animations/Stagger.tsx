@@ -7,15 +7,16 @@ interface StaggerProps {
 }
 
 const itemVariants = {
-  hidden: { opacity: 0, y: 10 },
+  hidden: { opacity: 0, y: 16, scale: 0.97 },
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.4, ease: [0.22, 1, 0.36, 1] as const },
+    scale: 1,
+    transition: { duration: 0.5, ease: [0.22, 1, 0.36, 1] as const },
   },
 };
 
-const Stagger = ({ children, className, staggerDelay = 0.12 }: StaggerProps) => {
+const Stagger = ({ children, className, staggerDelay = 0.1 }: StaggerProps) => {
   const prefersReduced = useReducedMotion();
 
   if (prefersReduced) {
@@ -31,7 +32,7 @@ const Stagger = ({ children, className, staggerDelay = 0.12 }: StaggerProps) => 
       }}
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: true, margin: "-60px" }}
+      viewport={{ once: true, margin: "-80px" }}
     >
       {children}
     </motion.div>
