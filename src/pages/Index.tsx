@@ -50,40 +50,31 @@ type FormData = z.infer<typeof formSchema>;
 
 const ecosystemIcons = [Newspaper, Video, Mic, BookOpen];
 
-declare global {
-  interface Window {
-    Calendly?: { initInlineWidget: (opts: { url: string; parentElement: HTMLElement }) => void };
-  }
-}
-
 const CalendlyWidget = () => {
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const init = () => {
-      if (window.Calendly && containerRef.current) {
-        window.Calendly.initInlineWidget({
-          url: "https://calendly.com/max-io-group?hide_landing_page_details=1&hide_gdpr_banner=1",
-          parentElement: containerRef.current,
-        });
-      }
-    };
+    if (!containerRef.current) return;
 
-    // Try immediately, or wait for script to load
-    if (window.Calendly) {
-      init();
-    } else {
-      const interval = setInterval(() => {
-        if (window.Calendly) {
-          init();
-          clearInterval(interval);
-        }
-      }, 200);
-      return () => clearInterval(interval);
-    }
+    // Clear any previous content
+    containerRef.current.innerHTML = '';
+
+    // Create the widget div
+    const widgetDiv = document.createElement('div');
+    widgetDiv.className = 'calendly-inline-widget';
+    widgetDiv.setAttribute('data-url', 'https://calendly.com/max-io-group?hide_landing_page_details=1&hide_gdpr_banner=1');
+    widgetDiv.style.minWidth = '320px';
+    widgetDiv.style.height = '700px';
+    containerRef.current.appendChild(widgetDiv);
+
+    // Load the Calendly script
+    const script = document.createElement('script');
+    script.src = 'https://assets.calendly.com/assets/external/widget.js';
+    script.async = true;
+    containerRef.current.appendChild(script);
   }, []);
 
-  return <div ref={containerRef} style={{ minWidth: "320px", height: "700px" }} />;
+  return <div ref={containerRef} />;
 };
 
 const Index = () => {
