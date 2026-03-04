@@ -1,11 +1,22 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import { footer, siteConfig } from "@/content/site";
 
 const Footer = () => {
-  const scrollTo = (href: string) => {
-    const id = href.replace("#", "");
-    const el = document.getElementById(id);
-    if (el) el.scrollIntoView({ behavior: "smooth" });
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const handleNav = (href: string) => {
+    if (href.startsWith("#")) {
+      if (location.pathname !== "/") {
+        navigate("/" + href);
+        return;
+      }
+      const id = href.replace("#", "");
+      const el = document.getElementById(id);
+      if (el) el.scrollIntoView({ behavior: "smooth" });
+    } else {
+      navigate(href);
+    }
   };
 
   return (
@@ -20,18 +31,14 @@ const Footer = () => {
             {footer.links.map((l) => (
               <button
                 key={l.href}
-                onClick={() => scrollTo(l.href)}
+                onClick={() => handleNav(l.href)}
                 className="hover:text-foreground transition-colors"
               >
                 {l.label}
               </button>
             ))}
             {footer.legal.map((l) => (
-              <Link
-                key={l.href}
-                to={l.href}
-                className="hover:text-foreground transition-colors"
-              >
+              <Link key={l.href} to={l.href} className="hover:text-foreground transition-colors">
                 {l.label}
               </Link>
             ))}
@@ -43,9 +50,7 @@ const Footer = () => {
           </div>
         </div>
         <div className="mt-8 pt-4 border-t border-border">
-          <p className="text-xs text-muted-foreground">
-            © 2025 MAX IO Group. All rights reserved.
-          </p>
+          <p className="text-xs text-muted-foreground">© 2025 MAX IO Group. All rights reserved.</p>
         </div>
       </div>
     </footer>
