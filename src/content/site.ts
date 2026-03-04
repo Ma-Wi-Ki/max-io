@@ -10,10 +10,9 @@ export const siteConfig = {
 
 export const nav = {
   links: [
-    { label: "About", href: "#about" },
-    { label: "Services", href: "#growth-tracks" },
-    { label: "Ecosystem", href: "#ecosystem" },
-    { label: "Contact", href: "#contact" },
+    { label: "About", href: "/about" },
+    { label: "Services", href: "#services" },
+    { label: "Ecosystem", href: "/ecosystem" },
   ],
   cta: { label: "Book a Screening Call", href: "#contact" },
 };
@@ -287,8 +286,9 @@ If you have questions about these Terms, please contact us at ${siteConfig.email
 
 export const footer = {
   links: [
-    { label: "About", href: "#about" },
-    { label: "Services", href: "#growth-tracks" },
+    { label: "About", href: "/about" },
+    { label: "Services", href: "#services" },
+    { label: "Ecosystem", href: "/ecosystem" },
     { label: "Contact", href: "#contact" },
   ],
   legal: [

@@ -1,5 +1,4 @@
 import { useState, useCallback, useEffect, useRef } from "react";
-import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -7,70 +6,42 @@ import { z } from "zod";
 import PageLayout from "@/components/layout/PageLayout";
 import Section from "@/components/layout/Section";
 import Reveal from "@/components/animations/Reveal";
-import Stagger, { StaggerItem } from "@/components/animations/Stagger";
 import HoverCard from "@/components/animations/HoverCard";
 import SEO from "@/components/SEO";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-
 import { Label } from "@/components/ui/label";
 import { supabase } from "@/integrations/supabase/client";
 import { useToast } from "@/hooks/use-toast";
+import { hero, growthTracks, seo } from "@/content/site";
 import {
-  hero,
-  about,
-  growthTracks,
-  ecosystem,
-  seo } from
-"@/content/site";
-import {
-  ArrowRight,
-  CheckCircle,
-  Calendar,
-  Loader2,
-  TrendingUp,
-  Brain,
-  Newspaper,
-  Video,
-  Mic,
-  BookOpen,
-  Mail,
-  User,
-  Handshake } from
-"lucide-react";
+  ArrowRight, CheckCircle, Loader2, TrendingUp, Brain,
+} from "lucide-react";
 
 /* ── Form schema ── */
 const formSchema = z.object({
   name: z.string().trim().min(1, "Name is required").max(100),
   email: z.string().trim().email("Valid email required").max(255),
   phone: z.string().trim().max(30).optional(),
-  business_name: z.string().trim().max(200).optional()
+  business_name: z.string().trim().max(200).optional(),
 });
 type FormData = z.infer<typeof formSchema>;
-
-const ecosystemIcons = [Newspaper, Video, Mic, BookOpen];
 
 const CalendlyWidget = () => {
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (!containerRef.current) return;
-
-    // Clear any previous content
-    containerRef.current.innerHTML = '';
-
-    // Create the widget div
-    const widgetDiv = document.createElement('div');
-    widgetDiv.className = 'calendly-inline-widget';
-    widgetDiv.setAttribute('data-url', 'https://calendly.com/max-io-group?hide_landing_page_details=1&hide_gdpr_banner=1');
-    widgetDiv.style.minWidth = '320px';
-    widgetDiv.style.height = '290px';
-    widgetDiv.style.overflow = 'hidden';
+    containerRef.current.innerHTML = "";
+    const widgetDiv = document.createElement("div");
+    widgetDiv.className = "calendly-inline-widget";
+    widgetDiv.setAttribute("data-url", "https://calendly.com/max-io-group?hide_landing_page_details=1&hide_gdpr_banner=1");
+    widgetDiv.style.minWidth = "320px";
+    widgetDiv.style.height = "290px";
+    widgetDiv.style.overflow = "hidden";
     containerRef.current.appendChild(widgetDiv);
-
-    // Load the Calendly script
-    const script = document.createElement('script');
-    script.src = 'https://assets.calendly.com/assets/external/widget.js';
+    const script = document.createElement("script");
+    script.src = "https://assets.calendly.com/assets/external/widget.js";
     script.async = true;
     containerRef.current.appendChild(script);
   }, []);
@@ -82,65 +53,24 @@ const Index = () => {
   const navigate = useNavigate();
   const { toast } = useToast();
   const [submitting, setSubmitting] = useState(false);
-  const [subscribing, setSubscribing] = useState(false);
-  const [subEmail, setSubEmail] = useState("");
-  const [activeEco, setActiveEco] = useState(0);
 
   const {
-    register,
-    handleSubmit,
-    setValue,
-    formState: { errors }
+    register, handleSubmit, formState: { errors },
   } = useForm<FormData>({ resolver: zodResolver(formSchema) });
 
   const onSubmit = async (values: FormData) => {
     setSubmitting(true);
     try {
       const { error } = await supabase.from("leads").insert({
-        name: values.name,
-        email: values.email,
-        phone: values.phone || null,
-        business_name: values.business_name || null
+        name: values.name, email: values.email,
+        phone: values.phone || null, business_name: values.business_name || null,
       });
       if (error) throw error;
       navigate("/thank-you");
     } catch {
-      toast({
-        title: "Something went wrong",
-        description: "Please try again or email us directly.",
-        variant: "destructive"
-      });
+      toast({ title: "Something went wrong", description: "Please try again or email us directly.", variant: "destructive" });
     } finally {
       setSubmitting(false);
-    }
-  };
-
-  const onSubscribe = async (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!subEmail.trim()) return;
-    setSubscribing(true);
-    try {
-      const { error } = await supabase.
-      from("newsletter_subscribers").
-      insert({ email: subEmail.trim() });
-      if (error) {
-        if (error.code === "23505") {
-          toast({ title: "You're already subscribed!" });
-        } else {
-          throw error;
-        }
-      } else {
-        toast({ title: "Subscribed!", description: "Welcome to the operator memo." });
-        setSubEmail("");
-      }
-    } catch {
-      toast({
-        title: "Something went wrong",
-        description: "Please try again.",
-        variant: "destructive"
-      });
-    } finally {
-      setSubscribing(false);
     }
   };
 
@@ -149,308 +79,81 @@ const Index = () => {
       <SEO {...seo.home} />
 
       {/* ── HERO ── */}
-      <Section className="pt-24 md:pt-32 pb-12">
+      <Section className="pt-24 md:pt-32 pb-8">
         <Reveal>
-          <h1 className="text-5xl font-extrabold leading-[1.05] tracking-tight md:text-7xl lg:text-8xl max-w-5xl silver-text">Max. Input
-Max. Output
+          <h1 className="text-5xl font-extrabold leading-[1.05] tracking-tight md:text-7xl lg:text-8xl max-w-5xl silver-text">
+            Max. Input{"\n"}Max. Output
           </h1>
         </Reveal>
         <Reveal delay={0.15} direction="up">
-          <p className="mt-6 text-lg text-muted-foreground max-w-2xl md:text-xl leading-relaxed">
-            {hero.sub}
-          </p>
+          <p className="mt-6 text-lg text-muted-foreground max-w-2xl md:text-xl leading-relaxed">{hero.sub}</p>
         </Reveal>
         <Reveal delay={0.25} direction="up">
-          <div className="mt-10 flex flex-col sm:flex-row gap-4">
+          <div className="mt-8 flex flex-col sm:flex-row gap-4">
             <a href="#contact">
-              <Button
-                size="lg"
-                className="sheen-hover silver-gradient text-primary-foreground font-semibold text-base px-8 py-6">
+              <Button size="lg" className="sheen-hover silver-gradient text-primary-foreground font-semibold text-base px-8 py-6">
                 {hero.cta1}
               </Button>
             </a>
-            <a href="#growth-tracks">
-              <Button
-                size="lg"
-                variant="outline"
-                className="border-primary/40 hover:bg-primary/10 text-base px-8 py-6 group">
+            <a href="#services">
+              <Button size="lg" variant="outline" className="border-primary/40 hover:bg-primary/10 text-base px-8 py-6 group">
                 {hero.cta2} <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
               </Button>
             </a>
           </div>
         </Reveal>
         <Reveal delay={0.35}>
-          <p className="mt-10 text-sm text-muted-foreground/60 tracking-wide uppercase">{hero.trust}</p>
-        </Reveal>
-        <div className="mt-8 h-px w-full max-w-lg bg-gradient-to-r from-accent/40 via-primary/20 to-transparent" />
-      </Section>
-
-      {/* ── ABOUT ── */}
-      <Section id="about" className="border-t border-border/60">
-        <Reveal>
-          <h2 className="text-3xl font-bold md:text-4xl">{about.title}</h2>
-        </Reveal>
-
-        {/* Founder — headshot + bio */}
-        <div className="mt-6 grid gap-6 md:grid-cols-[280px_1fr] items-start">
-          <Reveal delay={0.1}>
-            <div className="flex flex-col items-center md:items-start">
-              <div className="w-48 h-48 md:w-64 md:h-64 rounded-lg bg-card border border-border/60 flex items-center justify-center overflow-hidden">
-                <User className="h-20 w-20 text-accent/40" />
-              </div>
-              <h3 className="text-xl font-semibold mt-4">{about.founder.name}</h3>
-              <p className="text-xs text-muted-foreground">Founder & Principal</p>
-            </div>
-          </Reveal>
-          <Reveal delay={0.2}>
-            <div className="space-y-4">
-              {about.founder.bio.map((paragraph, i) =>
-              <p key={i} className="text-sm leading-relaxed text-muted-foreground">
-                  {paragraph}
-                </p>
-              )}
-            </div>
-          </Reveal>
-        </div>
-
-        {/* Company + Manifesto */}
-        <div className="mt-8 border-t border-border/60 pt-6">
-          <Reveal delay={0.1}>
-            <h3 className="text-2xl font-bold mb-3">{about.company.name}</h3>
-            <p className="text-base leading-relaxed text-muted-foreground max-w-3xl">
-              {about.company.description}
-            </p>
-          </Reveal>
-          <Reveal delay={0.15}>
-            <div className="mt-6 space-y-4 max-w-3xl">
-              {about.company.manifesto.map((p, i) =>
-              <p key={i} className="text-sm leading-relaxed text-muted-foreground">
-                  {p}
-                </p>
-              )}
-            </div>
-          </Reveal>
-
-          {/* AI use cases */}
-          <Reveal delay={0.2}>
-            <div className="mt-8 max-w-3xl">
-              <p className="text-sm font-medium text-foreground mb-3">
-                We use AI agents and automation deliberately:
-              </p>
-              <ul className="space-y-1.5 mb-4">
-                {about.company.aiUseCases.map((uc) =>
-                <li key={uc} className="text-sm text-muted-foreground flex items-center gap-2">
-                    <span className="h-1.5 w-1.5 rounded-full bg-accent shrink-0" />
-                    {uc}
-                  </li>
-                )}
-              </ul>
-              <p className="text-sm font-semibold text-foreground italic">
-                {about.company.aiDisclaimer}
-              </p>
-            </div>
-          </Reveal>
-
-          {/* What we deliver */}
-          <Reveal delay={0.25}>
-            <div className="mt-10">
-              <p className="text-sm font-medium text-foreground mb-4">What we deliver</p>
-              <ul className="grid gap-3 sm:grid-cols-2">
-                {about.company.capabilities.map((c) =>
-                <li key={c.title} className="text-sm flex items-start gap-2.5">
-                    <CheckCircle className="h-4 w-4 text-accent shrink-0 mt-0.5" />
-                    <div>
-                      <span className="font-medium text-foreground">{c.title}</span>
-                      <p className="text-muted-foreground mt-0.5">{c.desc}</p>
-                    </div>
-                  </li>
-                )}
-              </ul>
-            </div>
-          </Reveal>
-        </div>
-
-        {/* Partner Network */}
-        <div className="mt-8 border-t border-border/60 pt-6">
-          <Reveal delay={0.1}>
-            <div className="flex items-center gap-3 mb-3">
-              <Handshake className="h-6 w-6 text-accent" />
-              <h3 className="text-2xl font-bold">{about.partners.title}</h3>
-            </div>
-            <p className="text-sm leading-relaxed text-muted-foreground max-w-3xl">
-              {about.partners.description}
-            </p>
-          </Reveal>
-          <Stagger className="mt-8 grid gap-6 sm:grid-cols-3">
-            {about.partners.agencies.map((partner, i) =>
-            <StaggerItem key={i}>
-                <HoverCard className="h-full text-center">
-                  <div className="w-16 h-16 rounded-full bg-muted border border-accent/20 flex items-center justify-center mx-auto mb-4">
-                    <span className="text-lg font-bold text-muted-foreground">
-                      {partner.name.charAt(0)}
-                    </span>
-                  </div>
-                  <h4 className="font-semibold text-sm">{partner.name}</h4>
-                  <p className="text-xs text-muted-foreground mt-1">{partner.specialty}</p>
-                </HoverCard>
-              </StaggerItem>
-            )}
-          </Stagger>
-        </div>
-
-        <Reveal delay={0.3}>
-          <p className="mt-6 text-sm text-muted-foreground">{about.closing}</p>
+          <p className="mt-8 text-sm text-muted-foreground/60 tracking-wide uppercase">{hero.trust}</p>
         </Reveal>
       </Section>
 
-      {/* ── GROWTH TRACKS ── */}
-      <Section id="growth-tracks" className="border-t border-border/60">
+      {/* ── SERVICES ── */}
+      <Section id="services" className="border-t border-border/60">
         <div className="grid gap-6 md:grid-cols-2">
-          {/* Business Growth */}
           <Reveal delay={0.1}>
             <HoverCard className="h-full flex flex-col">
               <TrendingUp className="h-6 w-6 text-accent mb-3" />
-              <h3 className="text-xl font-bold mb-1">
-                {growthTracks.business.label}
-              </h3>
-              <p className="text-xs text-muted-foreground mb-4">
-                {growthTracks.business.audience}
-              </p>
+              <h3 className="text-xl font-bold mb-1">{growthTracks.business.label}</h3>
+              <p className="text-xs text-muted-foreground mb-4">{growthTracks.business.audience}</p>
               <ul className="space-y-2 mb-4">
-                {growthTracks.business.services.map((s) =>
-                <li key={s.title} className="flex items-start gap-2 group/item cursor-default">
+                {growthTracks.business.services.map((s) => (
+                  <li key={s.title} className="flex items-start gap-2 group/item cursor-default">
                     <CheckCircle className="h-3.5 w-3.5 text-accent shrink-0 mt-0.5" />
                     <span className="text-xs text-muted-foreground"><span className="font-medium text-foreground">{s.title}</span> — {s.desc}</span>
                   </li>
-                )}
+                ))}
               </ul>
               <div className="mt-auto">
                 <a href="#contact">
-                  <Button
-                    size="sm"
-                    className="sheen-hover silver-gradient text-primary-foreground font-semibold w-full group/btn">
-                    {growthTracks.business.cta}{" "}
-                    <ArrowRight className="ml-2 h-3.5 w-3.5 transition-transform group-hover/btn:translate-x-1" />
+                  <Button size="sm" className="sheen-hover silver-gradient text-primary-foreground font-semibold w-full group/btn">
+                    {growthTracks.business.cta} <ArrowRight className="ml-2 h-3.5 w-3.5 transition-transform group-hover/btn:translate-x-1" />
                   </Button>
                 </a>
               </div>
             </HoverCard>
           </Reveal>
 
-          {/* Executive Growth */}
           <Reveal delay={0.2}>
             <HoverCard className="h-full flex flex-col">
               <Brain className="h-6 w-6 text-accent mb-3" />
-              <h3 className="text-xl font-bold mb-1">
-                {growthTracks.executive.label}
-              </h3>
-              <p className="text-xs text-muted-foreground mb-4">
-                {growthTracks.executive.audience}
-              </p>
+              <h3 className="text-xl font-bold mb-1">{growthTracks.executive.label}</h3>
+              <p className="text-xs text-muted-foreground mb-4">{growthTracks.executive.audience}</p>
               <ul className="space-y-2 mb-4">
-                {growthTracks.executive.services.map((s) =>
-                <li key={s.title} className="flex items-start gap-2 group/item cursor-default">
+                {growthTracks.executive.services.map((s) => (
+                  <li key={s.title} className="flex items-start gap-2 group/item cursor-default">
                     <CheckCircle className="h-3.5 w-3.5 text-accent shrink-0 mt-0.5" />
                     <span className="text-xs text-muted-foreground"><span className="font-medium text-foreground">{s.title}</span> — {s.desc}</span>
                   </li>
-                )}
+                ))}
               </ul>
               <div className="mt-auto">
                 <a href="#contact">
-                  <Button
-                    size="sm"
-                    className="sheen-hover silver-gradient text-primary-foreground font-semibold w-full group/btn">
-                    {growthTracks.executive.cta}{" "}
-                    <ArrowRight className="ml-2 h-3.5 w-3.5 transition-transform group-hover/btn:translate-x-1" />
+                  <Button size="sm" className="sheen-hover silver-gradient text-primary-foreground font-semibold w-full group/btn">
+                    {growthTracks.executive.cta} <ArrowRight className="ml-2 h-3.5 w-3.5 transition-transform group-hover/btn:translate-x-1" />
                   </Button>
                 </a>
               </div>
             </HoverCard>
-          </Reveal>
-        </div>
-      </Section>
-
-
-      {/* ── ECOSYSTEM ── */}
-      <Section id="ecosystem" className="border-t border-border/60">
-        <Reveal>
-          <h2 className="text-3xl font-bold md:text-4xl">{ecosystem.title}</h2>
-          <p className="mt-3 text-lg text-muted-foreground">{ecosystem.sub}</p>
-        </Reveal>
-
-        <div className="mt-6 grid gap-6 lg:grid-cols-[1fr_1fr]">
-          {/* Left — Interactive tabs */}
-          <Reveal delay={0.1} direction="left">
-            <div className="flex flex-wrap gap-2 mb-6">
-              {ecosystem.blocks.map((block, i) => {
-                const Icon = ecosystemIcons[i];
-                return (
-                  <button
-                    key={block.title}
-                    onClick={() => setActiveEco(i)}
-                    className={`flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 border ${
-                    activeEco === i ?
-                    "bg-accent/15 border-accent/50 text-accent" :
-                    "bg-card border-border/60 text-muted-foreground hover:border-accent/30 hover:text-foreground"}`
-                    }>
-                    
-                    <Icon className="h-4 w-4" />
-                    {block.title}
-                  </button>);
-
-              })}
-            </div>
-            <motion.div
-              key={activeEco}
-              initial={{ opacity: 0, y: 8 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
-              className="rounded-xl border border-border/80 bg-card p-6">
-              
-              <div className="flex items-center justify-between mb-4">
-                <div className="flex items-center gap-3">
-                  {(() => {const Icon = ecosystemIcons[activeEco];return <Icon className="h-6 w-6 text-accent" />;})()}
-                  <h3 className="text-xl font-semibold">{ecosystem.blocks[activeEco].title}</h3>
-                </div>
-                <span className="text-xs font-medium text-accent bg-accent/10 px-3 py-1 rounded-full">
-                  {ecosystem.blocks[activeEco].tag}
-                </span>
-              </div>
-              <p className="text-sm text-muted-foreground leading-relaxed">
-                {ecosystem.blocks[activeEco].desc}
-              </p>
-            </motion.div>
-          </Reveal>
-
-          {/* Right — Subscribe */}
-          <Reveal delay={0.2} direction="right">
-            <div className="rounded-xl border border-accent/20 bg-card/50 p-8 flex flex-col justify-center h-full">
-              <Mail className="h-8 w-8 text-accent mb-4" />
-              <h3 className="text-xl font-semibold mb-2">Subscribe to the Operator Memo</h3>
-              <p className="text-sm text-muted-foreground mb-6 leading-relaxed">
-                Weekly systems, decisions, and workflows — straight to your inbox.
-              </p>
-              <form
-                onSubmit={onSubscribe}
-                className="flex flex-col sm:flex-row gap-3">
-                <Input
-                  type="email"
-                  placeholder="you@company.com"
-                  value={subEmail}
-                  onChange={(e) => setSubEmail(e.target.value)}
-                  required
-                  className="flex-1" />
-                <Button
-                  type="submit"
-                  disabled={subscribing}
-                  className="sheen-hover silver-gradient text-primary-foreground font-semibold px-6">
-                  {subscribing ?
-                  <Loader2 className="h-4 w-4 animate-spin" /> :
-                  "Subscribe"
-                  }
-                </Button>
-              </form>
-            </div>
           </Reveal>
         </div>
       </Section>
@@ -464,90 +167,52 @@ Max. Output
           </p>
         </Reveal>
 
-        {/* Calendly inline widget */}
         <Reveal delay={0.1}>
-          <div className="mt-10 max-w-2xl mx-auto">
+          <div className="mt-8 max-w-2xl mx-auto">
             <CalendlyWidget />
           </div>
         </Reveal>
 
-        {/* OR divider */}
         <Reveal delay={0.15}>
-          <div className="flex items-center gap-4 my-10 max-w-2xl mx-auto">
+          <div className="flex items-center gap-4 my-8 max-w-2xl mx-auto">
             <div className="flex-1 h-px bg-border" />
             <span className="text-sm font-semibold text-muted-foreground tracking-widest uppercase">OR</span>
             <div className="flex-1 h-px bg-border" />
           </div>
         </Reveal>
 
-        {/* Lead form */}
         <Reveal delay={0.2}>
-          <form
-            onSubmit={handleSubmit(onSubmit)}
-            className="max-w-2xl mx-auto space-y-6">
-
+          <form onSubmit={handleSubmit(onSubmit)} className="max-w-2xl mx-auto space-y-6">
             <div className="grid gap-4 sm:grid-cols-2">
               <div className="space-y-2">
                 <Label htmlFor="name">Name *</Label>
-                <Input
-                  id="name"
-                  {...register("name")}
-                  placeholder="Your name" />
-                {errors.name &&
-                <p className="text-xs text-destructive">
-                    {errors.name.message}
-                  </p>
-                }
+                <Input id="name" {...register("name")} placeholder="Your name" />
+                {errors.name && <p className="text-xs text-destructive">{errors.name.message}</p>}
               </div>
               <div className="space-y-2">
                 <Label htmlFor="email">Email *</Label>
-                <Input
-                  id="email"
-                  type="email"
-                  {...register("email")}
-                  placeholder="you@company.com" />
-                {errors.email &&
-                <p className="text-xs text-destructive">
-                    {errors.email.message}
-                  </p>
-                }
+                <Input id="email" type="email" {...register("email")} placeholder="you@company.com" />
+                {errors.email && <p className="text-xs text-destructive">{errors.email.message}</p>}
               </div>
             </div>
-
             <div className="grid gap-4 sm:grid-cols-2">
               <div className="space-y-2">
                 <Label htmlFor="phone">Phone</Label>
-                <Input
-                  id="phone"
-                  {...register("phone")}
-                  placeholder="+61..." />
+                <Input id="phone" {...register("phone")} placeholder="+61..." />
               </div>
               <div className="space-y-2">
                 <Label htmlFor="business_name">Business Name</Label>
-                <Input
-                  id="business_name"
-                  {...register("business_name")}
-                  placeholder="Your business" />
+                <Input id="business_name" {...register("business_name")} placeholder="Your business" />
               </div>
             </div>
-
-            <Button
-              type="submit"
-              size="lg"
-              disabled={submitting}
-              className="sheen-hover silver-gradient text-primary-foreground font-semibold w-full">
-              {submitting ?
-              <>
-                  <Loader2 className="mr-2 h-4 w-4 animate-spin" /> Sending...
-                </> :
-              "Submit"
-              }
+            <Button type="submit" size="lg" disabled={submitting} className="sheen-hover silver-gradient text-primary-foreground font-semibold w-full">
+              {submitting ? <><Loader2 className="mr-2 h-4 w-4 animate-spin" /> Sending...</> : "Submit"}
             </Button>
           </form>
         </Reveal>
       </Section>
-    </PageLayout>);
-
+    </PageLayout>
+  );
 };
 
 export default Index;
