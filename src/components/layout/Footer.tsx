@@ -6,13 +6,13 @@ const Footer = () => (
     <div className="container">
       <div className="flex flex-col gap-6 md:flex-row md:items-start md:justify-between">
         <Link to="/" className="flex flex-col items-center leading-none">
-          <span className="text-lg font-bold text-foreground tracking-tight">&lt;/&gt;</span>
-          <span className="text-sm font-bold text-foreground tracking-wider">MAX.io</span>
+          <span className="text-2xl font-bold text-foreground tracking-tight">&lt;/&gt;</span>
+          <span className="text-base font-bold text-foreground tracking-widest">MAX.io</span>
         </Link>
 
-        <div className="flex flex-wrap gap-x-6 gap-y-2 text-sm text-muted-foreground">
+        <div className="flex flex-wrap gap-x-6 gap-y-2 text-base text-muted-foreground">
           {footer.links.map((l) => (
-            <Link key={l.href} to={l.href} className="hover:text-foreground transition-colors">
+            <Link key={l.href} to={l.href} className="hover:text-foreground transition-colors font-medium">
               {l.label}
             </Link>
           ))}
@@ -23,7 +23,7 @@ const Footer = () => (
           ))}
         </div>
 
-        <div className="text-sm text-muted-foreground text-right">
+        <div className="text-base text-muted-foreground text-right">
           <p>{siteConfig.location}</p>
           <p className="mt-1">{siteConfig.abn}</p>
         </div>
