@@ -6,7 +6,7 @@ import HoverCard from "@/components/animations/HoverCard";
 import SEO from "@/components/SEO";
 import { Button } from "@/components/ui/button";
 import { about, caseStudies, seo } from "@/content/site";
-import { CheckCircle, User, ArrowRight } from "lucide-react";
+import { CheckCircle, User, ArrowRight, Zap, Settings, Target, Brain, Users } from "lucide-react";
 
 const Resources = () => (
   <PageLayout>
@@ -37,47 +37,62 @@ const Resources = () => (
         </Reveal>
       </div>
 
-      {/* Company + Manifesto */}
+      {/* Company */}
       <div className="mt-8 border-t border-border/60 pt-6">
         <Reveal delay={0.1}>
-          <h3 className="text-2xl font-bold mb-3">{about.company.name}</h3>
-          <p className="text-base leading-relaxed text-muted-foreground max-w-3xl">{about.company.description}</p>
+          <h3 className="text-2xl font-bold mb-2">{about.company.name}</h3>
+          <p className="text-lg font-medium text-foreground/90">{about.company.description}</p>
         </Reveal>
         <Reveal delay={0.15}>
-          <div className="mt-6 space-y-4 max-w-3xl">
+          <div className="mt-5 space-y-3 max-w-3xl">
             {about.company.manifesto.map((p, i) => (
               <p key={i} className="text-sm leading-relaxed text-muted-foreground">{p}</p>
             ))}
           </div>
         </Reveal>
 
-        {/* AI use cases */}
+        {/* Pillars */}
         <Reveal delay={0.2}>
-          <div className="mt-8 max-w-3xl">
-            <p className="text-sm font-medium text-foreground mb-3">We use AI agents and automation deliberately:</p>
-            <ul className="space-y-1.5 mb-4">
-              {about.company.aiUseCases.map((uc) => (
-                <li key={uc} className="text-sm text-muted-foreground flex items-center gap-2">
-                  <span className="h-1.5 w-1.5 rounded-full bg-accent shrink-0" />
-                  {uc}
-                </li>
+          <div className="mt-10">
+            <p className="text-sm font-semibold text-foreground uppercase tracking-wider mb-5">What We Do</p>
+            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+              {about.company.pillars.map((pillar) => (
+                <HoverCard key={pillar.title} className="flex flex-col gap-2">
+                  <span className="text-sm font-semibold text-foreground">{pillar.title}</span>
+                  <p className="text-xs leading-relaxed text-muted-foreground">{pillar.desc}</p>
+                </HoverCard>
               ))}
-            </ul>
-            <p className="text-sm font-semibold text-foreground italic">{about.company.aiDisclaimer}</p>
+            </div>
           </div>
         </Reveal>
 
-        {/* What we deliver */}
+        {/* Process */}
         <Reveal delay={0.25}>
           <div className="mt-10">
-            <p className="text-sm font-medium text-foreground mb-4">What we deliver</p>
+            <p className="text-sm font-semibold text-foreground uppercase tracking-wider mb-5">How We Work</p>
+            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+              {about.company.process.map((s) => (
+                <div key={s.step} className="space-y-1.5">
+                  <span className="text-2xl font-bold text-accent">{s.step}</span>
+                  <p className="text-sm font-semibold text-foreground">{s.title}</p>
+                  <p className="text-xs text-muted-foreground leading-relaxed">{s.desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </Reveal>
+
+        {/* Outcomes */}
+        <Reveal delay={0.3}>
+          <div className="mt-10">
+            <p className="text-sm font-semibold text-foreground uppercase tracking-wider mb-4">What This Means For You</p>
             <ul className="grid gap-3 sm:grid-cols-2">
-              {about.company.capabilities.map((c) => (
-                <li key={c.title} className="text-sm flex items-start gap-2.5">
+              {about.company.outcomes.map((o) => (
+                <li key={o.title} className="text-sm flex items-start gap-2.5">
                   <CheckCircle className="h-4 w-4 text-accent shrink-0 mt-0.5" />
                   <div>
-                    <span className="font-medium text-foreground">{c.title}</span>
-                    <p className="text-muted-foreground mt-0.5">{c.desc}</p>
+                    <span className="font-medium text-foreground">{o.title}</span>
+                    <p className="text-muted-foreground mt-0.5">{o.desc}</p>
                   </div>
                 </li>
               ))}
