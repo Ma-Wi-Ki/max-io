@@ -4,6 +4,7 @@ import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { nav } from "@/content/site";
 import { cn } from "@/lib/utils";
+import logo from "@/assets/max-io-logo.jpeg";
 
 const Header = () => {
   const [open, setOpen] = useState(false);
@@ -20,10 +21,10 @@ const Header = () => {
       <div className="container flex h-16 items-center justify-between">
         <Link
           to="/"
-          className="text-lg font-bold tracking-tight text-foreground"
+          className="flex items-center"
           onClick={() => setOpen(false)}
         >
-          MAX{"<>"}IO
+          <img src={logo} alt="MAX.io logo" className="h-10 w-auto" />
         </Link>
 
         {/* Desktop nav */}
