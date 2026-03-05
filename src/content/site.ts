@@ -98,7 +98,7 @@ export const growthTracks = {
     cta: "Discuss Business Growth",
   },
   executive: {
-    label: "Executive Growth",
+    label: "Individual Growth",
     audience: "For founders, executives, and operators.",
     services: [
       { title: "AI Education", desc: "Design practical workflows, tool selection frameworks, and structured prompt systems." },
