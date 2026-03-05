@@ -109,9 +109,8 @@ export const growthTracks = {
       { title: "Time & Energy Architecture", desc: "Design your calendar, routines, and environment for sustained high performance." },
     ],
     focus: [
-      "Better decision-making under pressure",
-      "Improved focus and reduced context switching",
-      "Higher output per hour",
+      "Improved decision-making",
+      "Tech. education",
       "Consistent weekly execution",
     ],
     cta: "Discuss Executive Growth",
