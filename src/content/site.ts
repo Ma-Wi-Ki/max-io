@@ -21,10 +21,10 @@ export const nav = {
 
 export const hero = {
   h1: "Maximum Input.\nMaximum Output.",
-  sub: "Most businesses don't need more advice. They need the right systems, the right strategy, and the right people to execute. MAX.io operates as a growth partner for founders and operators.",
+  sub: "",
   cta1: "Start a Conversation",
   cta2: "Explore Services",
-  trust: "BUILT FOR FOUNDERS, OPERATORS AND HIGH-AGENCY EXECUTIVES.",
+  trust: "BUILT FOR FOUNDERS, OPERATORS AND EXECUTIVES.",
 };
 
 export const about = {
