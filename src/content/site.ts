@@ -113,7 +113,7 @@ export const growthTracks = {
       "Tech. education",
       "Consistent weekly execution",
     ],
-    cta: "Discuss Executive Growth",
+    cta: "Discuss Individual Growth",
   },
 };
 

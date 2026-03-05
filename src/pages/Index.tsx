@@ -45,24 +45,24 @@ const Index = () => (
 
     {/* ── SERVICES PREVIEW ── */}
     <Section className="border-t border-border/60">
-      <div className="grid gap-6 md:grid-cols-2">
+      <div className="grid gap-8 md:grid-cols-2">
         <Reveal delay={0.1}>
           <HoverCard className="h-full flex flex-col">
-            <TrendingUp className="h-6 w-6 text-accent mb-3" />
-            <h3 className="text-xl font-bold mb-1">{growthTracks.business.label}</h3>
-            <p className="text-xs text-muted-foreground mb-4">{growthTracks.business.audience}</p>
-            <ul className="space-y-2 mb-4">
+            <TrendingUp className="h-7 w-7 text-accent mb-4" />
+            <h3 className="text-2xl font-bold mb-2">{growthTracks.business.label}</h3>
+            <p className="text-sm text-muted-foreground mb-5">{growthTracks.business.audience}</p>
+            <ul className="space-y-3 mb-6">
               {growthTracks.business.focus.map((f) => (
-                <li key={f} className="flex items-start gap-2">
-                  <CheckCircle className="h-3.5 w-3.5 text-accent shrink-0 mt-0.5" />
-                  <span className="text-xs text-muted-foreground">{f}</span>
+                <li key={f} className="flex items-start gap-2.5">
+                  <CheckCircle className="h-4 w-4 text-accent shrink-0 mt-0.5" />
+                  <span className="text-sm text-muted-foreground">{f}</span>
                 </li>
               ))}
             </ul>
             <div className="mt-auto">
               <Link to="/services">
-                <Button size="sm" className="sheen-hover silver-gradient text-primary-foreground font-semibold w-full group/btn">
-                  {growthTracks.business.cta} <ArrowRight className="ml-2 h-3.5 w-3.5 transition-transform group-hover/btn:translate-x-1" />
+                <Button className="sheen-hover silver-gradient text-primary-foreground font-semibold w-full group/btn text-sm py-5">
+                  {growthTracks.business.cta} <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover/btn:translate-x-1" />
                 </Button>
               </Link>
             </div>
@@ -71,44 +71,27 @@ const Index = () => (
 
         <Reveal delay={0.2}>
           <HoverCard className="h-full flex flex-col">
-            <Brain className="h-6 w-6 text-accent mb-3" />
-            <h3 className="text-xl font-bold mb-1">{growthTracks.executive.label}</h3>
-            <p className="text-xs text-muted-foreground mb-4">{growthTracks.executive.audience}</p>
-            <ul className="space-y-2 mb-4">
+            <Brain className="h-7 w-7 text-accent mb-4" />
+            <h3 className="text-2xl font-bold mb-2">{growthTracks.executive.label}</h3>
+            <p className="text-sm text-muted-foreground mb-5">{growthTracks.executive.audience}</p>
+            <ul className="space-y-3 mb-6">
               {growthTracks.executive.focus.map((f) => (
-                <li key={f} className="flex items-start gap-2">
-                  <CheckCircle className="h-3.5 w-3.5 text-accent shrink-0 mt-0.5" />
-                  <span className="text-xs text-muted-foreground">{f}</span>
+                <li key={f} className="flex items-start gap-2.5">
+                  <CheckCircle className="h-4 w-4 text-accent shrink-0 mt-0.5" />
+                  <span className="text-sm text-muted-foreground">{f}</span>
                 </li>
               ))}
             </ul>
             <div className="mt-auto">
               <Link to="/services">
-                <Button size="sm" className="sheen-hover silver-gradient text-primary-foreground font-semibold w-full group/btn">
-                  {growthTracks.executive.cta} <ArrowRight className="ml-2 h-3.5 w-3.5 transition-transform group-hover/btn:translate-x-1" />
+                <Button className="sheen-hover silver-gradient text-primary-foreground font-semibold w-full group/btn text-sm py-5">
+                  {growthTracks.executive.cta} <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover/btn:translate-x-1" />
                 </Button>
               </Link>
             </div>
           </HoverCard>
         </Reveal>
       </div>
-    </Section>
-
-    {/* ── BOTTOM CTA ── */}
-    <Section className="border-t border-border/60">
-      <Reveal>
-        <div className="text-center max-w-xl mx-auto">
-          <h2 className="text-2xl font-bold md:text-3xl">Ready to remove the bottlenecks?</h2>
-          <p className="mt-3 text-muted-foreground">
-            A short conversation to understand the business, identify friction, and determine whether MAX.io can help.
-          </p>
-          <Link to="/contact" className="inline-block mt-6">
-            <Button size="lg" className="sheen-hover silver-gradient text-primary-foreground font-semibold text-base px-8 py-6">
-              Book a Screening Call <ArrowRight className="ml-2 h-4 w-4" />
-            </Button>
-          </Link>
-        </div>
-      </Reveal>
     </Section>
   </PageLayout>
 );
