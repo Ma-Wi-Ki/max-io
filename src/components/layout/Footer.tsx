@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { footer, siteConfig } from "@/content/site";
-import logo from "@/assets/max-io-logo.jpeg";
+import logo from "@/assets/max-io-logo.png";
 
 const Footer = () => (
   <footer className="border-t border-border bg-background py-12">

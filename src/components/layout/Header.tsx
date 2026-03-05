@@ -4,7 +4,7 @@ import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { nav } from "@/content/site";
 import { cn } from "@/lib/utils";
-import logo from "@/assets/max-io-logo.jpeg";
+import logo from "@/assets/max-io-logo.png";
 
 const Header = () => {
   const [open, setOpen] = useState(false);
