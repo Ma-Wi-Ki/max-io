@@ -20,11 +20,11 @@ const Header = () => {
       <div className="container flex h-16 items-center justify-between">
         <Link
           to="/"
-          className="flex flex-col items-center leading-none"
+          className="flex flex-col items-center leading-none group"
           onClick={() => setOpen(false)}
         >
-          <span className="text-lg font-bold text-foreground tracking-tight">&lt;/&gt;</span>
-          <span className="text-sm font-bold text-foreground tracking-wider">MAX.io</span>
+          <span className="text-2xl font-bold text-foreground tracking-tight transition-all duration-300 group-hover:silver-text">&lt;/&gt;</span>
+          <span className="text-base font-bold text-foreground tracking-widest">MAX.io</span>
         </Link>
 
         {/* Desktop nav */}
@@ -34,8 +34,10 @@ const Header = () => {
               key={link.href}
               to={link.href}
               className={cn(
-                "rounded-md px-3 py-2 text-sm font-medium transition-colors hover:text-foreground",
-                location.pathname === link.href ? "text-foreground" : "text-muted-foreground"
+                "relative rounded-md px-3 py-2 text-base font-medium transition-colors hover:text-foreground",
+                location.pathname === link.href
+                  ? "text-foreground after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:w-4 after:h-0.5 after:bg-accent after:rounded-full"
+                  : "text-muted-foreground"
               )}
             >
               {link.label}

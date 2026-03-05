@@ -47,7 +47,7 @@ const Ecosystem = () => {
       <Section className="pt-24 md:pt-32">
         <Reveal>
           <h1 className="text-3xl font-bold md:text-4xl">{ecosystem.title}</h1>
-          <p className="mt-3 text-lg text-muted-foreground">{ecosystem.sub}</p>
+          <p className="mt-3 text-lg text-muted-foreground font-medium">{ecosystem.sub}</p>
         </Reveal>
 
         <div className="mt-6 grid gap-6 lg:grid-cols-[1fr_1fr]">
@@ -59,13 +59,13 @@ const Ecosystem = () => {
                   <button
                     key={block.title}
                     onClick={() => setActiveEco(i)}
-                    className={`flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 border ${
+                    className={`flex items-center gap-2 px-4 py-2 rounded-lg text-base font-medium transition-all duration-300 border ${
                       activeEco === i
                         ? "bg-accent/15 border-accent/50 text-accent"
                         : "bg-card border-border/60 text-muted-foreground hover:border-accent/30 hover:text-foreground"
                     }`}
                   >
-                    <Icon className="h-4 w-4" />
+                    <Icon className="h-5 w-5" />
                     {block.title}
                   </button>
                 );
@@ -80,22 +80,22 @@ const Ecosystem = () => {
             >
               <div className="flex items-center justify-between mb-4">
                 <div className="flex items-center gap-3">
-                  {(() => { const Icon = ecosystemIcons[activeEco]; return <Icon className="h-6 w-6 text-accent" />; })()}
-                  <h3 className="text-xl font-semibold">{ecosystem.blocks[activeEco].title}</h3>
+                  {(() => { const Icon = ecosystemIcons[activeEco]; return <Icon className="h-7 w-7 text-accent" />; })()}
+                  <h3 className="text-xl font-bold">{ecosystem.blocks[activeEco].title}</h3>
                 </div>
-                <span className="text-xs font-medium text-accent bg-accent/10 px-3 py-1 rounded-full">
+                <span className="text-sm font-semibold text-accent bg-accent/10 px-3 py-1 rounded-full">
                   {ecosystem.blocks[activeEco].tag}
                 </span>
               </div>
-              <p className="text-sm text-muted-foreground leading-relaxed">{ecosystem.blocks[activeEco].desc}</p>
+              <p className="text-base text-muted-foreground leading-relaxed">{ecosystem.blocks[activeEco].desc}</p>
             </motion.div>
           </Reveal>
 
           <Reveal delay={0.2} direction="right">
             <div className="rounded-xl border border-accent/20 bg-card/50 p-8 flex flex-col justify-center h-full">
               <Mail className="h-8 w-8 text-accent mb-4" />
-              <h3 className="text-xl font-semibold mb-2">Subscribe to the Operator Memo</h3>
-              <p className="text-sm text-muted-foreground mb-6 leading-relaxed">
+              <h3 className="text-xl font-bold mb-2">Subscribe to the Operator Memo</h3>
+              <p className="text-base text-muted-foreground mb-6 leading-relaxed">
                 Weekly systems, decisions, and workflows — straight to your inbox.
               </p>
               <form onSubmit={onSubscribe} className="flex flex-col sm:flex-row gap-3">
@@ -107,7 +107,7 @@ const Ecosystem = () => {
                   required
                   className="flex-1"
                 />
-                <Button type="submit" disabled={subscribing} className="sheen-hover silver-gradient text-primary-foreground font-semibold px-6">
+                <Button type="submit" disabled={subscribing} className="sheen-hover silver-gradient text-primary-foreground font-bold px-6">
                   {subscribing ? <Loader2 className="h-4 w-4 animate-spin" /> : "Subscribe"}
                 </Button>
               </form>
