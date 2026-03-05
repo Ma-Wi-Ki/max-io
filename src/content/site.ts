@@ -38,26 +38,44 @@ export const about = {
   },
   company: {
     name: "MAX.io Group",
-    description: "New-Age Consulting",
+    description: "A growth agency built for founders, operators & executives.",
     manifesto: [
-      "Traditional firms analyse and recommend. We design and deploy. By combining structured strategy with AI-enabled workflows, we build systems that reduce manual load, improve visibility, and increase output.",
+      "Traditional firms analyse and recommend. We design and deploy.",
+      "By combining structured strategy with AI-enabled workflows, we build systems that generate revenue, reduce manual load, improve visibility, & increase output — fast.",
     ],
-    aiUseCases: [
-      "To triage and respond to leads",
-      "To draft and systemise documentation",
-      "To reduce repetitive admin",
-      "To surface data for better decisions",
-      "To support execution without increasing headcount",
+    pillars: [
+      {
+        title: "Growth Systems",
+        desc: "We build the systems that generate revenue — websites, lead capture, CRM, pipelines, & sales automation. Every asset is designed to convert attention into pipeline & pipeline into cash.",
+      },
+      {
+        title: "Business Operations",
+        desc: "We streamline how your business runs — process design, workflow automation, dashboards, & AI-enabled admin. Less friction, more clarity, faster execution across your entire operation.",
+      },
+      {
+        title: "Strategy & Positioning",
+        desc: "We clarify how you compete & win — offer design, market positioning, messaging, & growth planning. Sharp positioning means better leads, higher conversion, & sustainable differentiation.",
+      },
+      {
+        title: "AI Education & Enablement",
+        desc: "We train founders, teams, & individuals to use AI tools effectively — saving time & unlocking new capability. Practical workshops, prompt systems, & tool selection frameworks built for operators.",
+      },
+      {
+        title: "Execution & Delivery",
+        desc: "We coordinate the right people to get it done — operators, agencies, engineers, & specialists on demand. You get results without the overhead of hiring or managing it all yourself.",
+      },
     ],
-    aiDisclaimer: "AI is not the product. Structured systems are.",
-    capabilities: [
-      { title: "Operational systems design & automation", desc: "Clear workflows that remove friction and standardise delivery." },
-      { title: "AI integrations & workflow agents", desc: "Practical automation embedded into day-to-day operations." },
-      { title: "Strategic positioning & offer design", desc: "Define who you serve and how you win." },
-      { title: "CRM, SOPs, dashboards & process builds", desc: "Operational clarity and measurable tracking." },
-      { title: "Digital media & lead infrastructure", desc: "Structured acquisition systems (partner-supported where required)." },
-      { title: "Research & strategic documentation", desc: "Capability statements, grant narratives, and formal advisory outputs." },
-      { title: "Executive coaching & execution cadence", desc: "Disciplined thinking and consistent output." },
+    process: [
+      { step: "01", title: "Screen", desc: "We assess your business, goals, & current challenges to understand where the real opportunities are." },
+      { step: "02", title: "Diagnose", desc: "We map your operations, identify the bottlenecks, & pinpoint what is costing you time, money, or growth." },
+      { step: "03", title: "Strategise", desc: "We design a practical plan — the right systems, the right people, & the right sequence to move fast." },
+      { step: "04", title: "Execute", desc: "We build, implement, & deliver. Decisions get made, systems go live, & results become measurable." },
+    ],
+    outcomes: [
+      { title: "Faster Growth", desc: "Stronger systems & clearer positioning drive revenue & scale." },
+      { title: "Less Manual Work", desc: "Automation & AI reduce the workload draining your team." },
+      { title: "Real Visibility", desc: "Dashboards & structured data give you clarity on what's happening." },
+      { title: "Confident Decisions", desc: "Better intelligence means faster, sharper decisions at every level." },
     ],
   },
   closing: "Small team. Tight scope. Measurable outputs.",
