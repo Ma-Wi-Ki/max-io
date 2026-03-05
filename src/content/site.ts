@@ -91,12 +91,12 @@ export const growthTracks = {
     label: "Business Growth",
     audience: "For trades, service businesses, SMEs, and startups.",
     services: [
-      { title: "Growth Infrastructure", desc: "Lead capture, CRM, pipeline management, and sales automation systems." },
-      { title: "Business Systems", desc: "Process mapping, workflow automation, dashboards, and AI-driven admin." },
+      { title: "Growth Infrastructure", desc: "Lead capture, CRM, pipeline management, & automated systems." },
+      { title: "Business Systems", desc: "Process mapping, workflow automation, dashboards, & AI admin." },
       { title: "Strategic Positioning", desc: "Offer design, market positioning, messaging, and growth strategy." },
-      { title: "Execution Support", desc: "Coordinating operators, agencies, and specialists to deliver results." },
-      { title: "Automation & AI Integration", desc: "Automated lead triage, follow-ups, reporting, and internal operations." },
-      { title: "Research & Documentation", desc: "Capability statements, white papers, and structured advisory outputs." },
+      { title: "Execution Support", desc: "Coordinating operators, agencies, & specialists to deliver results." },
+      { title: "Automation & AI Integration", desc: "Automated lead triage, follow-ups, reporting, & internal operations." },
+      { title: "Research & Documentation", desc: "Capability statements, white papers, & structured advisory outputs." },
     ],
     outcomes: [
       { title: "Faster Growth", desc: "Clear positioning, stronger systems, and improved sales infrastructure." },
