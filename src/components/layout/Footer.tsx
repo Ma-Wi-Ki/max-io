@@ -1,60 +1,37 @@
-import { Link, useNavigate, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { footer, siteConfig } from "@/content/site";
 
-const Footer = () => {
-  const navigate = useNavigate();
-  const location = useLocation();
+const Footer = () => (
+  <footer className="border-t border-border bg-background py-12">
+    <div className="container">
+      <div className="flex flex-col gap-6 md:flex-row md:items-start md:justify-between">
+        <Link to="/" className="text-lg font-bold text-foreground">
+          MAX<span className="text-primary">&lt;&gt;</span>IO
+        </Link>
 
-  const handleNav = (href: string) => {
-    if (href.startsWith("#")) {
-      if (location.pathname !== "/") {
-        navigate("/" + href);
-        return;
-      }
-      const id = href.replace("#", "");
-      const el = document.getElementById(id);
-      if (el) el.scrollIntoView({ behavior: "smooth" });
-    } else {
-      navigate(href);
-    }
-  };
-
-  return (
-    <footer className="border-t border-border bg-background py-12">
-      <div className="container">
-        <div className="flex flex-col gap-6 md:flex-row md:items-start md:justify-between">
-          <p className="text-lg font-bold text-foreground">
-            MAX<span className="text-primary">&lt;&gt;</span>IO
-          </p>
-
-          <div className="flex flex-wrap gap-x-6 gap-y-2 text-sm text-muted-foreground">
-            {footer.links.map((l) => (
-              <button
-                key={l.href}
-                onClick={() => handleNav(l.href)}
-                className="hover:text-foreground transition-colors"
-              >
-                {l.label}
-              </button>
-            ))}
-            {footer.legal.map((l) => (
-              <Link key={l.href} to={l.href} className="hover:text-foreground transition-colors">
-                {l.label}
-              </Link>
-            ))}
-          </div>
-
-          <div className="text-sm text-muted-foreground text-right">
-            <p>{siteConfig.location}</p>
-            <p className="mt-1">{siteConfig.abn}</p>
-          </div>
+        <div className="flex flex-wrap gap-x-6 gap-y-2 text-sm text-muted-foreground">
+          {footer.links.map((l) => (
+            <Link key={l.href} to={l.href} className="hover:text-foreground transition-colors">
+              {l.label}
+            </Link>
+          ))}
+          {footer.legal.map((l) => (
+            <Link key={l.href} to={l.href} className="hover:text-foreground transition-colors">
+              {l.label}
+            </Link>
+          ))}
         </div>
-        <div className="mt-8 pt-4 border-t border-border">
-          <p className="text-xs text-muted-foreground">© 2025 MAX IO Group. All rights reserved.</p>
+
+        <div className="text-sm text-muted-foreground text-right">
+          <p>{siteConfig.location}</p>
+          <p className="mt-1">{siteConfig.abn}</p>
         </div>
       </div>
-    </footer>
-  );
-};
+      <div className="mt-8 pt-4 border-t border-border">
+        <p className="text-xs text-muted-foreground">© 2025 MAX IO Group. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+);
 
 export default Footer;

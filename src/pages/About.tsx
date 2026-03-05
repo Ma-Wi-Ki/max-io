@@ -1,11 +1,13 @@
+import { Link } from "react-router-dom";
 import PageLayout from "@/components/layout/PageLayout";
 import Section from "@/components/layout/Section";
 import Reveal from "@/components/animations/Reveal";
 import Stagger, { StaggerItem } from "@/components/animations/Stagger";
 import HoverCard from "@/components/animations/HoverCard";
 import SEO from "@/components/SEO";
+import { Button } from "@/components/ui/button";
 import { about } from "@/content/site";
-import { CheckCircle, User, Handshake } from "lucide-react";
+import { CheckCircle, User, Handshake, ArrowRight } from "lucide-react";
 
 const About = () => (
   <PageLayout>
@@ -111,6 +113,22 @@ const About = () => (
 
       <Reveal delay={0.3}>
         <p className="mt-6 text-sm text-muted-foreground">{about.closing}</p>
+      </Reveal>
+    </Section>
+
+    <Section className="border-t border-border/60">
+      <Reveal>
+        <div className="text-center max-w-xl mx-auto">
+          <h2 className="text-2xl font-bold md:text-3xl">Let's see if there's a fit.</h2>
+          <p className="mt-3 text-muted-foreground">
+            A short, practical conversation about where you are and where you want to be.
+          </p>
+          <Link to="/contact" className="inline-block mt-6">
+            <Button size="lg" className="sheen-hover silver-gradient text-primary-foreground font-semibold text-base px-8 py-6 group">
+              Book a Screening Call <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+            </Button>
+          </Link>
+        </div>
       </Reveal>
     </Section>
   </PageLayout>
