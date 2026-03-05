@@ -2,16 +2,15 @@ import { Link } from "react-router-dom";
 import PageLayout from "@/components/layout/PageLayout";
 import Section from "@/components/layout/Section";
 import Reveal from "@/components/animations/Reveal";
-import Stagger, { StaggerItem } from "@/components/animations/Stagger";
 import HoverCard from "@/components/animations/HoverCard";
 import SEO from "@/components/SEO";
 import { Button } from "@/components/ui/button";
-import { about } from "@/content/site";
-import { CheckCircle, User, Handshake, ArrowRight } from "lucide-react";
+import { about, caseStudies, seo } from "@/content/site";
+import { CheckCircle, User, ArrowRight } from "lucide-react";
 
-const About = () => (
+const Resources = () => (
   <PageLayout>
-    <SEO title="About — MAX.io Group" description="Meet the founder and learn about MAX.io Group's approach to new-age consulting." />
+    <SEO {...seo.resources} />
 
     <Section className="pt-24 md:pt-32">
       <Reveal>
@@ -87,33 +86,41 @@ const About = () => (
         </Reveal>
       </div>
 
-      {/* Partner Network */}
-      <div className="mt-8 border-t border-border/60 pt-6">
-        <Reveal delay={0.1}>
-          <div className="flex items-center gap-3 mb-3">
-            <Handshake className="h-6 w-6 text-accent" />
-            <h3 className="text-2xl font-bold">{about.partners.title}</h3>
-          </div>
-          <p className="text-sm leading-relaxed text-muted-foreground max-w-3xl">{about.partners.description}</p>
-        </Reveal>
-        <Stagger className="mt-8 grid gap-6 sm:grid-cols-3">
-          {about.partners.agencies.map((partner, i) => (
-            <StaggerItem key={i}>
-              <HoverCard className="h-full text-center">
-                <div className="w-16 h-16 rounded-full bg-muted border border-accent/20 flex items-center justify-center mx-auto mb-4">
-                  <span className="text-lg font-bold text-muted-foreground">{partner.name.charAt(0)}</span>
-                </div>
-                <h4 className="font-semibold text-sm">{partner.name}</h4>
-                <p className="text-xs text-muted-foreground mt-1">{partner.specialty}</p>
-              </HoverCard>
-            </StaggerItem>
-          ))}
-        </Stagger>
-      </div>
-
       <Reveal delay={0.3}>
         <p className="mt-6 text-sm text-muted-foreground">{about.closing}</p>
       </Reveal>
+    </Section>
+
+    {/* Case Studies */}
+    <Section className="border-t border-border/60">
+      <Reveal>
+        <h2 className="text-2xl font-bold md:text-3xl mb-2">Case Studies</h2>
+        <p className="text-muted-foreground mb-8">From trades to tech — structured systems for every stage.</p>
+      </Reveal>
+
+      <div className="grid gap-6 md:grid-cols-3">
+        {caseStudies.map((cs, i) => (
+          <Reveal key={i} delay={0.1 * (i + 1)}>
+            <HoverCard className="h-full flex flex-col">
+              <span className="text-xs font-semibold text-accent uppercase tracking-wider mb-3">{cs.industry}</span>
+              <div className="space-y-3 flex-1">
+                <div>
+                  <p className="text-xs font-semibold text-foreground mb-1">Problem</p>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{cs.problem}</p>
+                </div>
+                <div>
+                  <p className="text-xs font-semibold text-foreground mb-1">Solution</p>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{cs.solution}</p>
+                </div>
+                <div>
+                  <p className="text-xs font-semibold text-foreground mb-1">Result</p>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{cs.result}</p>
+                </div>
+              </div>
+            </HoverCard>
+          </Reveal>
+        ))}
+      </div>
     </Section>
 
     <Section className="border-t border-border/60">
@@ -134,4 +141,4 @@ const About = () => (
   </PageLayout>
 );
 
-export default About;
+export default Resources;
