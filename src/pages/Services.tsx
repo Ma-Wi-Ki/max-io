@@ -6,7 +6,7 @@ import HoverCard from "@/components/animations/HoverCard";
 import SEO from "@/components/SEO";
 import { Button } from "@/components/ui/button";
 import { growthTracks, seo } from "@/content/site";
-import { ArrowRight, CheckCircle, TrendingUp, Brain } from "lucide-react";
+import { ArrowRight, CheckCircle, TrendingUp, Brain, Zap } from "lucide-react";
 
 const ServiceTrack = ({
   icon: Icon,
@@ -36,6 +36,24 @@ const ServiceTrack = ({
         </Reveal>
       ))}
     </div>
+
+    {/* Outcomes */}
+    <Reveal delay={delay + 0.25}>
+      <div className="rounded-xl border border-border/60 bg-card/50 p-6 mb-6">
+        <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-3">What This Means For You</p>
+        <div className="grid gap-4 sm:grid-cols-2">
+          {track.outcomes.map((o) => (
+            <div key={o.title} className="flex items-start gap-2.5">
+              <Zap className="h-4 w-4 text-accent shrink-0 mt-0.5" />
+              <div>
+                <span className="text-sm font-medium text-foreground">{o.title}</span>
+                <p className="text-xs text-muted-foreground mt-0.5">{o.desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </Reveal>
 
     <Reveal delay={delay + 0.3}>
       <div className="rounded-xl border border-border/60 bg-card/50 p-6 mb-6">

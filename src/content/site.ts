@@ -12,9 +12,7 @@ export const nav = {
   links: [
     { label: "Home", href: "/" },
     { label: "Services", href: "/services" },
-    { label: "Outcomes", href: "/outcomes" },
-    { label: "Past Clients", href: "/past-clients" },
-    { label: "About", href: "/about" },
+    { label: "Resources", href: "/resources" },
   ],
   cta: { label: "Book a Screening Call", href: "/contact" },
 };
@@ -62,18 +60,29 @@ export const about = {
       { title: "Executive coaching & execution cadence", desc: "Disciplined thinking and consistent output." },
     ],
   },
-  partners: {
-    title: "Partner Network",
-    description:
-      "We work alongside a curated network of specialist agencies and operators to deliver end-to-end solutions. Where our scope ends, our partners begin — ensuring you get expert execution across every domain.",
-    agencies: [
-      { name: "Partner Agency", specialty: "Web Development & Design" },
-      { name: "Partner Agency", specialty: "Paid Media & Performance Marketing" },
-      { name: "Partner Agency", specialty: "Brand Strategy & Creative" },
-    ],
-  },
   closing: "Small team. Tight scope. Measurable outputs.",
 };
+
+export const caseStudies = [
+  {
+    industry: "Trade Services",
+    problem: "Leads were falling through the cracks. No CRM, no follow-up system, and a 3-day average response time.",
+    solution: "Deployed a CRM with automated lead triage, follow-up sequences, and a weekly pipeline review cadence.",
+    result: "Lead response time dropped to under 2 hours. Pipeline visibility increased across the entire team.",
+  },
+  {
+    industry: "Professional Services",
+    problem: "The founder was buried in admin — manual quoting, scattered communication, and no operational dashboards.",
+    solution: "Built automated quoting workflows, centralised communication, and installed KPI dashboards for weekly reviews.",
+    result: "Admin reduced by 60%. The founder reclaimed 12+ hours per week for client-facing work.",
+  },
+  {
+    industry: "Retail Business",
+    problem: "Inconsistent brand positioning, no structured acquisition system, and manual inventory tracking.",
+    solution: "Refined positioning and offer design, built a structured digital acquisition funnel, and automated inventory alerts.",
+    result: "Conversion rate improved. Inventory issues reduced significantly within the first month.",
+  },
+];
 
 export const growthTracks = {
   title: "What We Do",
@@ -88,6 +97,12 @@ export const growthTracks = {
       { title: "Execution Support", desc: "We coordinate operators, agencies, and specialists to deliver." },
       { title: "Automation & AI Integration", desc: "Automate lead triage, follow-ups, reporting, and internal operations with practical AI." },
       { title: "Research & Documentation", desc: "Develop capability statements, white papers, and structured advisory outputs." },
+    ],
+    outcomes: [
+      { title: "Faster Growth", desc: "Clear positioning, stronger systems, and improved sales infrastructure." },
+      { title: "Less Friction", desc: "Automation and better workflows reduce the manual load on your team." },
+      { title: "Greater Visibility", desc: "Dashboards and structured systems give you real clarity on performance." },
+      { title: "Faster Sales Response", desc: "Leads are triaged, routed, and followed up within hours — not days." },
     ],
     focus: [
       "Faster lead-to-cash cycles",
@@ -110,6 +125,12 @@ export const growthTracks = {
       { title: "Communication & Positioning", desc: "Refine how you present ideas, pitch initiatives, and lead conversations." },
       { title: "Time & Energy Architecture", desc: "Design your calendar, routines, and environment for sustained high performance." },
     ],
+    outcomes: [
+      { title: "Smarter Decisions", desc: "Better information leads to faster, more confident decision making." },
+      { title: "Improved Execution Cadence", desc: "Weekly operating rhythms with clear KPIs, reviews, and accountability." },
+      { title: "Reduced Cognitive Load", desc: "Automation handles the repetitive so you can focus on what matters." },
+      { title: "Higher Output Per Hour", desc: "Structured systems and routines that compound your effectiveness." },
+    ],
     focus: [
       "Improved decision-making",
       "Tech. education and AI literacy",
@@ -120,55 +141,6 @@ export const growthTracks = {
     ],
     cta: "More Details",
   },
-};
-
-export const outcomesData = {
-  title: "What This Means for Your Business",
-  sub: "What changes when systems replace chaos.",
-  items: [
-    { title: "Faster Growth", desc: "Clear positioning, stronger systems, and improved sales infrastructure.", icon: "trending" },
-    { title: "Less Friction", desc: "Automation and better workflows reduce the manual load on your team.", icon: "zap" },
-    { title: "Greater Visibility", desc: "Dashboards and structured systems give you real clarity on performance.", icon: "eye" },
-    { title: "Smarter Decisions", desc: "Better information leads to faster, more confident decision making.", icon: "brain" },
-    { title: "Faster Sales Response", desc: "Leads are triaged, routed, and followed up within hours — not days.", icon: "clock" },
-    { title: "Improved Execution Cadence", desc: "Weekly operating rhythms with clear KPIs, reviews, and accountability structures.", icon: "target" },
-  ],
-  note: "Outcomes are defined in week one and reviewed weekly.",
-  cta: "Identify Your Bottlenecks — Book a Screening Call",
-};
-
-export const pastClientsData = {
-  title: "Past Clients",
-  sub: "From trades to tech — structured systems for every stage.",
-  industries: [
-    "Trades & Construction",
-    "Retail & E-commerce",
-    "Professional Services",
-    "Technology & SaaS",
-    "Hospitality",
-    "Social Enterprise",
-  ],
-  caseStudies: [
-    {
-      industry: "Trade Services",
-      problem: "Leads were falling through the cracks. No CRM, no follow-up system, and a 3-day average response time.",
-      solution: "Deployed a CRM with automated lead triage, follow-up sequences, and a weekly pipeline review cadence.",
-      result: "Lead response time dropped to under 2 hours. Pipeline visibility increased across the entire team.",
-    },
-    {
-      industry: "Professional Services",
-      problem: "The founder was buried in admin — manual quoting, scattered communication, and no operational dashboards.",
-      solution: "Built automated quoting workflows, centralised communication, and installed KPI dashboards for weekly reviews.",
-      result: "Admin reduced by 60%. The founder reclaimed 12+ hours per week for client-facing work.",
-    },
-    {
-      industry: "Retail Business",
-      problem: "Inconsistent brand positioning, no structured acquisition system, and manual inventory tracking.",
-      solution: "Refined positioning and offer design, built a structured digital acquisition funnel, and automated inventory alerts.",
-      result: "Conversion rate improved. Inventory issues reduced significantly within the first month.",
-    },
-  ],
-  cta: "Start Your Engagement",
 };
 
 export const ecosystem = {
@@ -269,9 +241,7 @@ If you have questions about these Terms, please contact us at ${siteConfig.email
 export const footer = {
   links: [
     { label: "Services", href: "/services" },
-    { label: "Outcomes", href: "/outcomes" },
-    { label: "Past Clients", href: "/past-clients" },
-    { label: "About", href: "/about" },
+    { label: "Resources", href: "/resources" },
     { label: "Contact", href: "/contact" },
   ],
   legal: [
@@ -289,13 +259,9 @@ export const seo = {
     title: "Services — MAX.io Group",
     description: "Business Growth and Executive Growth services. Operational systems, automation, strategy, and execution for operators.",
   },
-  outcomes: {
-    title: "Outcomes — MAX.io Group",
-    description: "Measurable improvements in visibility, efficiency, and execution. See what changes when systems replace chaos.",
-  },
-  pastClients: {
-    title: "Past Clients — MAX.io Group",
-    description: "Industries served and case studies from MAX.io Group engagements.",
+  resources: {
+    title: "Resources — MAX.io Group",
+    description: "Meet the founder, learn about MAX.io Group's approach, and explore case studies from real engagements.",
   },
   contact: {
     title: "Contact — MAX.io Group",
