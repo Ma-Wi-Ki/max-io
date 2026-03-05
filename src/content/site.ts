@@ -1,7 +1,7 @@
 export const siteConfig = {
   name: "MAX<>IO Group",
   tagline: "Turn operational chaos into measurable progress.",
-  description: "Business and Executive growth through \nautomated systems, education, and execution.",
+  description: "Business and Executive growth through automated systems, education, and execution.",
   abn: "ABN 22 426 251 651",
   email: "max@max-io.co",
   phone: "+61 435 132 222",
@@ -10,19 +10,21 @@ export const siteConfig = {
 
 export const nav = {
   links: [
+    { label: "Home", href: "/" },
+    { label: "Services", href: "/services" },
+    { label: "Outcomes", href: "/outcomes" },
+    { label: "Past Clients", href: "/past-clients" },
     { label: "About", href: "/about" },
-    { label: "Services", href: "#services" },
-    { label: "Ecosystem", href: "/ecosystem" },
   ],
-  cta: { label: "Book a Screening Call", href: "#contact" },
+  cta: { label: "Book a Screening Call", href: "/contact" },
 };
 
 export const hero = {
-  h1: "Max. Input\nMax. Output",
-  sub: "Business and executive growth through \nautomated systems, strategy, and execution.",
+  h1: "Maximum input.\nMaximum output.",
+  sub: "MAX<>IO helps businesses identify bottlenecks, design solutions, and implement the systems that remove them.",
   cta1: "Book a Screening Call",
-  cta2: "Our Services",
-  trust: "BUILT FOR FOUNDER, OPERATORS AND HIGH-AGENCY EXECUTIVES.",
+  cta2: "Explore Services",
+  trust: "BUILT FOR FOUNDERS, OPERATORS AND HIGH-AGENCY EXECUTIVES.",
 };
 
 export const about = {
@@ -38,11 +40,9 @@ export const about = {
   },
   company: {
     name: "MAX<>IO Group",
-    description:
-      "New-Age Consulting",
+    description: "New-Age Consulting",
     manifesto: [
       "Traditional firms analyse and recommend. We design and deploy. By combining structured strategy with AI-enabled workflows, we build systems that reduce manual load, improve visibility, and increase output.",
-      "\n",
     ],
     aiUseCases: [
       "To triage and respond to leads",
@@ -80,106 +80,91 @@ export const growthTracks = {
   sub: "Choose Business Growth or Executive Growth.",
   business: {
     label: "Business Growth",
-    audience: "For trades, storefronts, SMEs, and startups ready to increase output without increasing chaos.",
+    audience: "For trades, service businesses, SMEs, and startups.",
     services: [
-      { title: "Website revamp", desc: "Rebuild your digital presence for clarity, positioning, and lead capture that converts consistently." },
-      { title: "Strategic positioning & offer design", desc: "Define who you serve, what you sell, and how you compete with precision." },
-      { title: "AI integrations & workflow agents", desc: "Automate lead triage, drafting, follow-ups, reporting, and internal operations." },
-      { title: "Digital media & marketing systems", desc: "Build structured acquisition infrastructure and repeatable campaign systems (partner-supported where required)." },
-      { title: "Business digitalisation", desc: "Implement CRM, SOPs, dashboards, and workflow automation that standardise delivery." },
-      { title: "Research & strategic documentation", desc: "Develop capability statements, white papers, grant narratives, and structured advisory outputs." },
-      { title: "Process mapping & workflow design", desc: "Document and streamline operations across teams to remove friction and improve coordination." },
+      { title: "Operational Systems", desc: "Design and deploy workflows that standardise delivery and remove friction across teams." },
+      { title: "Automation & AI Integration", desc: "Automate lead triage, follow-ups, reporting, and internal operations with practical AI." },
+      { title: "CRM & Workflow Builds", desc: "Implement CRM, SOPs, dashboards, and process automation for operational clarity." },
+      { title: "Strategic Positioning", desc: "Define who you serve, what you sell, and how you compete with precision." },
+      { title: "Digital Infrastructure", desc: "Build structured acquisition systems and repeatable campaign frameworks." },
+      { title: "Research & Documentation", desc: "Develop capability statements, white papers, and structured advisory outputs." },
     ],
     focus: [
       "Faster lead-to-cash cycles",
-      "Clear operational visibility",
-      "Reduced manual workload",
-      "Structured, measurable execution",
+      "Reduced admin and manual workload",
+      "Operational visibility across the business",
+      "Scalable, repeatable systems",
     ],
-    targets: [],
     cta: "Discuss Business Growth",
   },
   executive: {
     label: "Executive Growth",
-    audience: "For founders, executives, and operators who want stronger execution and clearer decision-making.",
+    audience: "For founders, executives, and operators.",
     services: [
-      { title: "AI education", desc: "Design practical workflows, tool selection frameworks, and structured prompt systems." },
-      { title: "Personal automation systems", desc: "Reduce cognitive load by automating recurring tasks across communication, scheduling, and reporting." },
-      { title: "Mentality & mindset discipline", desc: "Strengthen structured thinking, performance consistency, and resilience under pressure." },
-      { title: "Execution cadence design", desc: "Install weekly operating systems with defined KPIs and review mechanisms." },
-      { title: "Strategic decision frameworks", desc: "Apply structured models for prioritisation, delegation, and resource allocation." },
-      { title: "Communication & positioning", desc: "Refine how you present ideas, pitch initiatives, and lead internal and external conversations." },
-      { title: "Time & energy architecture", desc: "Design your calendar, routines, and environment for sustained high performance." },
+      { title: "AI Education", desc: "Design practical workflows, tool selection frameworks, and structured prompt systems." },
+      { title: "Personal Automation", desc: "Reduce cognitive load by automating recurring tasks across communication and scheduling." },
+      { title: "Execution Cadence", desc: "Install weekly operating systems with defined KPIs and review mechanisms." },
+      { title: "Decision Frameworks", desc: "Apply structured models for prioritisation, delegation, and resource allocation." },
+      { title: "Communication & Positioning", desc: "Refine how you present ideas, pitch initiatives, and lead conversations." },
+      { title: "Time & Energy Architecture", desc: "Design your calendar, routines, and environment for sustained high performance." },
     ],
     focus: [
-      "Higher decision quality",
+      "Better decision-making under pressure",
+      "Improved focus and reduced context switching",
+      "Higher output per hour",
       "Consistent weekly execution",
-      "Reduced context switching",
-      "Increased output per hour",
     ],
-    targets: [],
     cta: "Discuss Executive Growth",
   },
 };
 
-export const outcomes = {
-  title: "What changes.",
-  before: ["Leads missed", "Admin overload", "No weekly clarity", "Tool sprawl", "Decision fatigue"],
-  after: [
-    "Leads tracked and automated",
-    "Admin reduced",
-    "Clear KPIs",
-    "Consolidated systems",
-    "Structured decision rules",
+export const outcomesData = {
+  title: "Measurable Outcomes",
+  sub: "What changes when systems replace chaos.",
+  items: [
+    { title: "Operational Visibility", desc: "Full clarity on team activity, pipeline status, and project progress — no more guesswork.", icon: "eye" },
+    { title: "Reduced Manual Workload", desc: "Automations handle repetitive tasks so your team focuses on what moves the needle.", icon: "zap" },
+    { title: "Faster Sales Response", desc: "Leads are triaged, routed, and followed up within hours — not days.", icon: "clock" },
+    { title: "Improved Execution Cadence", desc: "Weekly operating rhythms with clear KPIs, reviews, and accountability structures.", icon: "target" },
+    { title: "Stronger Positioning", desc: "Clear messaging, defined offers, and structured acquisition systems that convert.", icon: "trending" },
+    { title: "Decision Clarity", desc: "Structured frameworks replace gut-feel — better decisions, faster action.", icon: "brain" },
   ],
   note: "Outcomes are defined in week one and reviewed weekly.",
+  cta: "Identify Your Bottlenecks — Book a Screening Call",
 };
 
-export const clients = {
-  title: "Who we work with.",
-  sub: "From trades to tech — we help operators at every stage.",
-  examples: [
-    { name: "Trade Services Co.", industry: "Trades & Construction", size: "10–25 staff" },
-    { name: "Urban Retail Group", industry: "Retail & E-commerce", size: "5–15 staff" },
-    { name: "Apex Professional Services", industry: "Professional Services", size: "15–50 staff" },
-    { name: "GreenTech Solutions", industry: "Technology & SaaS", size: "3–10 staff" },
+export const pastClientsData = {
+  title: "Past Clients",
+  sub: "From trades to tech — structured systems for every stage.",
+  industries: [
+    "Trades & Construction",
+    "Retail & E-commerce",
+    "Professional Services",
+    "Technology & SaaS",
+    "Hospitality",
+    "Social Enterprise",
   ],
-};
-
-export const companies = {
-  title: "Previously worked with.",
-  logos: [
-    { name: "Company One" },
-    { name: "Company Two" },
-    { name: "Company Three" },
-    { name: "Company Four" },
-    { name: "Company Five" },
-    { name: "Company Six" },
-  ],
-};
-
-export const testimonials = {
-  title: "What clients say.",
-  items: [
+  caseStudies: [
     {
-      quote:
-        "MAX<>IO transformed how we operate. We went from drowning in admin to having full visibility across the business in under 6 weeks.",
-      name: "Client Name",
-      role: "Director, Trade Services",
+      industry: "Trade Services",
+      problem: "Leads were falling through the cracks. No CRM, no follow-up system, and a 3-day average response time.",
+      solution: "Deployed a CRM with automated lead triage, follow-up sequences, and a weekly pipeline review cadence.",
+      result: "Lead response time dropped to under 2 hours. Pipeline visibility increased across the entire team.",
     },
     {
-      quote:
-        "The systems Max built paid for themselves in month one. Our lead response time dropped from 3 days to under 2 hours.",
-      name: "Client Name",
-      role: "Founder, Retail Business",
+      industry: "Professional Services",
+      problem: "The founder was buried in admin — manual quoting, scattered communication, and no operational dashboards.",
+      solution: "Built automated quoting workflows, centralised communication, and installed KPI dashboards for weekly reviews.",
+      result: "Admin reduced by 60%. The founder reclaimed 12+ hours per week for client-facing work.",
     },
     {
-      quote:
-        "Working with MAX<>IO gave me the clarity and structure I'd been missing for years. It's not just consulting — it's execution.",
-      name: "Client Name",
-      role: "CEO, Professional Services",
+      industry: "Retail Business",
+      problem: "Inconsistent brand positioning, no structured acquisition system, and manual inventory tracking.",
+      solution: "Refined positioning and offer design, built a structured digital acquisition funnel, and automated inventory alerts.",
+      result: "Conversion rate improved. Inventory issues reduced significantly within the first month.",
     },
   ],
+  cta: "Start Your Engagement",
 };
 
 export const ecosystem = {
@@ -211,15 +196,8 @@ export const ecosystem = {
 
 export const contact = {
   title: "Start with a screening call.",
-  sub: "Answer five questions. We confirm fit. We propose a scope.",
-  questions: [
-    "Top 5 bottlenecks?",
-    "Current systems and what's breaking?",
-    "AI/digital experience level?",
-    "Needs vs wants?",
-    "90-day success?",
-  ],
-  budgetRanges: ["Under $5k/month", "$5k–$10k/month", "$10k–$15k/month", "$15k+/month", "Not sure yet"],
+  sub: "A short conversation to understand the business, identify bottlenecks, and determine whether MAX<>IO can help.",
+  description: "No pitch. No pressure. Just a practical conversation about where you are and where you want to be.",
 };
 
 export const thankYou = {
@@ -286,10 +264,11 @@ If you have questions about these Terms, please contact us at ${siteConfig.email
 
 export const footer = {
   links: [
+    { label: "Services", href: "/services" },
+    { label: "Outcomes", href: "/outcomes" },
+    { label: "Past Clients", href: "/past-clients" },
     { label: "About", href: "/about" },
-    { label: "Services", href: "#services" },
-    { label: "Ecosystem", href: "/ecosystem" },
-    { label: "Contact", href: "#contact" },
+    { label: "Contact", href: "/contact" },
   ],
   legal: [
     { label: "Privacy", href: "/privacy" },
@@ -300,8 +279,23 @@ export const footer = {
 export const seo = {
   home: {
     title: "MAX<>IO Group — Business & Executive Growth",
-    description:
-      "Turn operational chaos into measurable progress. Business Growth and Executive Growth for operators who value leverage over noise.",
+    description: "Identify bottlenecks, design solutions, and implement systems that remove them. Business and Executive Growth for operators who value leverage over noise.",
+  },
+  services: {
+    title: "Services — MAX<>IO Group",
+    description: "Business Growth and Executive Growth services. Operational systems, automation, strategy, and execution for operators.",
+  },
+  outcomes: {
+    title: "Outcomes — MAX<>IO Group",
+    description: "Measurable improvements in visibility, efficiency, and execution. See what changes when systems replace chaos.",
+  },
+  pastClients: {
+    title: "Past Clients — MAX<>IO Group",
+    description: "Industries served and case studies from MAX<>IO Group engagements.",
+  },
+  contact: {
+    title: "Contact — MAX<>IO Group",
+    description: "Book a screening call with MAX<>IO Group. Practical, low-pressure, valuable.",
   },
   thankYou: {
     title: "Thank You — MAX<>IO Group",
