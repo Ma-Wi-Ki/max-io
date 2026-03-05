@@ -1,13 +1,12 @@
 import { Link } from "react-router-dom";
 import { footer, siteConfig } from "@/content/site";
-import logo from "@/assets/max-io-logo.png";
 
 const Footer = () => (
   <footer className="border-t border-border bg-background py-12">
     <div className="container">
       <div className="flex flex-col gap-6 md:flex-row md:items-start md:justify-between">
-        <Link to="/" className="flex items-center">
-          <img src={logo} alt="MAX.io logo" className="h-14 w-auto" />
+        <Link to="/" className="flex items-center text-xl font-bold tracking-tight text-foreground">
+          <span className="opacity-60 mr-1">&lt;</span> MAX.io <span className="opacity-60 ml-1">&gt;</span>
         </Link>
 
         <div className="flex flex-wrap gap-x-6 gap-y-2 text-sm text-muted-foreground">
