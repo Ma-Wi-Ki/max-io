@@ -24,7 +24,7 @@ export const hero = {
   sub: "",
   cta1: "Start a Conversation",
   cta2: "Explore Services",
-  trust: "BUILT FOR FOUNDERS, OPERATORS AND EXECUTIVES.",
+  trust: "A GROWTH AGENCY BUILT FOR FOUNDERS, OPERATORS AND EXECUTIVES.",
 };
 
 export const about = {
