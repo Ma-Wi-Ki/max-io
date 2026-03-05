@@ -23,7 +23,7 @@ const HoverCard = ({ children, className, glowColor }: HoverCardProps) => {
               y: -6,
               boxShadow: glowColor
                 ? `0 12px 40px -12px ${glowColor}`
-                : "0 12px 40px -12px hsl(210 40% 58% / 0.15)",
+                : "0 12px 40px -12px hsl(220 15% 30% / 0.12)",
             }
       }
       transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
