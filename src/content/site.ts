@@ -102,7 +102,7 @@ export const growthTracks = {
       { title: "Faster Growth", desc: "Clear positioning, stronger systems, & improved sales infrastructure." },
       { title: "Less Friction", desc: "Automation & better workflows reduce the manual load on your team." },
       { title: "Greater Visibility", desc: "Dashboards & structured systems give you real clarity on performance." },
-      { title: "Faster Sales Response", desc: "Leads are triaged, routed, and followed up within hours — not days." },
+      { title: "Faster Sales Response", desc: "Leads are triaged, routed, & followed up within hours — not days." },
     ],
     focus: [
       "Faster lead-to-cash cycles",
