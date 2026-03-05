@@ -7,7 +7,7 @@ const Footer = () => (
     <div className="container">
       <div className="flex flex-col gap-6 md:flex-row md:items-start md:justify-between">
         <Link to="/" className="flex items-center">
-          <img src={logo} alt="MAX.io logo" className="h-10 w-auto" />
+          <img src={logo} alt="MAX.io logo" className="h-14 w-auto" />
         </Link>
 
         <div className="flex flex-wrap gap-x-6 gap-y-2 text-sm text-muted-foreground">
