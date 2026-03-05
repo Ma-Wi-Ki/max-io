@@ -196,7 +196,7 @@ export const ecosystem = {
 
 export const contact = {
   title: "Start with a conversation.",
-  sub: "20 minutes. We'll identify where your business is losing time, money, or momentum.",
+  sub: "15 minutes. We'll identify where your business is losing time, money, or momentum.",
   description: "No pitch. No pressure. Just a practical conversation about where you are and where you want to be.",
 };
 
@@ -295,7 +295,7 @@ export const seo = {
   },
   contact: {
     title: "Contact — MAX.io Group",
-    description: "Start with a conversation. 20 minutes to identify where your business is losing time, money, or momentum.",
+    description: "Start with a conversation. 15 minutes to identify where your business is losing time, money, or momentum.",
   },
   thankYou: {
     title: "Thank You — MAX.io Group",
