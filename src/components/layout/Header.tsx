@@ -24,7 +24,7 @@ const Header = () => {
           className="flex items-center"
           onClick={() => setOpen(false)}
         >
-          <img src={logo} alt="MAX.io logo" className="h-10 w-auto" />
+          <img src={logo} alt="MAX.io logo" className="h-14 w-auto" />
         </Link>
 
         {/* Desktop nav */}
