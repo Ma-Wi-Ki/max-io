@@ -1,7 +1,7 @@
 export const siteConfig = {
-  name: "MAX<>IO Group",
-  tagline: "Turn operational chaos into measurable progress.",
-  description: "Business and Executive growth through automated systems, education, and execution.",
+  name: "MAX.io Group",
+  tagline: "Maximum Input. Maximum Output.",
+  description: "A growth agency for businesses that want to move faster.",
   abn: "ABN 22 426 251 651",
   email: "max@max-io.co",
   phone: "+61 435 132 222",
@@ -20,26 +20,26 @@ export const nav = {
 };
 
 export const hero = {
-  h1: "Maximum input.\nMaximum output.",
-  sub: "MAX<>IO helps businesses identify bottlenecks, design solutions, and implement the systems that remove them.",
-  cta1: "Book a Screening Call",
+  h1: "Maximum Input.\nMaximum Output.",
+  sub: "Most businesses don't need more advice. They need the right systems, the right strategy, and the right people to execute. MAX.io operates as a growth partner for founders and operators.",
+  cta1: "Start a Conversation",
   cta2: "Explore Services",
   trust: "BUILT FOR FOUNDERS, OPERATORS AND HIGH-AGENCY EXECUTIVES.",
 };
 
 export const about = {
-  title: "About MAX<>IO",
+  title: "About MAX.io",
   founder: {
     name: "Max King",
     bio: [
       "Max works with businesses and operators to improve systems, strategy, and execution. His background includes founding and running ventures across esports, commercial cleaning, digital projects, and social enterprise initiatives. Through those experiences, he has worked directly inside both operational service businesses and technology-driven environments.",
       "He focuses on identifying friction—unclear positioning, manual processes, scattered tools, inconsistent workflows—and replacing it with structured, practical and measurable processes.",
-      "Currently studying IT & Law, Max brings a structured, systems-oriented approach to business growth and decision-making. Through MAX<>IO, he helps businesses and individuals improve how they operate, automate, and build a consistent execution cadence.",
+      "Currently studying IT & Law, Max brings a structured, systems-oriented approach to business growth and decision-making. Through MAX.io, he helps businesses and individuals improve how they operate, automate, and build a consistent execution cadence.",
       "Main objective: Maximum input. Maximum output.",
     ],
   },
   company: {
-    name: "MAX<>IO Group",
+    name: "MAX.io Group",
     description: "New-Age Consulting",
     manifesto: [
       "Traditional firms analyse and recommend. We design and deploy. By combining structured strategy with AI-enabled workflows, we build systems that reduce manual load, improve visibility, and increase output.",
@@ -76,17 +76,17 @@ export const about = {
 };
 
 export const growthTracks = {
-  title: "Services",
-  sub: "Choose Business Growth or Executive Growth.",
+  title: "What We Do",
+  sub: "Growth Infrastructure. Business Systems. Strategic Positioning. Execution Support.",
   business: {
     label: "Business Growth",
     audience: "For trades, service businesses, SMEs, and startups.",
     services: [
-      { title: "Operational Systems", desc: "Design and deploy workflows that standardise delivery and remove friction across teams." },
+      { title: "Growth Infrastructure", desc: "Website optimisation, lead capture, CRM, pipeline, sales automation." },
+      { title: "Business Systems", desc: "Process mapping, workflow automation, dashboards, reporting, AI admin." },
+      { title: "Strategic Positioning", desc: "Offer design, market positioning, messaging, growth strategy." },
+      { title: "Execution Support", desc: "We coordinate operators, agencies, and specialists to deliver." },
       { title: "Automation & AI Integration", desc: "Automate lead triage, follow-ups, reporting, and internal operations with practical AI." },
-      { title: "CRM & Workflow Builds", desc: "Implement CRM, SOPs, dashboards, and process automation for operational clarity." },
-      { title: "Strategic Positioning", desc: "Define who you serve, what you sell, and how you compete with precision." },
-      { title: "Digital Infrastructure", desc: "Build structured acquisition systems and repeatable campaign frameworks." },
       { title: "Research & Documentation", desc: "Develop capability statements, white papers, and structured advisory outputs." },
     ],
     focus: [
@@ -119,15 +119,15 @@ export const growthTracks = {
 };
 
 export const outcomesData = {
-  title: "Measurable Outcomes",
+  title: "What This Means for Your Business",
   sub: "What changes when systems replace chaos.",
   items: [
-    { title: "Operational Visibility", desc: "Full clarity on team activity, pipeline status, and project progress — no more guesswork.", icon: "eye" },
-    { title: "Reduced Manual Workload", desc: "Automations handle repetitive tasks so your team focuses on what moves the needle.", icon: "zap" },
+    { title: "Faster Growth", desc: "Clear positioning, stronger systems, and improved sales infrastructure.", icon: "trending" },
+    { title: "Less Friction", desc: "Automation and better workflows reduce the manual load on your team.", icon: "zap" },
+    { title: "Greater Visibility", desc: "Dashboards and structured systems give you real clarity on performance.", icon: "eye" },
+    { title: "Smarter Decisions", desc: "Better information leads to faster, more confident decision making.", icon: "brain" },
     { title: "Faster Sales Response", desc: "Leads are triaged, routed, and followed up within hours — not days.", icon: "clock" },
     { title: "Improved Execution Cadence", desc: "Weekly operating rhythms with clear KPIs, reviews, and accountability structures.", icon: "target" },
-    { title: "Stronger Positioning", desc: "Clear messaging, defined offers, and structured acquisition systems that convert.", icon: "trending" },
-    { title: "Decision Clarity", desc: "Structured frameworks replace gut-feel — better decisions, faster action.", icon: "brain" },
   ],
   note: "Outcomes are defined in week one and reviewed weekly.",
   cta: "Identify Your Bottlenecks — Book a Screening Call",
@@ -168,7 +168,7 @@ export const pastClientsData = {
 };
 
 export const ecosystem = {
-  title: "The MAX<>IO Ecosystem.",
+  title: "The MAX.io Ecosystem.",
   sub: "We publish, document, and build publicly.",
   blocks: [
     {
@@ -195,8 +195,8 @@ export const ecosystem = {
 };
 
 export const contact = {
-  title: "Start with a screening call.",
-  sub: "A short conversation to understand the business, identify bottlenecks, and determine whether MAX<>IO can help.",
+  title: "Start with a conversation.",
+  sub: "20 minutes. We'll identify where your business is losing time, money, or momentum.",
   description: "No pitch. No pressure. Just a practical conversation about where you are and where you want to be.",
 };
 
@@ -214,7 +214,7 @@ export const thankYou = {
 export const privacy = {
   title: "Privacy Policy",
   lastUpdated: "February 2026",
-  content: `MAX<>IO Group ("we", "our", "us") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website.
+  content: `MAX.io Group ("we", "our", "us") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website.
 
 **Information We Collect**
 We may collect personal information that you voluntarily provide when you fill out our contact form, including your name, email address, phone number, business name, and other details you choose to share.
@@ -238,19 +238,19 @@ If you have questions about this Privacy Policy, please contact us at ${siteConf
 export const terms = {
   title: "Terms of Service",
   lastUpdated: "February 2026",
-  content: `These Terms of Service ("Terms") govern your use of the MAX<>IO Group website and services.
+  content: `These Terms of Service ("Terms") govern your use of the MAX.io Group website and services.
 
 **Acceptance of Terms**
 By accessing or using our website, you agree to be bound by these Terms. If you do not agree, please do not use our website.
 
 **Services**
-MAX<>IO Group provides operational advisory, digital automation, cyber security analysis, research and writing, and strategy coaching services. All engagements are subject to a separate service agreement.
+MAX.io Group provides operational advisory, digital automation, cyber security analysis, research and writing, and strategy coaching services. All engagements are subject to a separate service agreement.
 
 **Intellectual Property**
-All content on this website, including text, graphics, logos, and software, is the property of MAX<>IO Group and is protected by Australian and international copyright laws.
+All content on this website, including text, graphics, logos, and software, is the property of MAX.io Group and is protected by Australian and international copyright laws.
 
 **Limitation of Liability**
-To the fullest extent permitted by law, MAX<>IO Group shall not be liable for any indirect, incidental, special, consequential, or punitive damages arising from your use of our website or services.
+To the fullest extent permitted by law, MAX.io Group shall not be liable for any indirect, incidental, special, consequential, or punitive damages arising from your use of our website or services.
 
 **Governing Law**
 These Terms shall be governed by and construed in accordance with the laws of Australia.
@@ -278,35 +278,35 @@ export const footer = {
 
 export const seo = {
   home: {
-    title: "MAX<>IO Group — Business & Executive Growth",
-    description: "Identify bottlenecks, design solutions, and implement systems that remove them. Business and Executive Growth for operators who value leverage over noise.",
+    title: "MAX.io Group — Business & Executive Growth",
+    description: "A growth agency for businesses that want to move faster. Identify bottlenecks, design solutions, and implement systems that remove them.",
   },
   services: {
-    title: "Services — MAX<>IO Group",
+    title: "Services — MAX.io Group",
     description: "Business Growth and Executive Growth services. Operational systems, automation, strategy, and execution for operators.",
   },
   outcomes: {
-    title: "Outcomes — MAX<>IO Group",
+    title: "Outcomes — MAX.io Group",
     description: "Measurable improvements in visibility, efficiency, and execution. See what changes when systems replace chaos.",
   },
   pastClients: {
-    title: "Past Clients — MAX<>IO Group",
-    description: "Industries served and case studies from MAX<>IO Group engagements.",
+    title: "Past Clients — MAX.io Group",
+    description: "Industries served and case studies from MAX.io Group engagements.",
   },
   contact: {
-    title: "Contact — MAX<>IO Group",
-    description: "Book a screening call with MAX<>IO Group. Practical, low-pressure, valuable.",
+    title: "Contact — MAX.io Group",
+    description: "Start with a conversation. 20 minutes to identify where your business is losing time, money, or momentum.",
   },
   thankYou: {
-    title: "Thank You — MAX<>IO Group",
+    title: "Thank You — MAX.io Group",
     description: "Thanks for reaching out. We'll be in touch within 2 business days.",
   },
   privacy: {
-    title: "Privacy Policy — MAX<>IO Group",
-    description: "How MAX<>IO Group collects, uses, and protects your information.",
+    title: "Privacy Policy — MAX.io Group",
+    description: "How MAX.io Group collects, uses, and protects your information.",
   },
   terms: {
-    title: "Terms of Service — MAX<>IO Group",
-    description: "Terms governing the use of MAX<>IO Group website and services.",
+    title: "Terms of Service — MAX.io Group",
+    description: "Terms governing the use of MAX.io Group website and services.",
   },
 };

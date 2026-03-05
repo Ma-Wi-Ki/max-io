@@ -11,7 +11,7 @@ import { CheckCircle, User, Handshake, ArrowRight } from "lucide-react";
 
 const About = () => (
   <PageLayout>
-    <SEO title="About — MAX<>IO Group" description="Meet the founder and learn about MAX<>IO Group's approach to new-age consulting." />
+    <SEO title="About — MAX.io Group" description="Meet the founder and learn about MAX.io Group's approach to new-age consulting." />
 
     <Section className="pt-24 md:pt-32">
       <Reveal>
