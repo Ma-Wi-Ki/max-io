@@ -78,7 +78,7 @@ export const about = {
       { title: "Confident Decisions", desc: "Better intelligence means faster, sharper decisions at every level." },
     ],
   },
-  closing: "Small team. Tight scope. Measurable outputs.",
+  closing: "",
 };
 
 export const caseStudies = [
