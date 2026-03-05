@@ -100,7 +100,7 @@ const Index = () => (
         <div className="text-center max-w-xl mx-auto">
           <h2 className="text-2xl font-bold md:text-3xl">Ready to remove the bottlenecks?</h2>
           <p className="mt-3 text-muted-foreground">
-            A short conversation to understand the business, identify friction, and determine whether MAX&lt;&gt;IO can help.
+            A short conversation to understand the business, identify friction, and determine whether MAX.io can help.
           </p>
           <Link to="/contact" className="inline-block mt-6">
             <Button size="lg" className="sheen-hover silver-gradient text-primary-foreground font-semibold text-base px-8 py-6">

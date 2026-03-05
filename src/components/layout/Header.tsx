@@ -20,10 +20,11 @@ const Header = () => {
       <div className="container flex h-16 items-center justify-between">
         <Link
           to="/"
-          className="flex items-center text-xl font-bold tracking-tight text-foreground"
+          className="flex flex-col items-center leading-none"
           onClick={() => setOpen(false)}
         >
-          <span className="opacity-60 mr-1">&lt;</span> MAX.io <span className="opacity-60 ml-1">&gt;</span>
+          <span className="text-lg font-bold text-foreground tracking-tight">&lt;/&gt;</span>
+          <span className="text-sm font-bold text-foreground tracking-wider">MAX.io</span>
         </Link>
 
         {/* Desktop nav */}

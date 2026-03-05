@@ -42,7 +42,7 @@ const Ecosystem = () => {
 
   return (
     <PageLayout>
-      <SEO title="Ecosystem — MAX<>IO Group" description="Newsletter, short-form content, podcast, and education from MAX<>IO Group." />
+      <SEO title="Ecosystem — MAX.io Group" description="Newsletter, short-form content, podcast, and education from MAX.io Group." />
 
       <Section className="pt-24 md:pt-32">
         <Reveal>

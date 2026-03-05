@@ -5,8 +5,9 @@ const Footer = () => (
   <footer className="border-t border-border bg-background py-12">
     <div className="container">
       <div className="flex flex-col gap-6 md:flex-row md:items-start md:justify-between">
-        <Link to="/" className="flex items-center text-xl font-bold tracking-tight text-foreground">
-          <span className="opacity-60 mr-1">&lt;</span> MAX.io <span className="opacity-60 ml-1">&gt;</span>
+        <Link to="/" className="flex flex-col items-center leading-none">
+          <span className="text-lg font-bold text-foreground tracking-tight">&lt;/&gt;</span>
+          <span className="text-sm font-bold text-foreground tracking-wider">MAX.io</span>
         </Link>
 
         <div className="flex flex-wrap gap-x-6 gap-y-2 text-sm text-muted-foreground">
@@ -28,7 +29,7 @@ const Footer = () => (
         </div>
       </div>
       <div className="mt-8 pt-4 border-t border-border">
-        <p className="text-xs text-muted-foreground">© 2025 MAX IO Group. All rights reserved.</p>
+        <p className="text-xs text-muted-foreground">© 2025 MAX.io Group. All rights reserved.</p>
       </div>
     </div>
   </footer>
