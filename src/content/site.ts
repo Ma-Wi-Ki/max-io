@@ -94,8 +94,10 @@ export const growthTracks = {
       "Reduced admin and manual workload",
       "Operational visibility across the business",
       "Scalable, repeatable systems",
+      "Structured sales and pipeline automation",
+      "Clear positioning and offer design",
     ],
-    cta: "Discuss Business Growth",
+    cta: "More Details",
   },
   executive: {
     label: "Individual Growth",
@@ -110,10 +112,13 @@ export const growthTracks = {
     ],
     focus: [
       "Improved decision-making",
-      "Tech. education",
+      "Tech. education and AI literacy",
       "Consistent weekly execution",
+      "Reduced cognitive load and context switching",
+      "Structured personal automation",
+      "Higher output per hour",
     ],
-    cta: "Discuss Individual Growth",
+    cta: "More Details",
   },
 };
 
